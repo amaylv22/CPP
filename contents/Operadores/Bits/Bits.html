@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Op. de Bits</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Operadores de Bits</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Estos trabajan con operaciones a nivel de bits, y solo se pueden aplicar a expresiones enteras. Los operadores de bits existentes son:</p>
+
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th>Operador</th>
+						<th>Operación</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>~(ALT+126)</td>
+						<td>(...) (cambia 0 por 1 y viceverza)</td>
+					</tr>
+					<tr>
+						<td>&</td>
+						<td>Producto lógico (and)</td>
+					</tr>
+					<tr>
+						<td>│</td>
+						<td>Suma lógica (or)</td>
+					</tr>
+					<tr>
+						<td>^</td>
+						<td>Suma lógica exclusiva (xor)</td>
+					</tr>
+					<tr>
+						<td><<</td>
+						<td>Desplazamiento a la izquierda</td>
+					</tr>
+					<tr>
+						<td>>></td>
+						<td>Desplazamiento a la derecha</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Al igual que los operadores anteriores estos siguen la sintaxis general de los operadores, con excepción del operador "(...)" cuya sintaxis se muestra a continuación.</p>
+			<pre><code>~ (EXPRESION);</pre></code>
+			
+			<h2 id="">"&"</h2>
+			<p>Corresponde a la operación lógica "AND", compara las listas una a una, si ambas son "1", en caso contrario "0". También llamado producto lógico. En algebra (·).</p>
+			<pre><code>A=0100 0011
+B=0010 001		A&B=0000 0001
+
+			De izquierda a derecha
+			1x1=1, 1x0=0, 0x0=0 ...</pre></code>
+
+			<h2 id="">"│"</h2>
+			<p>Corresponde a la operación "OR", compara las listas una a una, si una de ellas es "1" el resultado es "1", en caso de contrario es "0". En álgebra (+). Suma lógica.</p>
+			<pre><code>A│B = 0110 0011
+
+1+1=1, 1+0=1, 0+0=0</pre></code>
+
+			<h2 id="">"^"</h2>
+			<p>Corresponde a "XOR", compara las listas una a una, si son diferentes el resultado es 1, de lo contrario es 0.</p>
+			<pre><code>A^B=0110 0010
+
+1^1=0, 1^0=1, 0^0=0</pre></code>
+
+			<h2 id="">"~"</h2>
+			<p>Corresponde a "NOT", se trata de un operador unitario que invierte el valor de cada bit, si es "1" da como resultado "0" y viceverza.</p>
+			<pre><code>~A=1011 1100	→	A=0100 0011</pre></code>
+
+			<h2 id="">"<<"</h2>
+			<p>Realiza un desplazamiento de bits a la izquierda introduciendo 0 a la derecha, tantas veces como indique el segundo operando (de la sintaxis general). Equivale a multiplicar por 2 tantas veces como lo indique dicho operando.</p>
+			<pre><code>A<<1=1000 0110	→	A=0100 0011</pre></code>
+			<article class="note"><p>En el caso de los desplazamientos, el segundo operando de la sintaxis indica el número de desplazamientos a recorrer.</p></article>
+			
+			<h2 id="">">>"</h2>
+			<p>Realiza el desplazamiento de bits a la derecha, introduciendo el 0 por la izquierda, tantas veces como indique el segundo operador, equivale a dividir por 2 tantas veces como indique el segundo operando, pero le (...) su longitud inicial, es decir, sustituye el dígito en el extremo derecho y agrega un "0" en el extremo izquierdo.</p>
+			<pre><code>A>>1=0010 0001	→	A=0100 0011</pre></code>
+		</article>
+		
+	</body>
+</html>	

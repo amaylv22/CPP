@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Return</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Return</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>La sentencia RETURN tiene dos funciones distintas:</p>
+			<ol>
+				<li>Devolver el valor "de retorno" producto de las operaciones propias de la función.</li>
+				<li>Regresar el control al programa o función desde la cuál fue llamado.</li>
+			</ol>
+
+			<p>Es por esto que cualquier sentencia escrita después de return "simple" no será ejecutado ni leído por el compilador.</p>
+			<p><b>Es posible utilizar más de un RETURN en una función.</b> Por ejemplo, como salida de la función producto de una condición no cumplida.</p>
+
+			<pre><code>(TIPO) [NOM_FUNC] ()
+	{
+	if ()
+		RETURN ();
+	else
+		RETURN ();
+	...........
+	...........
+	...........
+	RETURN ();
+	}</pre></code>
+		</article>
+		
+	</body>
+</html>	

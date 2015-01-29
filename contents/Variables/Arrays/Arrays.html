@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Arrays</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Arrays</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Permiten agrupar datos usando un mismo identificador. Todos los elementos de un array son del mismo tipo, y para acceder a cada elemento se usan subíndices.</p>
+			<pre><code><%TIPO> <%IDENTIFICADOR> [NUM_DE_ELEMNTOS] [[NUM_DE_ELEM_2]...];</pre></code>
+
+		<article class="note"><p><pre><code>[NUM_DE_ELEMNTOS]</pre></code>Corresponde al <b>subíndice</b> y tiene valores desde 0 hasta [(NUM_DE_ELEMENTOS)-1].</p></article>
+
+			<h1>Declarando arrays con listas</h1>
+			<p>En este caso no es necesario especificar el número de listas (subíndice), ya que se (...) de los valores de la lista.</p>
+			<pre><code><%TIPO> <%IDENTIFICADOR> [ ] =  {<%ELE_1>, <%ELE_2>,..., <$ELE_n>};</pre></code>
+
+
+			<h1>Operadores con arrays</h1>
+			<h2>Size of</h2>
+			<p>Aplicados a un array, este operador devuelve el tamaño de todo el array en bytes, dado que todos los elementos son del mismo tipo, podemos conocer el número de elementos que forman el array por medio de una sencilla división.<p>
+			<pre><code>SIZEOF (ARRAY) / SIZEOF (ARRAY [O])<p>ó</p>SIZEOF (ARRAY) / SIZEOF (INT)</pre></code>
+
+			<article class="note"><p>El segundo caso solo se utiliza cuando el tipo es "INT".</p></article>
+		</article>
+		
+	</body>
+</html>	

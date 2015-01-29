@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Declaración de variables. Más allá de la sintaxis</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Declaración de variables. Más allá de la sintaxis</h1>
+		</header>
+		
+		<article class="subsection">
+			<ul>
+				<li><p>La longitud del identificador al declarar la variable es cualquiera, pero el compilador solamente reconoce los primeros 31 caracteres.</p></li>
+
+				<li><p>Si existen varias variables del mismo tipo se pueden declarar a la vez.</p></li>
+				<pre><code>INT A;				INT A, B, C;
+INT B;		→		ó que
+INT C;				INT A,
+						B,
+						C;</pre></code>
+			<article class="note"><p>Es una buena costumbre inicializar las variables locales.</p></article>
+		
+				<li><p>Variables con un valor inicial</p></li>
+				<pre><code>INT A = 234;		INT A=234, B=123, C;</pre></code>
+				<p>Array con valor inicial</p>
+				<pre><code>INT A[#]=(<%VAL1>, <%VAL2>, ..., <%VAL#>)</pre></code>
+			<article class="note"><p>Las variables no inicializadas tienen un valor indeterminado. Es cuando son variables estáticas que se inicializan automáticamente a cero.</p></article>
+			</ul>
+		</article>
+		
+	</body>
+</html>	

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Predicados Binarios</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Predicados Binarios</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Un predicado binario es una función (...) que viene para hacer comparaciones y devuelve falso o verdadero. <b>Verdadero</b> si la condición se cumple, <b>falso</b> si no se cumple. Recomendando que en los return o if si se ponga.</p>
+			<pre><code>if (argumento)</pre></code>
+			<p>Se interpreta como si <b>argumento=true</b>, entonces en los predicados binarios el return se considera una comparación.</p>
+			<pre><code>return (condición);</pre></code>
+			<p>Si la condición se cumple regresará true, si no es así, regresará false.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Predicado implementado como función</h1>
+			<pre><code>boal (comparación) (double first, double second)
+	{return (int (first) == int(second));}
+
+boal (valor_de_un_solo_digito) (const int & value)
+	{return (value <10);}</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Predicado implementado como clase</h1>
+			<pre><code>Clase is_odd
+	{public:
+		boal operator() (const int & value)
+	};</pre></code>
+		
+	</body>
+</html>	

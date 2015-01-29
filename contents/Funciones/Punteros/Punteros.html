@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Punteros a funciones</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Punteros a funciones</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Es posible declarar un puntero a una función.</p>
+			<pre><code>(TIPO) (*(FUN_NAME)) ((LISTA_DE_PARAMETROS))</pre></code>
+			<p>Los paréntesis son muy importantes para declarar específicamente un puntero a una función del tipo (TIPO) y no una función que devuelve un puntero del tipo (TIPO).</p>
+		</article>
+	
+		<article class="subsection">
+			<h1 id="">Utilidad de los punteros a funciones</h1>
+			<p>Su utilidad se manifiesta sobre todo cuando se personalizan ciertas funciones de librerías.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Asignación de punteros a funciones</h1>
+			<p>Es posible asignarle a una función existente un puntero a función siempre y cuando la función y el puntero tengan el mismo tipo de retorno y los mismos parámetros. La asignación se lleva a cabo como una asignación de valor a una variable. Por ejemplo:</p>
+			<pre><code>INT FUNCION ();
+INT (*pfi) ();
+pfi=FUNCION;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Llamados a una función a través de un puntero</h1>
+			<p>Para llamar a una función basta con usar el identificador del puntero como si se tratara de un "alias".</p>
+		</article>
+	</body>
+</html>	

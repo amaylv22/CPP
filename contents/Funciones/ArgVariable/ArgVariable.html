@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Funciones con número de argumento variable</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Funciones con número de argumento variable</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Es posible también crear funciones con un número indeterminado de argumentos, para ello se deben declarar los argumentos conocidos del modo tradicional (al menos uno), y los desconocidos se sustituyen por tres puntos (...)</p>
+			<pre><code>(TIPO) (FUN_NAME) ((TIPO) (VAR_NAME), ...);</pre></code>
+
+			<article class="note"><p>Libería de (...)</p>
+<pre><code>#include (cstdarg)</pre></code></article>
+		</article>
+
+		<article class="subsection">
+			<p>Los parámetros se pasan usando la pila, además el programador es el responsable de decidir el tipo de cada argumento, la cual (...) bastante el uso de esta forma de pasar parámetros. Para hacer este proceso más sencillo, se incluyen algunos macros en el fichero de cabecera "STDARG.h" que permiten manejar facilmente las listas de argumentos desconocidos.</p>
+			<p>El fichero de cabecera STDARG.h define</p>
+
+			<ul>
+				<li><b>Tipo</b>: será necesario para declarar una variable de este tipo para tener acceso a la lista de parámetros. Es necesario para recuperar los argumentos.
+<pre><code>VA_LIST
+   ↓
+VA_LIST(VAR_NAME);</pre></code></li>
+				<li><b>Marcos</b>: ajusta el valor de "(VAR_NAME)" (declarado de tipo ("VA_LIST")) para que apunte alprimer parámetro de la lista, (ULTIMO) es el identificador del último parámetro fijo antes de comenzar la lista. Es decir, el último antes de la elipse, el nombre de.
+<pre><code>VA_START
+    ↓
+VOID VA_START((VAR_NAME), (ULTIMO));</pre></code>
+
+<p>El siguiente código es usado para recuperar los valores. Devuelve el siguiente valor de parámetros, (VAR_NAME) debe ser la misma variable que se actualiza precisamente con "VA_START", (TIPO) es el tipo de parámetro que se tomará de la lista.</p>
+<pre><code>VA_ARG
+   ↓
+(TIPO) VA_ARG ((VAR_NAME),(TIPO));
+VA_ARG ((VAR_NAME),(TIPO));</pre></code>
+<p>Permite a la función retornar normalmente, restaurando el estado de la pila; necesaria ya que en algunas ocasiones los macros anteriores pueden modificarlo, haciendo que el programa termine anormalmente.</p>
+<pre><code>VA_END
+   ↓
+VOID VA_END ((VAR_NAME));</pre></code></li>				
+			</ul>
+		</article>
+		<article class="subsection">
+			<p>Es necesario usar un sistema que permita determinar cuál es el último valor de la lista, para así dejar de leer y no provoque un error. Una forma es que el último valor de la lista de parámetros en la llamada en la función sea un 0, (o más en general, un valor conocido). De esta manera se (...) de un ciclo WHILE, por ejemplo, se puede interrumpir el proceso de (...), por ejemplo:</p>
+			<pre><code>WHILE ((p=VA_ARG(AR, CHAR))!=0) {
+	}</pre></code>
+			<p>También se puede hacer que uno de los parámetros conocidos sea la cuenta de los parámetros desconocidos (así se puede, por ejemplo, usar el ciclo FOR). Por otra parte, es necesario que se conozca el tipo de cada parámetro, para así poderlos leer adecuadamente, lo normal es que todos sean del mismo tipo. </p>
+		
+	</body>
+</html>	

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cadenas de caracteres</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Cadenas de caracteres</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Las cadenas de caracteres no son más que array del tipo char. Estos no pueden ser asignados directamente, con exepción de que este se haga junto con la declaración. La sintaxis se muestra a continuación seguido de algunos ejemplos.</p>
+			<pre><code>CHAR (VAR_NAME)[(NO_DE_CARACTERES)];
+CHAR *(VAR_NAME);</pre></code>
+
+			<p>En el primer caso para asignar memoria estáticamente y en el segundo para asignarla dinámicamente.</p>
+			<p>Ejemplos.</p>
+			<pre><code>CHAR TEXTO [5] = "HOLA";
+CHAR TEXTO [ ] = "HOLA";
+
+CHAR TEXTO [5];
+TEXTO [0] = 'H';
+TEXTO [1] = 'O';
+TEXTO [2] = 'L';
+TEXTO [3] = 'A';
+TEXTO [4] = '1000';</pre></code>
+			
+			<p>Cuando se asigna memoria para cadenas, se debe tomar en cuenta el caracter de fin en la cadena, a pesar de que el vector (...) en la posición 0, se debe de reservar espacio igual a (num, máximo de caracteres)+1.</p>
+		</article>
+		
+	</body>
+</html>	

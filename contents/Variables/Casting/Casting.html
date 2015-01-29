@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>"Casting", conversiones explícitas de tipos</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>"Casting", conversiones explícitas de tipos</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Cuando se produce demación de tipos, el computador normalmente emite avisos o "warning", por ejemplo, al asignar expresiones tipo float o variables int.</p>
+			<p>Para aludir estos avisos, el compilador usa el "casting" o conversión explícito (y no implícito como en el caso de la demación). En general el uso de este recurso es obligatorio cuando se hacen asignaciones, o cuando se pasan argumentos a funciones con pérdida de precisión. En el caso de los argumentos pasados o funciones es también muy recomendable aunque no exista pérdida de precisión.</p>
+			<p>En general un "casting" tiene dos notaciones, la normal y la funcional, que se presenta a continuación respectivamente.</p>
+			<pre><code>((TIPO))(VAR_NAME) o (TIPO)((EXPRESION))</pre></code>
+			<p>Existen otros castings propios de C++, los cuales son más recomendables debido a que realizan tareas especializadas, a continuación se presenta un listado de ellos.</p>
+
+			<h1>Static_cast< ></h1>
+			<p>Realizan una conversión de tipo durante la compilación del programa, de modo que no crea más código durante la ejecución. Es obligado a realizar conversiones de tipo que de otro modo haría el compilador automáticamente,por ejemplo, convertir un puntero a un objeto de una clase determinada o un puntero a una clase base pública.</p>
+			<pre><code>STATIC_CAST(TIPO) ((EXPRESION));</pre></code>
+
+			<h1>Const_cast< ></h1>
+			<p>Se usa para liminar o añadir los modificadores const y volatile de una expresión. Para eso, la expresión debe de ser del mismo tipo del "(TIPO)" salvo por los modificadores const o volatile que tengan que aparecer o desaparecer.</p>
+			<pre><code>CONST_CAST(TIPO) ((EXPRESION));</pre></code>
+
+			<h1>Reinterpret_cast< ></h1>
+			<p>Se usa para hacer cambios de tipo a nivel de bits, es decir, el valor de la "expresión" se interpreta como si fuese un objeto del tipo "(TIPO)". Los modificadores const y volatile no se modifican, permanecen igual que en el valor asignado de "expresión". Este tipo de conversión es peligrosa.</p>
+			<pre><code>REINTERPRET_CAST(TIPO) ((EXPRESION));</pre></code>
+		</article>
+		
+	</body>
+</html>	

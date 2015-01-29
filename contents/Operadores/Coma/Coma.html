@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Op. de Coma</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Operador de Coma</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>La coma tiene una doble función, por una parte separa elementos de una lista de argumentos de una función y por otra puede ser puede ser usada como separador de expresiones de "coma". Ambas funciones pueden ser mezcladas, pero hay que añadir paréntesis para resolver las ambigüedades.</p>
+			<p>En una expresión "de coma" cada operador es evaluado como una expresión, pero los resultados obtenidos anteriormente se tienen en cuenta en las subsiguientes evaluaciones. Por ejemplo.</p>
+			<pre><code>FUNC (i, (h=1,h+4), k) → FUNC(i,5,k)</pre></code>
+			<article class="note"><p>(h=,h+4) → Expresión de coma.</p>
+			<p>FUNC(i,5,k) → Llamado a función.</p></article>
+		</article>
+		
+	</body>
+</html>	

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Parámetros con valores por defecto</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Parámetros con valores por defecto</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Cuando se declara una función se peude decidir que alguno de sus parámetros sean opcionales, es decir, que pueda ser asignado un valor al hacer una llamada, para aquellos que se decida hacerlos opcinales, se deben proporcionar algunos valores por defecto, así, si al llamar a la función se llega a omitir alguno de estos valores, la fx trabajará con los agregados por defecto. Por ejemplo:</p>
+			<pre><code>INT FUNCION (INT A);
+
+INT MAIN ()
+{ FUNCION(19);
+FUNCION();
+}
+
+INT FUNCION (INT A=1)
+{
+COUT << a << ENDL;
+}</pre></code>
+
+			<p>Para este ejemplo, al llamar por primera vez la función, esto devolverá el valor de 19 y la segunda vez, el valor predeterminado de 1.</p>
+		</article>
+
+		<article class="subsection">
+			<p>Para este método existen algunas reglas con el fin de evitar errores o resultados indeseados.</p>
+			<ul>
+				<li>Solo los últimos argumentos de las funciones pueden tener valores por defecto.</li>
+				<li>De estos, solo los últimos argumentos pueden ser omitidos en una llamada. Es decir, si tenemos dos argumentos opcionales, no podremos omitir el parámetro del primero y agregar el del último, ya que los argumentos por defecto se asignan según el orden declarado en el prototipo.</li>
+				<li><p>Los valores por defecto deben especificarse o en los prototipos o en las declaraciones pero no en ambos. Cuando se haga esto en los prototipos, no es necesario indicar el nombre de los parámetros. Por ejemplo:</p>
+				<pre><code>VOID FUNCTION (INT=1)</pre></code></li>
+			</ul>
+
+		
+	</body>
+</html>	

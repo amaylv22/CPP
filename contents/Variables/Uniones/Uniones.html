@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Uniones</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Uniones</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Son un tipo especial de estructuras que permiten almacenar elementos de diferentes tipos en los mismas posiciones de memoria aunque evidentemente no al mismo tiempo.</p>
+			<pre><code>UNION [(IDENTIFICADOR)]
+{[(TIPO)(VAR_NAME);
+(TIPO)(VAR_NAME_2); ...;]
+} (VAR_UNION);</pre></code>
+			<p>Las uniones tienen propiedades muy similares, se pueden referenciar completas, usando su nombre, o se puede acceder a cada uno de sus elementos usando el operador de selección (.).</p>
+			<p>También pueden declararse más variables del tipo de la unión en cualquier parte del programa.</p>
+			<pre><code>[UNION] (IDENTIFICADOR) (VAR_UNION);</pre></code>
+			<p>La particularidad de estos, es que cada elemento (...) en la misma posición de memoria. Por ejemplo:</p>
+			
+			<p>Suponiendo que int ocupa dos bytes, char un byte, y double cuatro, y que A→int, B→char, C→double.</p>
+			<pre><code>[BYTE0][BYTE1][BYTE2][BYTE3]
+[(-----A----)]
+[(-B-)]
+[(------------C-----------)]</pre></code>
+
+			<p>Por el contrario, en una estructura, las mismas variables tendrían la siguiente disposición.</p>
+			<pre><code>[BYTE0][BYTE1][BYTE2][BYTE3][BYTE4][BYTE5][BYTE6][BYTE7]
+[(-----A----)][(-B-)]       [(------------C-----------)]</pre></code>
+			<p>Un uso muy práctico de las uniones es cuando tenemos estructuras con elementos del mismo tipo, para en determinadas circunstancias, puede permitirnos acceder a ellos como si fueran un array, tal como se muestra en el siguiente ejemplo.</p>
+			<pre><code>STRUCT COORD3D
+{ INT X,Y,Z;
+};
+
+UNION UNCOORD3D
+{ STRUCT COORD3D N;
+  INT COOR[3];
+} PUNTO;</pre></code>
+			<p>Ya que la memoria se comparte, podemos llamar la información de dos maneras:</p>
+			<pre><code>→ PUNTO.N.Y
+→ PUNTO.COOR[2]</pre></code>
+			<p>Es importante que en este caso sobreponer las variables de estructura y array completamente, es decir, campo con campo (X con [1], Y con [2] y Z con [3]) y no hay sobreposición X, Y, Z, [1], [2], [3], como se pudiera (...) por la definición anterior. La diferencia radica en la forma en la que se declaran las variables, ya que en este caso se declaran como vectores se reserva el espacio que ocupa dicho vector completamente y no solo lo que ocupa un solo campo.</p>
+			<h1>Estructuras anidadas en uniones.</h1>
+			<p>Como ya se sabe, la estructura anónima es la que carece de identificación de tipo de estructura y de identificación de variables de tipo de estructura.</p>
+			<p>La misma unión del ejemplo anterior puede declararse del modo siguiente:</p>
+			<pre><code>UNION COOR3D
+{ STRUCT{
+	INT X, Y, Z;
+  };
+  INT COOR[3];
+} PUNTO;</pre></code>
+			<p>Haciéndolo así accedemos a las coordenadas Y de cualquiera de estas dos formas</p>
+			<pre><code>→ PUNTO.Y
+→ PUNTO.COOR[3]</pre></code>
+
+			<p>Este tipo de estructuras no solo nos sirve para ahorrar código, si no que es útil porque hace esto mucho más claro.</p>
+		</article>
+		
+	</body>
+</html>	

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Constantes</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Constantes</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>En C++ es posible aquellas variables que durante el desarrollo del programa y desde su inicio tuvieron el mismo valor como constante.</p>
+			<p>Existe la recomendación de declarar las constantes con letras mayúsculas y anteponer una "k" minúscula, solo por razones de legibilidad y comprensibilidad.</p>
+		<article class="note"><p>Las constantes se inicializan al (...).</p></article>
+			<p>La forma de declarar las constantes es la siguiente:</p>
+			<pre><code>CONST [TIPO & MODIFICADORES] <$NOMBRE>=<$VAL>;
+#DEFINE <$NOMBRE><$VAL>;</pre></code>
+			<p>La diferencia es que la segunda forma define una constante simbólica, es decir, el compilador no usa las variables como tal, si no que sustituye en el código el valor de este antes de armar el ejecutable.</p>
+
+			<h2 id="">Tipos de constantes</h2>
+			<dl>
+				<dt>Literales</dt>
+					<dd><p>Corresponden al valor escrito directamente en el código. Ej.15.</p></dd>
+				<dt>Simbólicas</dt>
+					<dd><p>Constante representada por un nombre.</p></dd>
+				<dt>Enumeraciones</dt>
+					<dd><p>Situado entre constante y variable, se define un tipo y a este se le asigna un número finito de valores posibles que puede tomar durante la ejecución. Se (...) en el inicio.</p></dd>
+			</dl>
+			
+		</article>
+		
+	</body>
+</html>	

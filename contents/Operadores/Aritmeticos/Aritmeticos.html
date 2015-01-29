@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Op. Aritméticos</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Operadores Aritméticos</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Existen <b>dos operadores aritméticos unitarios "+" y "-"</b>, que asignan valores positivos o negativos a la expresión a la que son aplicados.</p>
+
+			<pre><code>+ (EXPRESION)
+- (EXPRESION)
+
+"==" → Operador igual.</pre></code>
+			<p>En C++ encontramos <b>cinco operadores aritméticos binarios (+,-,*,/,%)</b></p>
+			<pre><code>(EXPRESION) + (EXPRE)
+(EXPRESION) - (EXPRE)
+(EXPRESION) * (EXPRE)
+(EXPRESION) / (EXPRE)
+(EXPRESION) % (EXPRE)</pre></code>
+			
+			<p>En caso de <b>(EXPRESION) - (EXPRE)</b>, si se utilizan variables seguidas por una resta que produzca signo negativo, el resultado es un (.......)</p>
+			<p>Si se usa una variable tipo (...) <b>(EXPRESION) / (EXPRE)</b>, solo devuelve el valor entero sin decimales, no redondea.</p>
+			<p><b>(EXPRESION) % (EXPRE)</b>, se usa en el mismo orden de la división pero (........). Solo esteros.</p>
+
+			<p>El operador "%" devuelve el residuo de la división entera del primer operando entre el segundo. Por esto no puede utilizarse con operadores de coma flotante.</p>
+		</article>
+
+		<article class="subsection">
+			<p>Existen un par más de operadores unitarios <b>(++,--)</b>. El primero incrementa el valor y el segundo lo decrementa, ambos en una unidad. Dependiendo como se utilice el operador puede producir un <b>PRE-INCREMENTO</b> o un <b>POST-INCREMENTO</b>. Solamente se aplican a variables.</p>
+
+			<pre><code>(VAR_NAME) ++	(POST_INCREMENTO)
+++ (VAR_NAME)	(PRE_INCREMENTO)
+(VAR_NAME) --	(POST_INCREMENTO)
+-- (VAR_NAME)	(PRE_INCREMENTO)</pre></code>
+
+			<p>En seguida se presentan ejemplos y algunas formas alternativas de representar incrementos y decrementos en variables.</p>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+
+						<th>   </th>
+						<th>Es lo mismo que</th>
+						<th>Operadores de autoasignación</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>a++</td>
+						<td>→</td>
+						<td>a=a+1</td>
+					</tr>
+					<tr>
+						<td>a--</td>
+						<td>→</td>
+						<td>a=a-1</td>
+					</tr>
+					<tr>
+						<td>a+=b</td>
+						<td>→</td>
+						<td>a=a+b</td>
+					</tr>
+					<tr>
+						<td>a-=b</td>
+						<td>→</td>
+						<td>a=a-b</td>
+					</tr>
+					<tr>
+						<td>a*=b</td>
+						<td>→</td>
+						<td>a=a*b</td>
+					</tr>
+					<tr>
+						<td>a/=b</td>
+						<td>→</td>
+						<td>a=a/b</td>
+					</tr>
+					<tr>
+						<td>a%=b</td>
+						<td>→</td>
+						<td>a=a%b</td>
+					</tr>
+					<tr>
+						<td>a+=3</td>
+						<td>→</td>
+						<td>a=a+3</td>
+					</tr>
+				</tbody>
+			</table>
+
+				<h2>Pre│Post  Incremento│Decremento</h2>
+				<pre><code>b=a++	(POST-INCREMENTO)</pre></code>
+				<p>Si "a" valía 2, esta instrucción da a "b" el valor de "a" y aumenta el valor de "a". Al final b=2, a=3. (Postincremento, se incrementa "a" tres (...) su valor).</p>
+				<pre><code>b=++a</pre></code>
+				<p>Si "a" valía 2, esta instrucción hace que "a" incremente su valor y luego se le asigne a "b", de modo que al final a=3 b=3.</p>
+
+				<p>Por supuesto también tenemos Postincremento (a--) y Preincremento (--a). Debe quedar claro que al utilizar los operadores ++ o --, se modifica el valor de la variable a la que se le aplica dichos operadores.</p>
+				<p>El pre y post puede ser también utilizado en expresiones más elementos como:</p>
+				<pre><code>c=a+ ++b</pre></code>
+				<p>Por último, en C++ es posible hacer asignaciones múltiples.</p>
+				<pre><code>a=b=c=1;</pre></code>
+		</article>
+		
+	</body>
+</html>	

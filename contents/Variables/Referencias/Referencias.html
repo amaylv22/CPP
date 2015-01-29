@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Referencias</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Referencias</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Las referencias son un alias. Al crear una referencia la inicializamos con el nombre de otro objeto. Este objeto es el "(...)" (objetivo, destino o blanco), al que apunta el alias. La referencia actúa como un nombre alternativo para el blanco, cualquier cambio en la referencia se hace realmente en el blanco.</p>
+
+			<h1>Crear referencia</h1>
+			<p>(TIPO_DEL_BLANCO) & (NOM_DE_REF) = (NOM_DE_OBJETO_BLANCO);</p>
+
+			<article class="note"><p>Se debe inicializar al crearse. Para referirse a ella en cada referencia se usa NOM_DE_REF</p>
+			<p>& → Operador de referencia.</p></article>
+			<p>Las referencias no pueden ser reasignadas de otra manera, si se intenta lo que se produce es la modificación del objeto blanco.</p>
+
+			<h1>Referencias a objectos.</h1>
+			<p>Para poder acceder a los miembros de un objeto, se utiliza el operador de acceso (.).</p>
+
+			<p>Las referencias son usadas por razones de claridad y para evitar errores, sobretodo en los llamados a función, ya que, por ejemplo, una función por la que se ponen los valores por referencia es llamado, no es necesario ponerle la dirección de la variable (como si fueran punteros), si no que bastará con poner la variable.</p>
+			<p>Otra de las razones es por eficiencia del uso de stach. Es decir, en el caso de clases u objetos, por ejemplo al ponerles como argumento por valor causan gran cantidad de recursos, en cambio, si se pone por referencia la causa es mínima.</p>
+		</article>
+		
+	</body>
+</html>	

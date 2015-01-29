@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Parámetros por valor y por referencia</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Parámetros por valor y por referencia</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Cuando se dicta el prototipo de una función, se declaran parámetros para este, cuando la función se llena, en estos campos pueden insertarse variables y constantes para llamar a la función, la función copiará los valores de variable a constante a las variables creadas para recibir cada parámetro, la <b>fx</b> operará con estas variables modificando su valor (...) hasta alterar el resultado, sin embargo el valor de las variables de introducción no será modificado, esto se llama poner parámetros por su valor. Por ejemplo:</p>
+			<pre><code>INT a=8;
+INT b=4;
+INT FUNCION (INT m, INT n);
+
+INT MAIN ()
+	{ FUNCION (2,3);
+	  FUNCION (a,b);}
+
+INT FUNCION (INT m, INT n)
+	{ m=m+3;
+	  n=n-2;
+	  RETURN m+n;}</pre></code>
+
+			<ul>
+				<li>En el ejemplo anterior al llamar a FUNCION (2,3) m=2, n=3, arroja un valor de m+n=6.</li>
+				<li>En el segundo caso, a=8 y b=4 al llamar a FUNCION (a,b) y al tener el proceso <b>m</b> que corresponde a la variable<b>b</b> (...) (...) de m=11 y n que corresponde a la variable b (...) n=2, pero a y b siguen (...) a=8, b=4, con la que se (...) que el valor de a y b se (...) solo se copia a los parámetros de la función.</li>
+			</ul>
+
+			<p>Sin embargo, existen sentencias en donde es necesario que las variables que se introducen, cambian su valor mediante los procesos que ejecutan la función. Para constantes como las variables deberán ser paradas por referencia. Es decir, estarán ligados y el cambio que se le infringe a una afectan directamente a la otra.</p>
+			<p>Así, se deben crear referencias a las variables, la referencia es para definir un "alias" para las variables ya existentes. Para ello se usa el operador de referencia (&). A continuación se muestran las fromas para crear las referencias pero aún no se introduce el concepto de las funciones.</p>
+			<pre><code>(TIPO) & (ALIAS) = (VAR_DE_REFERENCIA)
+(TIPO) & (ALIAS)</pre></code>
+
+			<p>La primera forma es la que se usa para declarar variables de referencia, <b>la asignación</b> ya que no pueden definirse referencias indeterminadas. La segunda forma es la que se usa para definir parámetros por referencias en funciones, en las que las asignaciones (=) son implícitas.</p>
+			<p>De esta manera, si queremos que los cambios realizados en los parámetros dentro de la función se conserven al retorno de la llamada, debemos ponerlos por referencia. Esto se hace declarando los parámetros de la función como referencias a variables.</p>
+			<pre><code>(TIPO) (FUN_NAME) ((TIPO) & (VAR_NAME_1), (TIPO) & (VAR_NAME_i));
+
+(VAR_NAME_i) = alias</pre></code>
+			<article class="note"><p>Es ilegal pasar constantes como parámetros por referencia.</p>
+
+<p>Cualquier expresión C++ válida puede ser un argumento.</p>
+<p>Otras funciones: la salida de la fx coincide con el tipo de argumento.</p>
+
+<p><b>Ventaja</b>: al no hacer una copia es más rápido acceder a las (...) y si no se quiere (.........) se puede declarar (Constante).</p>
+<p><b>Múltiples (...)</b>: permiten tener varios salida, no solo uno.</p>
+<p><b>Punteros vs Referencias</b>: C++ usa los punteros para llevar a cabo los argumentos con dirección, así que estos son más rápidos que las referencias.</p>
+<p>Se debe incluir el & en los prototipos de función y en la definición, no en la llamada.</p></article>	
+
+			<p>Sin embargo, cuando se escribe el cuerpo de la función, solamente se escribe el alias para hacer referencia a la función.</p>
+			<p>Cualquier cambio que se realice en los parámetros dentro de la función se hará también en las variables referenciadas. Esto quiere decir que no es posible llamar a la función con parámetros constantes.</p>
+			<p>Al llamar la función de pasan las variables normalmente, sin modificarse alguno.</p>
+			
+		</article>
+		
+	</body>
+</html>	

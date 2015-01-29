@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Prototipos de funciones </title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Prototipos de funciones</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>En C++ es obligatorio usar prototipos, es decir, una declaración de una función sin cuerpo, solamente con (...) el valor de retorno y el tipo de sus argumentos, terminando con un ";".</p>
+			<pre><code>[EXTERN|STATIC] (TIPO) (FUN_NAME) ([(LISTA_DE_PARAMETROS)]);</pre></code>
+		
+			<article class="note"><pre><code>[(LISTA_DE_PARAMETROS)]
+	→ Toma en valor del argumento
+	→ Separado por comas para (.......)</pre></code></article>
+
+			<p>En un prototipo los nombres de los parámetros con opciones bastan solo con su tipo, pero estos ayudan a la legibilidad del programa.</p>
+			<pre><code>Cabecera
+		(TIPO) (NOMBRE DE FUNCION) ()
+		{
+Cuerpo
+		...
+		}</pre></code>
+
+			<article class="note"><p>→ Las funciones existentes con accesibles desde cualquier parte del programa, los <b>static</b> solo lo son desde el fichero fuente donde se definen.</p>
+<p>→ Si <b>name</b> indica (TIPO) de retorno, el compilador le concederá un (...). Si se quiere que no devuelva nada se usa <b>void</b>.</p></article>
+		</article>
+		
+	</body>
+</html>	

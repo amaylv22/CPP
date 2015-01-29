@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Funciones Inline</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Funciones Inline</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Este tipo de función, al contrario de aquellos que ya se han presentado, en los cuales al llamarlos se saltan para ejecutar el código en su localización original y después se devuelve el resultado al lugar solicitado, insertar pues su código entre las líneas donde se localiza la llamada. Esto tiene como ventaja una ejecución más rápida, pero también genera un programa más grande. Así pues, su uso está recomendado para funciones pequeñas, la que optenga los tipos de ejecución, sin embargo, estos deben evitarse cuando las funciones sean muy grandes, ya que incluso el compilador pudiera llegar a ignorar la instrucción.</p>
+			<pre><code>INLINE (TIPO) (FUN_NAME) ((LISTA_DE_PARAMETROS));</pre></code>
+
+			<p>Al igual que en cualquier función, es necesario y la llamada es como en los casos anteriores, la diferencia es que al construir el programa, el compilador copia el código de la definición, luego que se llama la función.</p>
+
+			<article class="note"><p>La definición lleva la palabra clave INLINE.</p></article>
+		</article>
+		
+	</body>
+</html>	

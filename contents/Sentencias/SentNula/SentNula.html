@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sentencia Nula</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sentencia Nula</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Consiste en un único ";". Sirve para ser usado en casos de que el compilador espera que aparezca una sentencia pero en realidad no se pretende hacer nada.</p>
+
+			<h1 id="">Detalle de Bucle For</h1>
+			<p>Se puede inicializar más de una variable y declarar al mismo tiempo.</p>
+			<pre><code>FOR (INT x=0, y=0;	x<3;	x++, y++)</pre></code>
+			<p>Omitir declaraciones con valores nulos.</p>
+			<pre><code>FOR (; CONTADOR <5;) → Igual que usar while.
+FOR (;;) → For no finaliza (for_ever)</pre></code>
+			<p>Incluir declaraciones es el (...) de acción.</p>
+			<pre><code>FOR (INT i=0; i<5; s+d::COUT <<"i:" <<i++ <<s+d: ENDL)</pre></code>
+		</article>
+		
+	</body>
+</html>	

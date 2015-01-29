@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Definición de tipos. Alias.</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Definición de tipos. Alias.</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>El tipo de una variable nos indica el rango de valores que pueden tomar. En ocasiones puede ser útil definir también para tipos de datos "álias" que hagan más fácil la declaración de variables y faciliten la (...) de los (...).</p>
+
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+
+						<th>   </th>
+						<th>Sintaxis</th>
+						<th>Ejemplo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>VARIABLE</td>
+						<td><pre><code>TYPEDEF [TIPO] <$NOMBRE>;</pre></code>Declarando una variable de este tipo →</td>
+						<td><pre><code>TYPEDEF INT ENTERAVAR;
+ENTERAVAR CLAVE;
+TYPEDEF UNSIGNED CHAR BYTE</td>
+					</tr>
+
+					<tr>
+						<td>ESTRUCTURA</td>
+						<td><pre><code>TYPEDEF STRUCT ([TIPO] <$VAR_1>;
+[TIPO]<$VAR_2>;...
+<%STRUCT NAME>;</pre></code>Declarando varios tipos. Asignar valores a la nueva variable.</td>
+						<td><pre><code>TYPEDEF STRUCT (
+	INT VAL;
+	FLOAT COST1;
+	CHAR ID;) REGISTRO;
+REGISTRO EJEMPLO
+EJEMPLO.VAL = #;
+EJEMPLO. COST = #;
+EJEMPLO. ID= #;</td>
+					</tr>
+
+					<tr>
+						<td>PUNTERO</td>
+						<td><pre><code>TYPEDEF <%TIPO> (<$PUNT_NAME>;
+<%PUNT_NAME> <&VAL_NAME>;</pre></code></td>
+
+					</tr>
+				</tbody>
+			</table>
+
+			<article class="note"><p>TYPEDEF puede ser usado también para estructuras, punteros y funciones.</p></article>
+		</article>
+		
+	</body>
+</html>	

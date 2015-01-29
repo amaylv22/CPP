@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Op. Condicional (?:)</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Operador Condicional (?:)</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>También llamados "operador ternario". Se trata de un operador ternario, es decir, dependiendo del resultado de la evaluación de la primera expresión, evaluará la segunda a la tercera expresión.</p>
+			<pre><code>(EXPRESION_A) ? (EXPRESION_B) : (EXPRESION_C)</pre></code>
+
+			<article class="note"><p>En general funcionan como un if else. Por ejemplo:</p>
+			<pre><code>if (x>y)
+z=x		→			z=(x>y) ? x:y;
+				o (x>y) ? (z=x) : (z=y);</pre></code></article>
+			
+			<p>Ejemplo:</p>
+			<pre><code>E1 ? E2 : E3</pre></code>
+			<p>En esta expresión primero se evalúa E1, si esto resulta <b>verdadero</b>, se evaluará la expresión E2 y E3 serán ignoradas, si E1 resultara <b>falso</b> se evaluará solamente E3.</p>
+
+			<p>Existen algunas reglas, o limitaciones que los argumentos deben seguir.</p>
+			<ul>
+				<li><p>E1 tiene que ser una expresión lógica</p></li>
+				<li><p>E2 y E3 han de seguir una de las siguientes reglas</p>
+					<ul>
+						<li><p>Ambos de tipo aritmético.</p></li>
+						<li><p>Ambos de estructuras o uniones compatibles.</p></li>
+						<li><p>Ambos de tipo "void".</p></li>
+					</ul>
+				</li>
+			</ul>
+			<p>Por ejemplo.</p>
+			<pre><code>... (a>b) ? (a) : (b)</pre></code>
+			<p>La interpretación es, si "a" es mayor que "b", se debe evaluar "a", en caso contrario evaluar "b". Recordemos que "a" y "b" pueden ser expresiones aritméticas.</p>
+				
+		</article>
+		
+	</body>
+</html>	

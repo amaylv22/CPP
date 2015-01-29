@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Modificadores. Tipos de almacenamiento.</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Modificadores. Tipos de almacenamiento.</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Los modificadores afectan el modo en que se almacenan las variables y su ámbito temporal, es decir, la gama del programa desde donde las variables son accesibles. A continuación se enlistan los modificadores constantes así como la sintaxis y la función que cada uno de ellos realiza.</p>
+
+			<h1>Auto.</h1>
+			<p>Define el ámbito temporal de una variable local. Es el modificador que por defecto pone las variables locales, y se usa raramente.</p>
+			<pre><code>[AUTO](TIPO)(VAR_NAME);</pre></code>
+
+			<h1>Register.</h1>
+			<p>Indica al computador una preferencia para que la variable se almacene en un registro del CPU, si es posible, con el fin de optimizar su acceso y reducir el código.</p>
+			<p>Los datos declarados con este modificador tienen un ámbito temporal global. Algunas veces, el computador puede ignorar la petición de almacenamiento en registro, está basado en el análisis sobre como se usa la variable.</p>
+			<pre><code>REGISTER (TIPO) (VAR_NAME);</pre></code>
+
+			<h1>Static.</h1>
+			<p>Tiene la finalidad de que las variables locales de una función conserven su valor entre distintos llamados sucesivos a la misma. Las variables estáticas tienen un ámbito local con respecto a su accesibilidad, pero temporalmente son como las variables externas, es decir, para consulta y para declaración de otras variables, dicho nombre (identificado) está reservado en un ámbito externo.</p>
+			<pre><code>STATIC (TIPO) (VAR_NAME);
+STATIC (TIPO) (FUNCTION_NAME) ((LISTA_DE_PARAMETROS));</pre></code>
+
+			<h1>Extern.</h1>
+			<p>Se utiliza para indicar que el almacenamiento y valor de varible a la definición de una función se encunetran en otro módulo a fichero fuente. Es decir, si en un fichero se utiliza un fichero definido en un segundo fichero, al inicio del primer fichero se deben listar las referencias de tales funciones.</p>
+			<pre><code>EXTERN (TIPO) (VAR_NAME);
+EXTERN (TIPO) (FUNCTION_NAME) ((LISTA_DE_PARAMETROS))</pre></code>
+		
+			<h1>Const.</h1>
+			<p>Indica que el valor de la variable a la que está siendo aplicada no puede ser modificado, cualquier intento por hacerlo durante el programa generará un error. Es por esto que es imprescindible inicializar los valores constantes cuando se declaren.</p>
+			<pre><code>CONST(TIPO)(VAR_NAME) = (INICIALIZACION);
+CONST(TIPO)(VAR_AGREGADA_NAME) = {(LISTA_INICIALIZACION)};
+CONST(TIPO)(FUNCTION_NAME)((LISTA_DE_PARAMETROS));
+(TIPO)(FUNCTION_NAME)((LISTA_INICIALIZACION)) CONST;</pre></code>
+			<p>Los objetos agregados ((VAR_AGREGADA)) son los arrays, estructuras o uniones.</p>
+			<p>Cuando se aplica al valor de retorno de una variable, el significado es análogo. Cuando se añade al final de un prototipo de función, indica que la función no modifica el valor de ninguna variable. Esto se aplica casi exclusivamente en clases, y en ese contexto tiene gran utilidad. En este último caso se trata más bien de una promesa que estaremos obligados a cumplir.</p>
+
+			<h1>Mutable.</h1>
+			<p>Sirve para que determinados miembros de un objeto de una estructura o clase declarada como constante, pueden ser modificados.</p>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>CLASS {
+...
+MUTABLE(TIPO)(VAR_NAME);
+...
+};</pre></code></td>
+						<td><pre><code>STRUCT {
+...
+MUTABLE(TIPO)(VAR_NAME);
+...
+};</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Por ejemplo:</p>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>STRUCT STA{
+	INT Y;
+	INT X;
+};
+
+STRUCT STB{
+	INT a;
+	MUTABLE INT b;
+};</pre></code></td>
+						<td><pre><code>INT MAIN() {
+	CONST STA A = {1,2} // inicializar obligatoriamente
+	CONST STB B = {3,4} // inicializar obligatoriamente
+		B.b=0; // Solo b de B puede ser modificado
+	RETURN 0;
+
+}
+
+
+</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h1>Volatile.</h1>
+			<p>Se usa con variables que pueden ser modificadas desde el exterior del programa, por procesos externos.</p>
+			<p>El computador usa este modificador para omitir optimizaciones de la variable. Por ejemplo, si se declara una variable sin usar "volatile", el computador o el SO puede almacenar el valor leído la primera vez que se accede a ella, bien en un registro o en la memoria caché. O incluso, si el computador sabe que no ha modificado su valor puede no actualizarlo en la memoria normal. Si su valor se modifica externamente, sin que el programa sea notificado, se pueden producir errores, ya que estaremos trabajando con un valor no válido.</p>
+			<p>Usando el modificador "volatile", obligamos al compilador a consultar el valor de la variable en la memoria cada vez que se deba acceder a ella.</p>
+			<p>Por esta razón es frecuente encontrar los modificadores "volatile" y "const", si la variable se modifica por un proceso externo, no tiene mucho sentido que el programa lo modifique.</p>
+			<pre><code>VOLATILE(TIPO)(NOMBRE_VAR);</pre></code>
+		</article>
+		
+	</body>
+</html>	

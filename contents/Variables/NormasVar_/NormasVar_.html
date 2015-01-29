@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Normas de notación para el contenido de las variables</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Normas de notación para el contenido de las variables</h1>
+		</header>
+		
+		<article class="subsection">
+			<h2>Constante Int</h2>
+			<p>Se puede almacenar en tres sistemas diferentes, hexadecimal, octal y decimal. La ventaja es que para números enteros en un byte se pueden representar en hexadecimal rangos de 00 a ff y en dos bytes de 0000 a ffff, además de que la conversión de octal y hexadecimal a binaria es casi directa. Para definir un valor en estos sistemas se debe escribir:</p>
+			<ul>
+				<li><p>VAR = 124 → Decimal</li></p>
+				<li><p>VAR = O321 → Octal (Prefijo O)</li></p>
+				<li><p>VAR = Ox4b → Hexadecimal (Prefijo Ox)</li></p>
+			</ul>
+
+			<h2>Especificaciones de tipos</h2>
+			<p>Cuando asignamos un valor constante a una variable es necesario especificar si es de un tipo especial, con el fin de que el compilador asigne el valor de esa manera, es decir, correspondiente al tipo y este proceso no tenga que ser realizado después directamente por el programa ya en tiempo de ejecución. Esta especificación se lleva a cabo agregando sufijos al valor asignado como a continuación se muestra.</p>
+			<ul>
+				<li><p>Ctes. Long → x = 123 L</li></p>
+				<li><p>Long Long → x = 123 LL</li></p>
+				<li><p>Unsigned → x = 123 U</li></p>
+				<li><p>Unsigned Long → x = 123 UL</li></p>
+				<li><p>Float → x = 123 F</li></p>
+				<li><p>Double → x = 123</li></p>
+				<li><p>Long Double → x = 123L (una vez declarado double)</li></p>
+			</ul>
+		<article class="note"><p>Se pueden cambiar los prefijos "O" y "Ox" con los sufijos vistos anteriormente.</p></article>
+
+			<h2>Constante Punto Flotante</h2>
+			<p>Cuando no se use el prefijo (es decir, double), se debe de añadir en caso necesario (si se presenta un entero) un ".0" para indicar que se trata de una variable tipo "double".</p>
+			<p>También se puede utilizar notación exponencial:</p>
+			<pre><code>x = 123e4</pre></code>
+			<p>4→valor del exponente</p>
+			<p>e → exponencial</p>
+			<pre><code>x = 123E4</pre></code>
+
+			<h2>Constantes Char</h2>
+			<p>El valor de las constantes se representa entre comillas simples si se trata de un solo caracter, y en caso de ser más de uno, se utilizarán comillas dobles.</p>
+			<p>Existen caracteres especiales que nos (...) encerrados en comillas para representarlo, así que cuentan con una definición especial, estos caracteres son llamados <b>"secuencias de escape"</b>. La sintaxis para representarlos es:</p>
+			<pre><code>VCHAR ='<$ESCAPE>'</pre></code>
+			<p>La siguiente tabla presenta algunas opciones a elegir sobre secuencias de escape.</p>
+
+		<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+
+						<th>Escape</th>
+						<th>Hepod</th>
+						<th>Ansi</th>
+						<th>Nombre del resultado</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>   </td>
+						<td>OxOO</td>
+						<td>NULL</td>
+						<td>Caracter nulo</td>
+					</tr>
+					<tr>
+						<td>\a</td>
+						<td>OxO7</td>
+						<td>BELL</td>
+						<td>Sonido de campanilla</td>
+					</tr>
+					<tr>
+						<td>\b</td>
+						<td>OxO8</td>
+						<td>BS</td>
+						<td>Retroceso</td>
+					</tr>
+					<tr>
+						<td>\f</td>
+						<td>OxOC</td>
+						<td>FF</td>
+						<td>Avance de página</td>
+					</tr>
+					<tr>
+						<td>\n</td>
+						<td>OxOA</td>
+						<td>LF</td>
+						<td>Avance de línea</td>
+					</tr>
+					<tr>
+						<td>\r</td>
+						<td>OxOD</td>
+						<td>CR</td>
+						<td>Retorno de línea</td>
+					</tr>
+					<tr>
+						<td>\t</td>
+						<td>OxO9</td>
+						<td>HT</td>
+						<td>Tabulador horizontal</td>
+					</tr>
+					<tr>
+						<td>\v</td>
+						<td>OXOB</td>
+						<td>VT</td>
+						<td>Tabulador vertical</td>
+					</tr>
+					<tr>
+						<td>\\</td>
+						<td>Ox5c</td>
+						<td>\</td>
+						<td>Barra descendente</td>
+					</tr>
+					<tr>
+						<td>\'</td>
+						<td>Ox27</td>
+						<td>'</td>
+						<td>Comilla sencilla</td>
+					</tr>
+					<tr>
+						<td>\"</td>
+						<td>Ox3Z</td>
+						<td>"</td>
+						<td>Comillas</td>
+					</tr>
+					<tr>
+						<td>\?</td>
+						<td>Ox3F</td>
+						<td>?</td>
+						<td>Interrogación</td>
+					</tr>
+					<tr>
+						<td>\O</td>
+						<td>Cualquiera</td>
+						<td>   </td>
+						<td>O = tres dígitos en octal</td>
+					</tr>
+					<tr>
+						<td>\xH</td>
+						<td>Cualquiera</td>
+						<td>   </td>
+						<td>H = número hexadecimal</td>
+					</tr>
+				</tbody>
+		</table>
+			
+			<p>También pueden asignarse números decimales a (...) de tipo Char.</p>			
+			
+		</article>
+		
+	</body>
+</html>	

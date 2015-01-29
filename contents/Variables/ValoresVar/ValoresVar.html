@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Rango de valores de cada variable</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Rango de valores de cada variable</h1>
+		</header>
+		
+		<article class="subsection">
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>INT
+↓
+SHORT</pre></code></td>
+						<td><pre><code>UNSIGNED →		0 - 65,535			(2 byes)
+SIGNED →		-32768 - 32,767		(2 bytes)</pre></code></td>
+					</tr>
+					<tr>
+						<td><pre><code>BOOL →</pre></code></td>
+						<td><pre><code>True or False		(1 byte)</pre></code></td>
+					</tr>
+					<tr>
+						<td><pre><code>LONG INT</pre></code></td>
+						<td><pre><code>UNSIGNED →		0 - 4,294,967,295					(4 bytes)
+SIGNED →		-2,14,483,648 - 2,147,483,647		(4 bytes)</pre></code></td>
+					</tr>
+					<tr>
+						<td><pre><code>INT</pre></code></td>
+						<td><pre><code>UNSIGNED		16 BITS →		0 - 65,535							(2 bytes)
+				32 BITS →		0 - 4,294,967,295					(4 bytes)
+
+SIGNED			16 BITS →		-32,768 - 32,767					(2 bytes)
+				32 BITS →		-2,147,483,648 - 2,147,483,647		(4 bytes)</pre></code></td>
+					</tr>
+					<tr>
+						<td><pre><code>CHAR →</pre></code></td>
+						<td><pre><code>ASCII and ASCII Extended values			(1 byte)</td></pre></code>
+					</tr>
+					<tr>
+						<td><pre><code>FLOAT →</pre></code></td>
+						<td><pre><code>1.2e^-38 - 3.4e^38						(4 bytes)</td></pre></code>
+					</tr>
+						<tr>
+						<td><pre><code>FLOAT →</pre></code></td>
+						<td><pre><code>2.2e^-308 - 1.8e^308					(8 bytes)</td></pre></code>
+					</tr>
+				</tbody>
+			</table>
+
+		<article class="note"><p>El número de <b>bytes</b> depende del (...) y el computador utilizado.</p></article>
+		</article>
+		</article>
+		
+	</body>
+</html>	

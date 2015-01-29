@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Op. de Procesador (#)</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Operador de Procesador (#)</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Este procesador se usa para dar órdenes o directivos al compilador.</p>
+			<pre><code>#(ORDEN_AL_COMPILADOR)</pre></code>
+			<p>A continuación se presentan algunos de las órdenes más importantes al compilador.</p>
+
+			<h1 id="">Directivo #DEFINE</h1>
+
+			<p>Sirve para definir macros. Este suministra un sistema para la sustitución de palabras, con y sin parámetros.</p>
+			<pre><code>#DEFINE (IDENTIF_DE_MACRO) (SECUENCIA)</pre></code>
+
+			<p>El procesador sustituirá cada (...) (IDENTIF)... en el fichero fuente, por la (SECUENCIA). Cada sustitución se tomará como una expansión de la macro, y la secuencia es llamada a (...) cuerpo de la macro.</p>
+			<p>Si la secuencia no existe, el (IDENTIFICADO...) será eliminado cada vez que aparezca en el fichero fuente.</p>
+			<h1 id="">Directivo #INCLUDE</h1>
+			<p>Sirve para insertar ficheros externos de nuestro fichero fuente.</p>
+			<pre><code>#INCLUDE (NOM_DE_FICH_DE_CABECERA)
+#INCLUDE "NOM_DE_FICH_DE_CABECERA"
+#INCLUDE (IDENTIFICADOR_DE_MACRO)</pre></code>
+			<p>En el tercer caso el nombre del fichero es el resultado de aplicar la macro.</p>
+
+			<p>La direfencia entre "( )" y (" ") es que de usar el primero, los archivos se buscarán en el directorio del compilador, en caso contrario por los directorios a incluir campo a ser buscado en el directorio personal; es decir, en el que se encuentra el fichero fuente.</p>
+			<p>Si se proporciona el camino como parte del nombre del fichero, solo se buscará en ese directorio.</p>
+			<pre><code>#DEFINE FICHERO "NUM_DE_FICH"</pre></code>
+			
+		</article>
+		
+	</body>
+</html>	
