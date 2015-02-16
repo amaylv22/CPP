@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores suscritos ([ ]</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores suscritos ([ ])</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Cuando se trabaje con arreglos, generalmente se utiliza el operador suscrito ([ ]) para acceder por medio del índice a tantos espacios del array.</p>
+			<p>Ahora, si en una clase tenemos una variable de tipo array privado, ¿de qué manera/forma podremos acceder a los datos del array o modificar los datos del mismo, si este es privado? La forma indicada será crear un par de funciones públicas, una para leer a la que habría que proporcionarle el índice de consulta y otra para escribir a la que hay que darle elíndice y el dato a acceder, sin embargo eso genera una situación no amigable al usuario. Lo mejor en este caso es sobrecargar el operador suscrito ([ ]).</p>
+			<p>Como sabemos, el operador [ ] toma como argumento un dato entero [i], patra que sea su valor de retorno, veamos que es lo que debemos de hacer.</p>
+			<ol>
+				<li>Visualizar el contenido del índice que se le indica.</li>
+				<li>Asegurar un valor a la (...) del índice que se le indica. Este valor es del tipo del que fue declarado el arreglo.</li>
+			</ol>
+
+			<p>Para cumplir ambas funciones, la sobrecarga debe regresar una referencia, pues de este modo al usar el operador de asignación (=) se le puede asignar un valor a la referencia y este puede ser consultado normalmente como si se tratara de un valor de una variable normal.</p>
+			<p>La referencia debe ser a algún tipo de variable, este &lt;TIPO&gt; será igual al tipo con que se ha declarado el array.</p>
+			<pre><code>&lt;TIPO&gt;& OPERATOR[ ] (INT 1)
+	{
+	RETURN MemberArray[i]
+	}</pre></code>
+			<p>Además, al sobrecargar [ ] tenemos la ventaja de que, debido a que necesitamos diferentes funciones, reocuparse el índice es válido, o incluso usar el índice para acceder a un término específico de un string, manejándolo como un caso de char.</p>
+		</article>
+		
+	</body>
+</html>	

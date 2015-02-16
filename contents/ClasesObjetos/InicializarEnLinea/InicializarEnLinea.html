@@ -22,8 +22,34 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>PAREJA :: PAREJA (INT a2, INT b2)
+	{
+	a=a2;
+	b=b2;
+	}</pre></code></td>
+						<td>=</td>
+						<td><pre><code>PAREJA :: PAREJA (INT a2, INT b2):
+	a=(a2),
+	b=(b2),
+	{ }
+  </pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Esto sirve para definir el constructor al mismo tiempo que se declara dentro de una clase.</p>
+			<p>Es también posible en la definición de la clase anteponerle a la definición de la función la palabra clave INLINE</p>
+			<pre><code>INLINE &ltTIPO&gt &ltNOM FUNC&gt &ltARGO&gt
+	{...}</pre></code>
 		</article>
 		
 	</body>

@@ -22,8 +22,26 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Tal como se observó en los constructores de contenedores tipo vector, es posible inicializar con un valor determinado, sin embargo, cuando los valores que contendrán son estructuras de dtos, habrá que pasar una estructura declarada.</p>
+			<p>Desde este mismo enfoque es posible, tomando como base una variable &lt;tipo&gt; y guardando en un vector más de estos haciendo push_back. Cuando se quiere acceder a los datos, se usa la dirección de memoria del vector y no la variable &lt;tipo&gt;, pues este solo contendrá el valor agregado, pues es un comodín. Por ejemplo, un vector que guarda estructuras sería:</p>
+
+			<pre><code>||Crear clase
+Class Clase A
+	{ public:
+		int A, B;
+	} ;
+
+|| Crear vector y objeto tipo Clase A
+Clase A Objeto_Comodin;
+vector &ltClase A&gt
+	o
+vector &ltClase A, Clase A&&gt
+
+||Capturar datos en objeto
+Objeto.Comodin.A = ...
+
+||Crear nuevo campo con el vector con los datos del objeto capturado
+vector.push_back(ObjetoComodin);</pre></code>
 		</article>
 		
 	</body>

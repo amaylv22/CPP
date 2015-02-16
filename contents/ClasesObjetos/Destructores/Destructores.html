@@ -22,9 +22,45 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Los destructores son funciones miembro especiales que sirven para eliminar un objeto de una determinada clase, liberando la memoria utilizada por dicho objeto. Así pues, limpian el objeto y liberan secciones de memoria.</p>
 		</article>
-		
+
+		<article class="subsection">
+			<h1 id="">Características de un destructor.</h1>
+			<ul>
+				<li>Se declaran siempre que se declara un constructor.</li>
+				<li>No tienen valor de retorno.</li>
+				<li>No toman argumentos.</li>
+				<li>No pueden ser heredados.</li>
+				<li>Tienen el mismo nombre de la clase, pero los antecede el símbolo (~). (alt + Ñ + |ESPACIO|)</li>
+				<li>No incluye acciones.</li>
+			</ul>
+			
+			<p>Siempre que se define un destructor para una clase, este es llamado automáticamente cuando se abandona el ámbito en el que fue definido. Esto es así solo cuando el objeto fue creado dinámicamente con el operador (NEW), ya que en este caso si es necesario eliminarlo con el operador (DELETE).</p>
+			<p>El destructor no puede sobrecargarse.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Declarar el destructor.</h1>
+			<pre><code>~ %ltNOM CLASE%gt ( );</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Definir el destructor.</h1>
+			<pre><code>&ltNOM CLASE&gt :: ~&ltNOM CLASE&gt ( )
+	{
+		&ltSENTENCIA&gt
+	}</pre></code>
+
+			<p><b>&ltSENTENCIAS O ACCIONES&gt</b> En el caso de tener datos miembro tipo puntero se aconseja incluir acción en el destructor que se encarga de liberar la memoria ocupada por dado puntero, en caso contrario la definición incluirá solo las llaves.</p>
+			<pre><code>&ltNOM_CLASE&gt :: ~&ltNOM CLASE&gt ( )
+	{
+	DELETE &ltPUNTERO_NAME&gt;;
+	.
+	.
+	.
+	}</pre></code>
+
+			<article class="note"><p>DELETE &ltPUNTERO_NAME&gt;; es para cada uno de los datos miembro tipo puntero en memoria Lead, es decir, inicializados con new.</p></article>
 	</body>
 </html>	

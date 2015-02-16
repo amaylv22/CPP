@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Set</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Set</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Los set son un tipo de contenedor que almacena elementos únicos, los cuales son en sí mismos la clave de ordenación. Son un tipo de contenedor asociativo.</p>
+			<p>Los contenedores asociativos están especialmente diseñados para ser eficientes en el acceso a sus elementos por la clave, en oposición a los contenedores secuenciales que son eficientes accesando a sus elementos mediante su posición absoluta o relativa.</p>
+			<p>Internamente, los elementos de un set están siempre ordenados del menor al mayor seguido de un criterio de ordenamiento específico.</p>
+			<p>Los set son implementados típicamente/generalmente/a menudo como (...) de búsqueda binaria. Así, los set no pueden contener dos elementos con el mismo valor, incluso cuando este se trate de insertar no será tomado en cuenta.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Librería de inclusión.</h1>
+			<pre><code>#Include &lt;set&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructor.</h1>
+			<pre><code>set &lt;TIPO&gt; [NOM]
+           [NOM] (OTRO)
+           [NOM] (first,last)</pre></code>
+			<p>Primer caso → Set vacío </p>
+			<p>Segundo caso → Set copia de otro</p>
+			<p>Tercer caso → Set con elementos tomados del rango first,last donde estos pueden ser iteradores o punteros (para un array, por ejemplo).</p>
+
+			<pre><code>set &lt;TIPO, COMP&gt; [NOM]</pre></code>
+			<p>Con elementos de comparación para su ordenamiento.</p>
+
+			<pre><code>set &lt;TIPO, fCOMP (arg...)&gt; [NOM] (fn,pt)</pre></code>
+			<p>Cuando el elemento de comparación es una función con argumentos de inicialización y su rango también es puntero o función.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Destructor.</h1>
+			<pre><code>[NOM]. ~set();</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de Set.</h1>
+			<h2 id="">Iguales a vector.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Begin</td>
+						<td>Clear</td>
+						<td>Empty</td>
+						<td>End</td>
+						<td>Get_allocator</td>
+					</tr>
+					<tr>
+						<td>Max_size</td>
+						<td>Operador =</td>
+						<td>Rbegin</td>
+						<td>Rend</td>
+						<td>Size</td>
+					</tr>
+					<tr>
+						<td>Swap</td>
+					</tr>		
+				</tbody>
+			</table>
+
+			<h2 id="">Particulares de Set</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>count (x)</td>
+						<td>Busca en el contenedor por elementos con la clave x, si encuentra al menos uno, devuelve como valor "1", en caso contrario devuelve 0.</td>
+					</tr>
+					<tr>
+						<td><p>erase (position)</p>
+<p>erase (x)</p>
+<p>erase (first,last)</p></td>
+						<td>Borra el elemento localizado en la dirección a que apunta, o el elemento con el valor/clave "x" o elimina los valores en el rango cerrado first,last.</td>
+					</tr>
+					<tr>
+						<td>find (x)</td>
+						<td>Busca en el contenedor la casilla que contenga el valor "x" y regresa el iterador o copia la posición.</td>
+					</tr>
+					<tr>
+						<td><p>insert (x)</p>
+<p>insert (position,x)</p>
+<p>insert (first,last)</p></td>
+						<td>Inserta en el contenedor un elemento de valor "x". En la segunda opción igualmente se inserta un elemento de valor "x" pero esta vez en la posición "position" lo que no hace forzoso que dado elemento se modifique en la posición señalada, solo nos dice que por ahí comenzarán las comparaciones para su (...), esto lo convierte en un evento de eficiencia en la ordenación si se conoce el rango de valor al rededor de "position", facilitando así su acomodo. La tercera opción es copiar los valores entre first,last desde otro contenedor y los ordena.</td>
+					</tr>
+					<tr>
+						<td>lower_bound (x)</td>
+						<td>Devuelve el apuntador al elemento inmediatamente mayor al valor "x" que se encuentra en el set. Dicho de otro modo, devuelve el iterador del primer elemento que no sea menor que x, es decir, también incluye los iguales, puede entonces regresar el primer elemento mayor o igual.</td>
+					</tr>
+					<tr>
+						<td>upper_bound (x)</td>
+						<td>Devuelve el apuntador al primer elemento que resulta mayor que "x".</td>
+					</tr>
+					<tr>
+						<td>key_comp ( )</td>
+						<td>Devuelve el objeto de comparación asociado con el contenedor, este objeto que será comparado y regresa true o false según se satisfaga la misma, es necesario declararlo como tal (ver declaración de objeto de comparación) y utilizar un iterador y un valor de referencia para comparar, tal como se expresa en seguida.
+<pre><code>set &lt;int&gt; Set 1;
+set &lt;int&gt; :: key_compare Comparador;
+set &lt;int&gt; :: iterador it;
+	.
+	.
+	.
+Comparador = Set 1.keycomp;
+	.
+	.
+	.
+do {
+	// enlista el elemento it (*it) del contenedor
+   }
+while (Comparador (*it++, *Set 1, rbegin ()))</pre></code></td>
+					</tr>
+					<tr>
+						<td>value_comp ( )</td>
+						<td>Devuelve el objeto de comparación asociado con el contenedor, que puede ser utilizado para comparar dos elementos. Debido a que en los sets la clave y el valor de cada elemento entero key_comp y value_comp devuelven lo mismo, sin embargo la declaración del objeto de comparación varía (ver declaración de objeto de comparación).</td>
+					</tr>
+					<tr>
+						<td>equal_range (x)</td>
+						<td>Regresa los límites (en apuntador) del rango que incluye todos los elementos en el contenedor con clave que al compararse con "x" devuelve "&lt;=" y "&gt;". En sets que no permiten claves duplicadas, el rango debe incluir cuando mucho un elemento. Al aplicar el método sobre un set, esto debe ser igual a una variable tipo Pair, en sus datos son igual a apuntadores set. Así, en el nombre "first" quedará el límite inferior y en el nombre "last" el superior. (Ver declaración de variable Pair).</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Declaración de Objetos Comparadores.</h1>
+			<p>Los objetos comparadores son variables asociadas directamente con algún tipo de contenedor y son capaces de efectuar comparaciones entre un campo de este y un valor meta. Dentro de la clase set existen dos tipos de comparadores principales y hay que asignarlos a una variable definida como tal tipo, los comparadores son:</p>
+			<pre><code>→ Declaración de una variable comp.
+	set &lt;int&gt; :: value_comp [NOM];
+	set &lt;int&gt; :: key_comp [NOM];
+
+→ Asignación a variable
+	[NOMC] = varset.value_comp ()
+		      .key_comp ()
+	
+→ Utilización del operador de comparación
+	.
+	.
+	.
+	while ([NOMC] (*it++, highest));</pre></code>
+
+			<p>El retorno de un comparador es siempre tipo boleano. True si la comparación se cumple, false en caso contrario.</p>
+
+		</article>
+		
+	</body>
+</html>	

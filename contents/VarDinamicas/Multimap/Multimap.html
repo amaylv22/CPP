@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Multimap</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Multimap</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Los multimap son contenedores asociativos como los map, pero que permiten múltiples registros con claves iguales.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Librería de inclusión.</h1>
+			<pre><code>#include &lt;map&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<p>Iguales que para maps, pero se cambia esto por</p>
+			<pre><code>multimap &lt;TIPO&gt;</pre></code>	
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Destructores.</h1>
+			<pre><code>[NOM]. ~multimap();</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de Multimaps.</h1>
+			<h2 id="">Iguales a map.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Begin</td>
+						<td>Clear</td>
+						<td>Empty</td>
+						<td>End</td>
+						<td>Erase</td>
+					</tr>
+					<tr>
+						<td>Get_allocator</td>
+						<td>Insert</td>
+						<td>Key_comp</td>
+						<td>Lower_bound</td>
+						<td>Max_size</td>
+					<tr>
+						<td>Rbegin</td>
+						<td>Rend</td>
+						<td>Size</td>
+						<td>Swap</td>
+						<td>Upper_bound</td>
+					</tr>
+					<tr>
+						<td>Value_comp</td>
+					</tr>		
+				</tbody>
+			</table>
+
+			<h2 id="">Propios de multimap.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>find (x)</td>
+						<td>Igual que para map pero regresa al iterador del primer elemento con clave = x que encuentra.</td>
+					</tr>
+					<tr>
+						<td>equal_range (x)</td>
+						<td>Igual que multiset pero adaptando los iteradores de map, es decir,con first y con second.</td>
+					<tr>
+						<td>count (x)</td>
+						<td>Igual que para multiset pero adaptado a map.</td>
+					</tr>		
+				</tbody>
+			</table>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Limpiar contenedores usando el operador =</h1>
+			<p>Para dejar vacío un contenedor ya declarado, usando el operador igual es solo necesario ejecutar la secuencia</p>
+			<pre><code>[NOM] = &lt;CONTENEDOR&gt; &lt;TIPO(S)&gt; ( );</pre><code>
+
+		</article>
+		
+	</body>
+</html>	

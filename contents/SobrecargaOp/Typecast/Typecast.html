@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de typecast</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de typecast</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>El casting es el proceso que nos permite convertir un cierto tipo de datos en otros, por ejemplo pasar de int a double, o de char a int. C++ sabe como convertir los datos tipo built-in, sin embargo no conoce como hacerlo en datos definidos por secciones, es decir, nuestras clases. Sobrecargar los typecast nos permiten convertir nuestras clases en otro tipo de datos.</p>
+			<p>El tipo &lt;TIPO&gt; nos sirve para que cuando se aplica un identificador de tipo directo al miembro de un objeto class_type este devuelva el valor que nosotros deseamos, por ejemplo, si existe una función para imprimir enteros en pantalla y esta recibe como argumento una variable tipo Int para después imprimir</p>
+			<pre><code>IMPRIMIR (INT X)
+	{ COUT &lt;&lt; X; }</pre></code>
+			<p>Y nosotros tenemos un objeto class_type que contiene una variable que deseamos imprimir, pero la variable es privada y no queremos usar una función miembro para publicar su valor y luego emitirlo en la función imprimir, si no que solamente queremos colocar como argumento el nombre de la clase y que esta sepa (o el compilador) que dato saca entero para poderlo usar en el type-cast. Así definimos una sobrecarga de int, que al aplicarla sobre el objeto class_type devuelve el valor de la variable que se desea, la llamada será entonces</p>
+			<pre><code>IMPRIMIR (OBJETO)
+
+Que el compilador lo usa como
+
+IMPRIMIR (INT OBJETO)</pre></code>
+
+			<p>Si deseamos evitar que se busque un INT y también advertir que OBJETO no es un INT, usamos una sobrecarga que le indique como operar en este caso, cual debe ser su valor de retorno. Entonces se encontrará con una sobrecarga en el campo de la clase como:</p>
+			<pre><code>OPERATOR INT() {RETURN VarMember;}</pre></code>
+			<p>Entonces el formato de la sobrecarga es:</p>
+			<pre><code>OPERATOR _ &lt;TIPO&gt;() {&lt;SECUENCIAS&gt;}</pre></code>
+
+			<p>Observemos que:</p>
+			<ol>
+				<li>Hay un espacio entre la keyword OPERATOR y el &lt;TIPO&gt;.</li>
+				<li>Los operadores de casting no tienen un tipo de retorno. Solo se inicializan con el Keyword OPERATOR.</li>
+			</ol>
+			<p>El cast se puede hacer también de forma explícita en el cuerpo de la (...) de (...) (Main, por ejemplo) usando la Keyword STATIC_CAST tal como a continuación se muestra.</p>
+			<pre><code>&lt;TIPO&gt; VarMember_to_output = STATIC_CAST &lt;TIPO&gt; (OBJ_CLASS_TYPE);</pre></code>
+			<p>Es posible sobrecargar operadores de cast para cualquier tipo de datos que se desee, incluyendo los autodefinidos (USER-DEFINED).</p>
+			<p>Por ejemplo, tomando una clase llamada Unidad y otra, usando una sobrecarga de tipo Unidad podemos corregir una conversión directa de decenas a unidades, tal y como se muestra a continuación.</p>
+			<pre><code><em>Clase Unidad:</em>
+Class Unidades
+	{ Private:
+		INT m_nUnidades;
+	  Public:
+		Unidades (INT nUnidades=0)
+			{m_nUnidades = nUnidades;}
+		INT GetUnidades() {Return m_nUnidades;}
+	};
+
+<em>Clase Decenas:</em>
+Class Decenas
+	{ Private:
+		INT m_nDecenas;
+	  Public:
+		Decenas (INT nDecenas=0)
+			{m_nDecenas = nDecenas;}
+		// Overload to convert Decenas into Unidades
+		OPERATOR Unidades() {Return Unidades (m_nDecenas*10);}
+	};
+
+<em>Utilización de la sobrecarga:</em>
+// Function for publish/impretion/show
+NOID PrintUnidades (Unidades cUnidades)
+	{ COUT &lt;&lt; cUnidades.GetUnidades(); }
+
+INT Main()
+	{
+	 Decenas cDecenas (6);
+	 PrintUnidades (cDecenas);
+	 Return 0;
+	}</pre></code>
+		</article>
+		
+	</body>
+</html>	

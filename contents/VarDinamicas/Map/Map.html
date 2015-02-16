@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Map</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Map</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Son un tipo de contenedores asociativos que guardan los elementos formados por la combinación de un valor clave y un valor mapeado (o principal con información).</p>
+			<p>En un mapa, el valor clave es utilizado para identificar inequívocamente un elemento mientras que el valor mapeado es la infomación asociada con el ID. Los tipos de la key y la mapped info pueden ser distintos.</p>
+			<p>Internamente los elementos de un mapa estrán ordenados del más pequeño al mayor. Como elementos asociativos están diseñados para ser óptimo el acceso por el valor de su clave. Sin embargo, se les puede acceder a un valor directo continuo en estos mediante la implementación del operador [ ]. Los mapas son arreglos de (...), por lo tanto tienen un miembro first y uno second.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Librería de Inclusión.</h1>
+			<pre><code>#inlcude &lt;map&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<pre><code>map &lt;TIPO1, TIPO2&gt; [NOM];
+				   [NOM] (OTRO);
+				   [NOM] (first,last);</pre></code>
+			<p>Primera opción: map vacío.</p>
+			<p>Segunda opción: copia de otros.</p>
+			<p>Tercera opción: inicializar con vectores en el rango de la parte first,last.</p>
+
+			<pre><code>map &lt;TIPO1, TIPO2, COMP&gt; [NOM];</pre></code>
+			<p>Con clase como elementos de comparación.</p>
+
+			<pre><code>map &lt;TIPO1, TIPO2, TIPOfN (arg)&gt; [NOM] (fnNAME);</pre></code>
+			<p>Con punteros a función con elementos de comparación.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Destructores.</h1>
+			<pre><code>[NOM]. ~map();</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de Map.</h1>
+			<h2 id="">Iguales a Set.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Begin</td>
+						<td>Clear</td>
+						<td>Count</td>
+						<td>Empty</td>
+						<td>End</td>
+					</tr>
+					<tr>
+						<td>Equal_range</td>
+						<td>Erase</td>
+						<td>Find</td>
+						<td>Get_allocator</td>
+						<td>Rbegin</td>
+					</tr>
+					<tr>
+						<td>Lower_bound</td>
+						<td>Max_size</td>
+						<td>Operador =</td>
+						<td>Operator [ ]</td>
+						<td>Rend</td>
+					</tr>
+					<tr>
+						<td>Size</td>
+						<td>Swap</td>
+						<td>Upper_lower</td>
+					</tr>		
+				</tbody>
+			</table>
+
+			<h2 id="">Particulares de Set</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><p>insert (pair &lt;TIPO1, TIPO2&gt; (val1, val2));</p>
+<p>insert (it, pair...);</p>
+<p>insert (first,last);</p></td>
+						<td>El primero inserta los valores correspondientes a Val1 y Val2, el segundo los inserta tomando en cuenta la posición sugerida y el último los inserta con base en el rango de otro map definido por los iteradores first,last.</td>
+					</tr>
+					<tr>
+						<td>key_comp</td>
+						<td>Igual que para el caso de Set, pero en este caso hay que ingresar siempre el primer elemento, pues se trata de un par en cada campo del map. Así, tomando en cuenta el código de Set los cambios serán:
+<pre><code>map &lt;char,int&gt; :: key_compare [NOMBC];
+[NOMBC] = VarMap.key_comp( );
+.
+.
+.
+while ([NOMBC] ((*it++).first, VarMap.rbegin() → first))</pre></code></td>
+					</tr>
+					<tr>
+						<td>value_comp</td>
+						<td>Igual que key_comp pero cambia en la declaración por value_comp y no se toma en cuenta el valor map, solo el rbegin, por lo que el while puede ser:
+<pre><code>while (VarMap.value_comp( ) (*it++, *VarMap.rbegin( )))</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">¿Cómo inicializar un mapa?</h1>
+			<p>Un mapa que se declara como vacío puede ser inicializado tomando en cuenta que es de acceso asociativo, así:</p>
+			<pre><code>map &lt;TIPO1, TIPO2&gt; [NOM];
+[NOM] [Val1] = Val2;
+.
+.
+.</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">¿Cómo acceder a los miembros de un mapa?</h1>
+			<p>El acceso se puede hacer desde el contenedor (con el identificador del contenido) o desde un puntero.</p>
+			<h2 id="">Desde un puntero/iterador.</h2>
+			<pre><code>it = VarMap.begin( )
+			it++
+
+	Para ver el key
+(*it).first
+it → first
+
+	Para ver el mapped
+(*it).second
+it → second</pre></code>
+
+			<h2 id="">Desde el identificador/Nombre de la variable</h2>
+			<p>Solo se puede acceder al valor mapped, utilizando como indicación la clave, si este no se encuentra regresa 0.</p>
+			<pre><code>VarMap [key]</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">¿Cómo acceder a los miembros de un (...) de un par como iteradores a mapa?</h1>
+			<p>Para el caso de return de la función equal_range, es necesario tener un par que reciba los punteros a mapa.</p>
+			<p>Así, para conocer el primer puntero usamos <b>first</b>, y para el segundo <b>second</b>. Para conocer la clave del primer puntero se usa <b>first first</b> y el mapped del primer puntero <b>first second</b>, tal como se muestra en el siguiente código.</p>
+			<pre><code>pair &lt;map &lt;...&gt; iterator, &lt;map &lt;...&gt; iterator&gt; miter;
+miter = ValMap.equal_range(Val1);
+						  ó key
+
+set.first → first
+set.first → second
+
+ó
+
+(*set.first).first
+(*set.first).second</pre></code>
+
+		</article>
+		
+	</body>
+</html>	

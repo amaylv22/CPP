@@ -22,9 +22,187 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Un vector es básicamente un array (...), esta clase permite acceso aleatoriomediante el operador [ ]. Ocupan el mismo espacio en la memoria que los array, pero son mejores, ya que para ellos existe una gran variedad de funciones para accesos y modificaciones. Al introducir un elemento se utiliza una cantidad de memoria mayor si se hace en el cuerpo que si se lleva a cabo en el final del vector.</p>
 		</article>
+
+		<article class="subsection">
+			<h1 id="">Declaración de un vector. Constructor.</h1>
+			<pre><code>VECTOR &lt[TIPO DATO]&gt [NOMBRE DEL VECTOR];</pre></code>
+
+			<article class="note"><p>Inicializar con n elementos cero: [NOM_VECTOR] (n);</p></article>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Operadores básicos.</h1>
+			<dl>
+				<dt>=</dt>
+					<dd><p>Asigna y reemplaza el contenido de un vector con (...). Copia un (...) a=b; ahora a es igual que b.</p></dd>
+				<dt>= =</dt>
+					<dd><p>Comparación de elemento por elemento, dice si un vector es igual a otro.</p></dd>
+				<dt>[ ]</dt>
+					<dd><p>Operador de acceso aleatorio, da a conocerse el valor (...) en la posición [ ].</p></dd>
+			</dl>
+
+			<article class="note"><p>Si no se está usando namespace STD se de anteponer std:: a la (...) del constructor.</p></article>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<pre><code>vector &lttipo&gt [NOM]
+			  [NOM] (n)
+			        (n,c)
+			        (first,last)
+			        (x)</pre></code>
+			<p>Donde:</p>
+			<ul>
+				<li><b>n</b>: número de elementos que contendrá.</li>
+				<li><b>c</b>: valor de inicialización para los elementos del vector</li>
+				<li><b>first,last</b>: marcan principio y fin de la secuencia a contener.</li>
+				<li><b>x</b>: contenido vector del nuevo &lttipo&gt que se copiará.</li>
+			</ul>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Destructores</h1>
+			<pre><code>vector &ltint&gt VECT;
+
+VECT .~VECTOR();</pre></code>
+			<p>Al indicarse el uso del vector, automáticamente llama al destructor.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos/Operadores del vector.</h1>
+			
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th> </th>
+						<th>[NOM_VECTOR] . [method]</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><b>empty ( )</b></td>
+						<td>Returns boolean (true/false). True if the vector is empty (True=1), otherwise false=0. ||bool empty|( )||</td>
+					</tr>
+					<tr>
+						<td><b>size ( )</b></td>
+						<td>Tamaño del vector. Regresa el número de elementos guardados, así que la casilla de referencia última es igual a .size( ) -1 ||unsigned in size( )||</td>
+					</tr>
+					<tr>
+						<td><b>capacity ( )</b></td>
+						<td>Max number of elements of vector before reallocation. Es decir, máximo número de elementos antes de generar mayor espacio en memoria, aderir un nuevo componente. Es igual a (size( )+1) ||size_type capacity( ) const||</td>
+					</tr>
+					<tr>
+						<td><b>max_size ( )</b></td>
+						<td>Máximo número de elementos que se pueden almacenar en el vector. ||size_type max_size( ) const||</td>
+					</tr>
+					<tr>
+						<td><b>resize (sz,c)</b></td>
+						<td>Resize the vector to hold/contein "sz" elements. <b>sz</b> es el mismo número de elementos que contendrá el vector. Si sz es menor que .size( ) se (...) el vector manteniendo los primeros sz elementos, si sz es mayor que .size( ) se agregan al vector los elementos necesarios para llegar a sz y en estos se almacenan "c", si c no se especifica, se almacena el valor "0". sz es el número de elementos por la posición (...) de 0.</td>
+					</tr>
+					<tr>
+						<td><b>reserve (n)</b></td>
+						<td>Reserva espacio de almacenamiento suficiente para alvergar al menos "n" elementos.</td>
+					</tr>
+					<tr>
+						<td><b>clear ( )</b></td>
+						<td>Borra o limpia el contenido del vector entre el que se aplica.</td>
+					</tr>
+					<tr>
+						<td><p><b>erase (n)</b></p>
+<p><b>erase (begin_n, end_n)</b></p></td>
+						<td>Borra la posición "n" del vector o el rango comprendido entre "begin_n" y "end_n". Recordar que las posiciones del vector inician en "0". El formato de n debe crearse con un iterador seguido de la posición. Por ejemplo:
+<pre><code>n= vector.begin() + 2
+n= vector.begin = vector.begin + 0</pre></code></td>
+					</tr>
+					<tr>
+						<td><b>at (n)</b></td>
+						<td>Regresa la referencia al elemento n, o proporciona el valor del elemento n. Se usa para asignarle valor al elemento o para cambiar el valor almacenado en constante. Se usa igual que el operador [ ]. La diferencia radica en que este (...) si se encuentra el valor requerido fuera del rango.</td>
+					</tr>
+					<tr>
+						<td><p><b>assign (n,u)</b></p>
+<p><b>assign (first,last)</b></p></td>
+						<td>Asigna nuevo contenido al vector en que se aplica, eliminando todos los elemntos del vector anterior a la llamada. En la primer versión se agregan "n" elementos con valor "u". En la segunda versión (con iteradores "ver iteradores i asignación de."), los elementos con una copia de la secuencia first y last, contienen el elemento de first pero no el elemento de last.</td>
+					</tr>
+					<tr>
+						<td><p><b>front ( )</b></p>
+<p><b>back ( )</b></p></td>
+						<td>Regresan la referencia (valor) del primero al último elemento del vector en que se aplica, a diferencia de begin( ) y end( ) que regresan el iterador y no el valor del mismo.</td>
+					</tr>
+					<tr>
+						<td><p><b>begin ( )</b></p>
+<p><b>end ( )</b></p></td>
+						<td>Regresan el iterador (índice y dirección de memoria) del primer y último elemento contenido en el vector. Es un iterador, no un valor, así que si se quiere conocer su valor hay que anteponer el punto vector.begin( )</td>
+					</tr>
+					<tr>
+						<td><p><b>rbegin ()</b></p>
+<p><b>rend ( )</b></p></td>
+						<td>Regresa el iterador (dirección del índice al que se hace referencia, dirección del valor), del inicio (...), es decir, el final o el principio respectivamente. rbegin ( ) = resend begin</td>
+					</tr>
+					<tr>
+						<td><p><b>Insert (where,x)</b></p>
+<p><b>Insert (where,n,x)</b></p>
+<p><b>Insert (where,first,last)</b></p></td>
+						<td><p>Extiende al vector insertando elementos antes de la posesión marcado por el iterador "where". Donde:</p>
+<p>x = valor utilizado para inicializar los elementos insertados.</p>
+<p>n = número de elementos a insertar.</p>
+<p>where = iterador antes del cual se insertarán los elementos.</p>
+<p>first,last = iteradores que especifican el rango de los elementos a introducir.</p>
+<p>Los iteradores asigandos antes de esta sentencia pueden afectar y hay que reasignarlos.</p></td>
+					</tr>
+					<tr>
+						<td><b>swap (vector z)</b></td>
+						<td>Intercambia el contenido entre el vector al que se aplica y el vector z, ambos deben ser del mismo tipo.</td>
+					</tr>
+					<tr>
+						<td><b>push_back (x)</b></td>
+						<td>Agrega un nuevo elemento al final del vector, el cual se inicializa con el valor "x".</td>
+					</tr>
+					<tr>
+						<td><b>pop_back ( )</b></td>
+						<td>Remueve el último elemento de la lista, reduciendo el tamaño del vector en uno e inicializando que a este apuntaban.</td>
+					</tr>
+					<tr>
+						<td><b>get_allocator ( )</b></td>
+						<td>Regresa la localización/distribución/dirección del objeto usado para construir el vector. Puede ser usado, por ejemplo, para pasar a un puntero la dirección del vector. Por ejemplo:
+<pre><code>int *P;	P = Vec.get_allocator() allocate(n);
+			Vec.get_allocator.diallocate(P,n)</pre></code></td>
+					</tr>
+					<tr>
+						<td><p><b>allocate (n)</b></p>
+<p><b>allocate (n,hint)</b></p></td>
+						<td><p>Intenta distribuir un bloque de almacenamiento de tamaño suficiente para contener "n" elementos de tipo "T".</p>
+<p>n = número de elementos a ser distribuídos.</p>
+<p>hint = 0 o un valor previamente obtenido por otro llamado de "allocate" y no liberado aún por diallocated.</p></td>
+					</tr>
+					<tr>
+						<td><b>diallocate (P,n)</b></td>
+						<td><p>Libera un bloque de almacenamiento previamente distribuido con la función allocate y no liberado con allocate.</p>
+<p>P = puntero al bloque de almacenamiento.</p>
+<p>n = número de elementos alojados en la llamada allocate.</p>
+<p>Ejemplo:</p>
+<pre><code>vector &ltint&gt vector A;
+int *P;
+P = vectorA.get_allocator.allocate(5)
+P[i]=x
+vectorA.get_allocator.diallocate(P,5)</pre></code></td>
+					</tr>
+					<tr>
+						<td><b>Operador [ ]</b></td>
+						<td>Regresa el valor (referencia) del elemento en la posición n del vector al qe se aplica
+<pre><code>Vect[n]</pre></code></td>
+					</tr>
+					<tr>
+						<td><b>Operador =</b></td>
+						<td>Iguala un vector con otro, pasando el (...) de datos contenidos en uno de atrás sin importar que sean de distintos tamaños, solo importa el tipo.
+<pre><code>vector &ltint&gt Vect;
+Vect = vector &ltint&gt ();</pre></code></td>
+					</tr>
+					
+				</tbody>
+			</table>
 		
 	</body>
 </html>	

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores paréntesis ( )</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores paréntesis ( )</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>A diferenca de los operadores que hemos visto antes, el operador paréntesis es especial pues en él se puede definir el tipo de parámetros a usar, como en cualquier otro operador, pero también el número de parámetros con los que actuamos, como en ningún otro.</p>
+			<p>Hay dos casos a tener en cuenta, el primero, <em>los paréntesis deben ser implementados como una función miembro,</em> y en segundo lugar, <em>al sobrecargarlos es solo un operador que llama una función</em>, como cualquier otro que llama una función.</p>	
+			<p>Una de sus utilidades es, por ejemplo, el acceso o modificación (por índices), de arreglos multidireccionales, ya que el operador de suscripción, dado que solo tiene un parámetro, no es suficiente para acceder a una matriz.</p>
+			<p>Como el operador puede tomar tantas variables como clases, se pueden declarar versiones para (...) los índices que corresponden a cada dimensión de la matriz, por ejemplo el siguiente código:</p>
+			<pre><code>Clase:
+Class Matrix
+	{ private:
+		DOUBLE DATOS[4][4]
+	  public:
+		MATRIX() {....
+		DOUBLE& OPERATOR() (Const INT Fil, Const INT Col)
+	};
+
+Implementación:
+DOUBLE& MATRIX :: OPERATOR() (Const INT Fil, Const INT Col)
+	{
+	 ASSERT (Col &gt;=0 && Col&gt;4);
+	 ASSERT (Fil &gt;=0 && Fil&gt;4);
+	 RETURN DATOS [Col][Fil];
+	};
+
+Main:
+int Main()
+	{
+	 MATRIX cMATRIX;
+	 cMATRIX(1,2) = 4,5;
+	 STD :: COUT &lt;&lt; cMATRIX(1,2);
+	}</pre></code>
+
+			<p>El operador ( ) es comunmente utilizado al sobrecargar con n parámetros para acceder a arreglos multidireccionales o retirar sub-arreglos de arreglos unidireccionales (return elementos de parámetro1 a parámetro2).</p>
+		</article>
+		
+	</body>
+</html>	

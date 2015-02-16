@@ -22,8 +22,29 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Un constructor de este tipo crea un objeto a partir de otro objeto existente. Estos solo tienen un argumento, que es una referencia a un objeto de misma clase. Crea una copia completa del objeto en el stack. Se utiliza, por ejemplo, cuando el objeto será utilizado como argumento de la función.</p>
+			<pre><code>&ltNOM CLASE&gt :: &ltNOM CLASE&gt (CONST NOM_CLASE & OBJ);</pre></code>
+			<p>Por ejemplo:</p>
+			<pre><code>CLASS PAREJA
+{ PUBLIC:
+	// CONSTRUCTOR
+	   PAREJA (INT a);
+	// CONSTRUCTOR COPIA
+	   PAREJA (CONST PAREJA & P);
+}
+
+PAREJA : PAREJA (CONST PAREJA & P)
+	{ a=P.a;
+	  b=P.b
+	}</pre></code>
+
+			<p>Para crear objetos usando el constructor copia se procede:</p>
+			<pre><code>INT MAIN ()
+	{
+	PAREJA PAR1 (12);
+	PAREJA PAR2 (PAR1) → Uso del constructor copia.</pre></code>
+
+			<p>También en este caso si no se especifica ningún constructor copia, el compilador crea uno por defecto, y su comportamiento es exactamente el mismo que el definido en el ejemplo anterior.</p>
 		</article>
 		
 	</body>

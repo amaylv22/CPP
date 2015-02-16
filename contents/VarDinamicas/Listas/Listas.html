@@ -22,9 +22,127 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Son un tipo de contenedores secuenciales, sus elementos están ordenados igual a una secuencia lineal.</p>
+			<p>Comparado con otros contenedores (vectores y deque), las listas son generalmente mejores (........) elementos en cualquier posición del contenedor, y por lo tanto, en algoritmos que usan estas capacidades tal como algoritmos de ordenamiento.</p>
+			<p>Los vectores son mejores removiendo elementos del final, mientras que las listas y los deques desde cualquier posición.</p>
 		</article>
+
+		<article class="subsection">
+			<h1 id="">Clase contenedora.</h1>
+			<pre><code>#Include &lt;list&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<p>Igual que los de la clase vector, pero se cambia la palabra vector &lt; &gt; por list &lt; &gt;</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos/Contenedores lista.</h1>
+			<p>A continuación se presentan aquellos métodos que tienen la nueva función y modo de implementación que los presentados para vector. Los que se describen en la lista posterior.</p>
+			<h2 id="">Iguales.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Assign</td>
+						<td>Back</td>
+						<td>Begin</td>
+						<td>Clear</td>
+						<td>Empty</td>
+					</tr>
+					<tr>
+						<td>End</td>
+						<td>Erase</td>
+						<td>Get_allocator</td>
+						<td>Insert</td>
+						<td>Max_size</td>
+					</tr>
+					<tr>
+						<td>Operador =</td>
+						<td>Pop_back</td>
+						<td>Push_back</td>
+						<td>Size</td>
+						<td>Swaps</td>
+					</tr>
+					<tr>
+						<td>Rbegin</td>
+						<td>Rend</td>
+						<td>Rsize</td>
+					</tr>
+				</tbody>
+			</table>
 		
+			<h2 id="">Distintos.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>pop_font ( )</td>
+						<td>Remueve, borra el primer elemento en la lista. Este procedimiento llama al destructor del elemento.</td>
+					</tr>
+					<tr>
+						<td>push_front (x)</td>
+						<td>Agrega un nuevo elemento al principio de la lista.</td>
+					</tr>
+					<tr>
+						<td>remove (x)</td>
+						<td>Remueve de la lista todos los elementos con el valor específico "x", reduciendo así el tamaño de la lista en los "n" elementos de los valores "x".</td>
+					<tr>
+						<td>reserve ( )</td>
+						<td>Reserva el orden de los elementos en el contenido de la lista. Todas sus referencias y valores se (........). Puede usarse después de push_back (x).</td>
+					</tr>
+					<tr>
+						<td><p>sort ( )</p>
+<p>sort (comp)</p></td>
+						<td>Ordena los elementos del menor al mayor, si no presenta argumentos ( ) los ordena por pares mediante el operador "&lt;", si se introduce el argumento "Comp" entero se asocia la comparación a una función "Comp", que regresa valores (...)</td>
+					</tr>
+					<tr>
+						<td><p>splice (position,x)
+     (position,x,i)
+     (position,x,first,last)</p></td>
+						<td><p>Remueve los elementos de una lista "x" y los coloca en la posición especificada de una segunda lista "y". Se aplica sobre el objeto de lectura y se da la dirección del origen como argumento. Donde:</p>
+<p>position = iterador al objeto (...) que señala la posición en que el primer elemento será (...)</p>
+<p>x = objeto tipo lista (origen) que contiene el mismo tipo de lista. Si se pone solo x se corta y pega completo, pero solo el primer elemento queda en la posición señalada, los demás serán a la (...).</p>
+<p>i = iterador al objeto origen que señala a un elemento único que será cortado y pegado.</p>
+<p>first,last = iterador que señala el rango de elementos que serán copiados. Incluye first, desde first hasta last, pero no last.</p>
+<p>Puede aplicarse a sí mismo, es decir, a la misma lista.</p></td>
+					</tr>
+					<tr>
+						<td><p>unique ( )</p>
+<p>unique (BinPred)</p></td>
+						<td>En su primer versión (sin argumento), elimina los argumentos contiguos iguales de una lista, y solo uno de cada tipo, también los elimina si son iguales (y están juntos). La versión con argumento requiere un predicado binario, es decir, crea una función booleana, si regresa true se elimina, si regresa false no lo hace.</td>
+					</tr>
+					<tr>
+						<td>remove_if (pred)</td>
+						<td>Remueve de la lista todos los elementos para los cuales la aplicación del predicado "pred" regrese true.</td>
+					</tr>
+					<tr>
+						<td><p>merge (origen)</p>
+<p>      (origen,pred)</p></td>
+						<td>Combina listas ordenadas. Se aplica sobre el objeto (...) y como argumento opera el objeto de origen. Puede ser utilizado también como un predicado binario para mandar un elemento a la lista y darle el orden deseado. Los elementos se cortan y pegan. En el predicado binario el elemento a mover representa el principal, es decir, el que será comparado por su incersión.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 	</body>
 </html>	

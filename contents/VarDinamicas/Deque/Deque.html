@@ -22,9 +22,98 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Usualmente pronunciado como "deck", en un anónimo de queue, <b>double-ended queued</b>. Los deques tienen la característica de que sus elementos pueden ser accesados por su (...) tal como los vectores pero son más eficientes en eliminación y agregado de elemento, no solo en el inicio de la secuencia, si no también en su final. Sin embargo por otro lado, después de garantizar tener todos sus elementos en espacios de alojamiento continuo, eliminando así la posibilidad de un acceso seguro mediante la aplicación de (...) o iteradores.</p>
+			<p>Sin bien son (...) casi iguales a los (...), los deques son más eficientes en cadenas muy grandes y de crecimiento (...) pues puede almacenar los datos en bordes esperados de memoria y no requiere por tanto alojamiento contiguo.</p>
+			<p>En los deques los elementos pueden entrar y salir por ambos lados.</p>
 		</article>
-		
+
+		<article class="subsection">	
+			<h1 id="">Librería de inclusión.</h1>
+			<pre><code>#include &ltdeque&gt</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<p>Aplican los mismos constructores que para (...) anteponiendo solamente</p>
+			<pre><code>deque &lt[TIPO]&gt</pre></code>
+			<p>Con excepción del constructor para elementos nulos el cual no es válido</p>
+			<pre><code>[NOMBRE](n)</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Destructores.</h1>
+			<pre><code>[NOMBRE]. ~deque();</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de Deque.</h1>
+			<h2 id="">Iguales a vector.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Assign</td>
+						<td>At</td>
+						<td>Back</td>
+						<td>Begin</td>
+						<td>Clear</td>
+					</tr>
+					<tr>
+						<td>Empty</td>
+						<td>End</td>
+						<td>Erase</td>
+						<td>Front</td>
+						<td>Get_allocator</td>
+					</tr>
+					<tr>
+						<td>Insert</td>
+						<td>Max_size</td>
+						<td>Operador [ ]</td>
+						<td>Operador =</td>
+						<td>Pop_back</td>
+					</tr>
+					<tr>
+						<td>Push_back</td>
+						<td>Rbegin</td>
+						<td>Rend</td>
+						<td>Rsize</td>
+						<td>Size</td>
+					</tr>
+					<tr>
+						<td>Swaps</td>
+					</tr>		
+				</tbody>
+			</table>
+
+			<h2 id="">Paticular de Deque.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>pop_font ( )</td>
+						<td>Remueve el primer elemento en el contenedor, es el de la posición inicial [0].</td>
+					</tr>
+					<tr>
+						<td>push_front (x)</td>
+						<td>Inserta o agrega un elemento al inicio del contenedor, es decir, a la cabeza. El valor de este es igual a "x".</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 	</body>
 </html>	

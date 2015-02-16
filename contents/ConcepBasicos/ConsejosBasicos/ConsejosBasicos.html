@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Consejos Básicos del C++</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Consejos Básicos del C++</h1>
+		</header>
+		
+		<article class="subsection">
+			<ul>
+				<li>Al final de cada renglón debe ponerse un punto y coma (;)</li>
+				<li><b>Variables</b>: es posible declarar una variable y asignarle valor al mismo tiempo. Por ejemplo, int x=10;</li>
+				<li><b>Variables</b>: se pueden declarar dos variables del mismo tipo separando una de otra mediante una coma (,), por ejemplo, float y, z;</li>
+				<li><b>Sintaxis</b>: x=x+1 → x++; o ++x. Si el operador "++" este antes que la variable, el incremento sucederá antes de la operación idicada, si esta después sucederá una vez efectuando la operación indicada. Por ejemplo:
+<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>x=10;
+y=2*(x++);
+	Da como resultado:
+		x=11
+		y=20</pre></code></td>
+						<td><pre><code>x=10;
+y=2*(++x);
+	Da como resultado:
+		x=11
+		y=22</pre></code></td>
+						<td><pre><code>x=10;
+x++;
+y=2*(x);
+
+  </pre></code></td>
+					</tr>	
+				</tbody>
+			</table></li>
+				<li><b>Operaciones</b>: el operador matemático (/) devuelve resultados diferentes según la variable a la que se asigna, si es el caso de int solo devuelve la parte entera, si es el caso de float devuelve la fracción.</li>
+				<li><b>Operaciones. Módulos</b>: el operador módulo (%) devuelve el residuo de una división, por ejemplo, REMINDER=x%y;
+<article class="note"><p>Solo funciona con enteros.</p></article></li>
+				<li><b>Comentarios:</b> "//" para una sola línea o "/*, */" para múltiples líneas.</li>
+				<li><b>Funciones</b>: si la función no regresa ningún valor, entonces es tipo
+<pre><code>VOID. /// RETURN;
+          }</pre></code>
+Entonces la palabra clave RETURN no será igual a ningún valor.</li>
+				<li><b>Funciones. Main</b>: Por convención la función Main regresa el entero 0 para indicar que el código ha sido ejecutado sin errores, por tanto la función debe ser declarada como entero.
+<pre><code>INT MAIN()</pre></code></li>
+				<li><b>Funciones. Declaración</b>: al declarar las funciones tipo en el encabezado, cada función terminará con ";", mientras que al declarar el cuerpo de la función, esto se omite.</li>
+			</ul>
+		</article>
+		
+	</body>
+</html>	

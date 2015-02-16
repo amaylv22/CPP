@@ -72,7 +72,7 @@ DELETE [] pnARRAY;
 			<p>Los namespaces determinan el ámbito o la porción de código en que se garantiza que un comando o llamada a función es única. Esta ayuda a evitar naming collision, que se presenta cuando el compilador quiere llamar a una función y evita núcleos con el mismo nombre, así no sabe a quién llamar.</p>
 			<p>Hay dos maneras de evitar el naming collision, la primera es usando el <b>operador de acceso (: :)</b>. Si tenemos librerías con menos nombres de funciones podemos usar este operador para identificar la llamada. (...) en una función FUNCION( ) definido en la librería VARIOS.h, también evita una función diferente pero con el mismo nombre y se encuentra en la librería OTROS.h, así para llamar a cada función utilizaremos:</p>
 			<pre><code>VARIOS::FUNCION(); ó OTROS::FUNCION();</pre></code>
-			<p>La segunda opción es usar la Key(...) namespace para definir el código que pertenece a cada librería. El efecto del namespace aplicado (...) hasta que se aplique (...) (...), lo que se hace es decirle al compilador que si no (...) en el puntero namespace define la busqueda en el (...).</p>
+			<p>La segunda opción es usar la Keyword namespace para definir el código que pertenece a cada librería. El efecto del namespace aplicado (...) hasta que se aplique (...) (...), lo que se hace es decirle al compilador que si no (...) en el puntero namespace define la busqueda en el (...).</p>
 			<pre><code>namespace VARIOS;
 	FUNCION();
 

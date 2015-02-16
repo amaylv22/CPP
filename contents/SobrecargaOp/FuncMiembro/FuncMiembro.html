@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores utilizando funciones miembro</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores utilizando funciones miembro</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Cuando se utilizan operadores que modifican el valor de sus operadores, se utilizan funciones miebro, a diferencia de cuando no los modifican, que se utilizan funciones amigas.</p>
+			<p>Sobrecargar operadores usando funciones miembro es muy similar a hacerlo con las funciones amigas, es necesario observar solo algunos aspectos diferentes y distintivos.</p>
+			<ul>
+				<li>El operador más a la izquierda del operador sobrecargado debe ser un objeto de tipo igual a la clase en que el operador es miembro.</li>
+				<li>El operador más a la izquierda debe ser de forma implícita el puntero *this (parámetros de dirección). Todos los demás operadores se vuelven parámetros de función.</li>
+			</ul>
+			
+			<p>La mayorías de los operadores pueden sobrecargarse así, sin embargo existen algunas excepciones que son:</p>
+			<ul>
+				<li>Si el operador más a la izquierda no es un class_type como cuando de sobrecarga + (int, class_type), o el operador &lt;&lt; (ostream&, class_type), el operador debe ser sobrecargado como amigo.</li>
+				<li>La asignación (=), el suscrito ([ ]), la llamada (( )) y el selector de miembros (->) deben ser sobrecargados como funciones miembro.</li>
+			</ul>
+
+			<p>Debido a que estamos tratando con funciones miembro, en este caso si tenemos un puntero *this asignado por el compilador, así ya no será recursivo pero por afuera del objeto es entonces posible encontrar los prototipos de sobrecarga de operador unario como funciones sin argumentos pues algo que se escribe comouna función nula, se utiliza para el operador negativo (-) y el compilador la traduce a:</p>
+			<pre><code>CLASS A OPERATOR- ();
+
+CLASS A OPERATOR- (CONST CLASS A*THIS);</pre></code>
+			<p>Lo que en realidad es identico al prototipo usado en la función amiga.</p>
+			<p>Lo anterior supone también una disminución por los operadores binarios, por ejemplo en el caso de la suma que se reduce a dos o uno cuando el primer parámetro sea el objeto de class_type pues</p>
+			<pre><code>CLASS A + (CLASS A OBJ, Int x)
+Pasa como
+CLASS A OPERATOR + (int x)</pre></code>
+			<p>Y en la implementación se utiliza el nombre de las variables miembro directamente sin usar el operador de acceso acompañado del nombre del objeto, por ejemplo:</p>
+			<pre><code>CLASS A [CLASS A] :: OPERATOR + (int x)
+	{
+	return CLASS A (VarX + x) → Variable miembro de la clase
+	}</pre></code>
+
+			<p>Sin embargo, cuando se escribe la otra versión del operador, es decir +(int, class_type), es imposible convertirlo a función miembro con menos operadores, pues el primer miembro siempre tiene quqe ser class_type. Sin embargo, este le lleva a crearla en una función amiga que a su vez llama a la función miembro creada para los operadores en orden.</p>
+			<p>Como ya se ha dicho, no es bueno dejar que las funciones amiga modifiquen las variables miembro, es mejor que llamen a una función miembro que a su vez lo haga.</p>
+			
+		</article>
+		
+	</body>
+</html>	

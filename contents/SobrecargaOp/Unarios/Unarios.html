@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores unarios (+,-,!)</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores unarios (+,-,!)</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>A diferencia de los operadores vistos hasta ahora, los operadores positivo (+), negativo (-) y el no lógico (!) son operadores que funcionan con un solo operador.</p>
+			<p>Como ninguno de estos cambia/modifica el valor de sus operadores, los sobrecargamos por medio de funciones amigas. Los tres operadores son sobrecargados de forma idéntica a los aritméticos, pero con la diferencia de que solo reciben un argumento como entrada.</p>
+			<p>El operador negativo (-) es usado generalmente para invertir el valor sobre la recta numérica, es decir, multiplicado por (-1), indica que un valor debe ser tomado como negativo.</p>
+			<article class="note"><p>Si se usa (-) con funciones amigas, es recomendable que se modifique el valor asignado de los operadores, de ser así, deben crearse funciones miembro para sobrecargas.</p></article>
+
+			<p>Mientras que (!) generalmente es usado para que una variable sea cero, es decir, !x = true, e igual a flase si x≠0.</p>
+			<p>Por último, el valor de retorno para (+) y (-) puede ser cualquiera, mientras que para ! generalmente se usa booleana.</p>
+		</article>
+		
+	</body>
+</html>	

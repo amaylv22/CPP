@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores de entrada y salida</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores de entrada y salida</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Sobrecarga de salida (Out Operator) &lt;&lt;</h1>
+			<p>En las clases que tienen muchas variables miembro, el parámetro en la pantalla o en cualquier modo de salida puede ser conveniente utilizar la sobrecarga del operador, pues hacerlo uno por uno se puede volver tedioso, especialmente si hay que hacerlo en repetidas ocaciones.</p>
+			<p>Así, en lugar de escribir, por ejemplo COUT &lt;&lt; "..." &lt;... , solo se escribe COUT &lt;&lt; [OBJ_NAM]</p>
+			<p>Sobrecargar el operador &lt;&lt; es similar a sobrecargar el operador +, pues los dos son operadores binarios, excepto que los parámetros son diferentes.</p>
+			<p>Considerando la expresión COUT &lt;&lt;OBJETO_CLASS A. Si el operador es <em>&lt;&lt;</em> el operador izquierdo es el objeto cout, y el operador derecho es un objeto de la clase A (un objeto al fin y al cabo). Cout es en realidad un objeto de tipo "ostream", por lo tanto, la función de sobrecarga sería:</p>
+			<pre><code>FRIEND OSTREAM& OPERATOR &lt;&lt; (OSTREAM &OUT, CLASS A &OBJETO);</pre></code>
+			<p>La implementación del operador &lt;&lt; es bastante directa, pues para componer la salida se puede usar el operador regular built-in &lt;&lt; tal como se muestra a continuación:</p>
+			<pre><code>OSTREAM& OPERATOR &lt;&lt; (OSTREAM &OUT, CLASS A &OBJETO)
+	{
+	OUT &lt;&lt;....&lt;&lt;.... ;
+	RETURN OUT;
+	}</pre></code>
+			<p>El tipo de retorno es importante pues si combinamos el uso del operador normal y el sobrecargado, debe tener éxito, por ejemplo, la siguiente expresión se evalúa como:</p>
+			<pre><code>COUT &lt;&lt; OBJ &lt;&lt; endl;
+(COUT &lt;&lt;OBJ) &lt;&lt; endl;</pre></code>
+			<p>De este modo, el tipo de retorno es congruente para que se pueda aplicar el segundo operador, y debido que la salida se muestra como OSTREAM&</p>
+			<pre><code>(cout &lt;&lt; Obj) &lt;&lt; endl;
+	    ↓      ↓   ↓
+       cout   &lt;&lt; endl;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Sobrecarga de Entrada (In Operator)</h1>
+			<p>La forma de sobrecargar este operador es muy similar, el punto clave es saber que "in" es un operador de tipo ISTREAM, así que este debe ser el tipo de salida del operador sobrecargado.</p>
+			<pre><code>FRIEND ISTREAM& OPERATOR &gt;&gt; (ISTREAM &IN, CLASS A &OBJETO);</pre></code>
+
+			<h2 id="">Implementación</h2>
+			<pre><code>ISTREAM& OPERATOR &lt;&lt; (ISTREAM &IN, CLASS A &OBJETO)
+	{
+	IN &gt;&gt; .... ;
+	RETURN IN;
+	}</pre></code>
+
+			<p>Por último es mejor definir las funciones de sobrecarga con el argumento del objeto constante (CONST...) pues de esta forma es capas de tomar ambas salidas, constantes y no constantes.</p>
+
+		</article>
+		
+	</body>
+</html>	

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Multiset</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Multiset</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Los multiset son contenedores asociativos como los set, pero que permiten múltiples claves con valores iguales. En su imlementación en la STL de C++, multiset toman los mismos parámetros de template que los contenedores set.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Librería de Inclusión.</h1>
+			<pre><code>#include &lt;set&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<p>Se aplican los mismos que para set, pero se cambia la definición de contenedor por</p>
+			<pre><code>multiset &lt;TIPO&gt; [NOM]</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Destructores.</h1>
+			<pre><code>[NOM]. ~multiset();</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos multiset.</h1>
+			<h2 id="">Iguales a Set.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Begin</td>
+						<td>Clear</td>
+						<td>Empty</td>
+						<td>End</td>
+						<td>Get_allocator</td>
+					</tr>
+					<tr>
+						<td>Max_size</td>
+						<td>Operador =</td>
+						<td>Rbegin</td>
+						<td>Rend</td>
+						<td>Size</td>
+					</tr>
+					<tr>
+						<td>Swap</td>
+						<td>Erase</td>
+						<td>Insert</td>
+						<td>Key_comp</td>
+						<td>Value_comp</td>
+					</tr>
+					<tr>
+						<td>Upper_bound</td>
+						<td>Lower_bound</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 id="">Particulares de Multiset</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>count (x)</td>
+						<td>Busca en el contenedor claves con valor igual a "x", y regresa el número de veces que el elemento aparece en el contenedor.</td>
+					</tr>
+					<tr>
+						<td>equal_range (x)</td>
+						<td>Regresa en una variable Pair los límites externos (en iterador) de un rango que contiene todos los elementos con clave igual a "x". Del par, first regresa el límite exterior, es decir &lt;=x y second el límite superior &gt;x.</td>
+					</tr>
+					<tr>
+						<td>find (x)</td>
+						<td>Regresa el operador a la posición del contenedor en que se almacena un elemento con el valor de x, de otro modo, si no existe dicho valor regresa el iterador a la última posición del contenedor y comprende al valor numérico de la posición, es decir, el size ( ).</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</article>
+		
+	</body>
+</html>	

@@ -22,9 +22,78 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Es una lista en que solo está permitida la inserción y la eliminación. Además, estos operadores deben ocurrir solo en un extremo de la lista llamado <b>extremo superior</b> (tap). El resultado es que los elementos se recuperan (obtienen) en el orden: último en entrar, primero en salir <b>(last-in, first-out, o LIFO)</b>. El extremo superior es delfinal de la lista.</p>
 		</article>
-		
+
+		<article class="subsection">
+			<h1 id="">Inclusión de la librería.</h1>
+			<pre><code>#include &lt;stack&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructor.</h1>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>stack &lt;[TIPO]&gt; [NOMBRE];</pre></code></td>
+						<td>Crea una pila vacía.</td>
+					</tr>
+					<tr>
+						<td><pre><code>stack &lt;[TIPO]&gt; [NOMBRE] (&lt;OTRO&gt;);</pre></code></td>
+						<td>Crea una lista copiando los elementos de otro.</td>
+					</tr>
+					<tr>
+						<td><pre><code>stack &lt;[TIPO], [CONTENEDOR], &lt;[TIPO]&gt;&gt; [NOM];</pre></code></td>
+						<td>Crea una pila que toma los elementos de un contenedor tipo [CONTENEDOR]</td>
+					</tr>
+					<tr>
+						<td><pre><code>stack &lt;[TIPO], [CONTENEDOR], &lt;[TIPO]&gt;&gt; [NOM] (&lt;OTRO&gt;);</pre></code></td>
+						<td>Crea una pila que toma los elementos de un contenedor tipo [CONTENEDOR] y la inicializa con otro.</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de pilas.</h1>
+			<table border="0" cellspacing="5" cellpadding="20px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>empty ( )</td>
+						<td>Función que comprueba si la pila está vacía. Si es así regresa true, si no regresa false.</td>
+					</tr>
+					<tr>
+						<td>pop ( )</td>
+						<td>Remueve el último elemento agregado, es decir, el que está en el extremo superior (tap).</td>
+					</tr>
+					<tr>
+						<td>push (x)</td>
+						<td>Agrega un nuevo elemento a la cabeza de la pila (tap), el valor del nuevo elemento es "x".</td>
+					</tr>
+					<tr>
+						<td>size ( )</td>
+						<td>Devuelve el tamaño de la pila. Número de elementos contenidos.</td>
+					</tr>
+					<tr>
+						<td>tap ( )</td>
+						<td>Da el valor del valor (tap) de la lista, es decir, de la cabeza. Este también puede ser modificado, igualando un valor al uso del método.</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 	</body>
 </html>	

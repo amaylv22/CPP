@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores aritméticos</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores aritméticos</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Todos los operadores aritméticos de C++ (+, -, * y /) son binarios, es decir, tienen dos argumentos, uno a cada lado del operador. Todos estos se sobrecargan en la misma forma.</p>
+			<p>Cuando el operador no modificará sus operadores, la mejor manera de sobrecargarlo es por medio de una función amiga. Pues, como se ha dicho, los operadores sobrecargados son para usar con los user_define variables, así, si se trata por ejemplo de una clase, será importante acceder a los miembros privados de esta.</p>
+			<p>La sobrecarga de un operador es igual que crear una función, se genera el prototipo (si es friend, va dentro de la clase anfitriona), y después se genera su implementación. La diferencia radica en el nombre de la función, pues en este caso hay que anteponerle al símbolo del operador a usar la palabra OPERATOR.</p>
+			<pre><code>[FUNC_NAM] = OPERATOR [SIMBOLO]</pre></code>
+			<p>Por ejemplo, observese el siguiente caso:</p>
+			<pre><code>class PUNTOS
+	{ PRIVATE:
+		INT mPuntos;
+	  PUBLIC:
+		Puntos (int x) {mPuntos = X;}
+		
+		// Add Puntos + Puntos
+		Friend Puntos <b>OPERATOR +</b> (Puntos &P1, Puntos &P2);
+		int GetPuntos( ) {RETURN mPuntos}
+	};
+
+	// Operator Overload - Function |OPERATOR +| IMPLEMENTATION
+Puntos <b>OPERATOR +</b> (Puntos &P1, Puntos &P2)
+	{ // Using the Constructor with anonymous object
+	  RETURN Puntos (P1.mPuntos + P2.mPuntos)
+	}
+
+// Calling the Operator Overload
+int Main( )
+{
+	Puntos Pu1 (6);
+	Puntos PU2 (7);
+	Puntos SumP = Pu1 + Pu2;
+	Return 0;
+}</pre></code>
+
+			<article class="note"><p><b>CONST</b></p>
+<p>Es recomendable que los argumentos de las funciones amigas para sobrecargar se pasen con CONST para prevenir cambios en el argumento, pues las funciones amigas son usadas cuando se pretende no hacer cambios en los operadores.</p></article>
+
+			<p>Como se observa, la sobrecarga recibe los parámetros, escoge el tipo de salida (dato tipo) y efectúa la operación. Si bien en el argumento se hace reciente uso del operador +, en este caso se usa built-in pues el comparador busca primero aquí y al tratarse de dos enteros valida su uso.</p>
+			<p>Sobrecargar el resto de los operadores (...) es igual cambiarle solo el sentido, así, para la resta tendrían operator-, para la multiplicación operator* y para la división operator/.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Sobrecarga de operadores para operadores de diferentes tipos.</h1>
+			<p>Cuando se están usando operadores binarios con operadores de distintos tipos, es importante observar el orden de los operadores de la implementación, pues cuando C++ evalúa la expresión <em>x+y</em>, <em>x</em> se vuelve el primer parámetro y <em>y</em> el segundo. Cuando <em>x</em> y <em>y</em> son del mismo tipo, no importa si se suma <em>x+y</em> o <em>y+x</em> (se puede usar la misma versión del operador OPERATOR + (INT,INT)), pues los dos son del mismo tipo, así el mismo operador es llamado. Sin embargo cuando <em>x</em> y <em>y</em> son de diferente tipo, <em>x+y</em> no es igual que <em>y+x</em>. Pensemos que <em>x</em> es un objeto <em>clase Obj</em> y <em>y</em> un objeto <em>(INT)</em>, así, el operador suma para <em>x+y</em> es <em>OPERATOR + (OBJ,INT)</em>, mientras que el operador para <em>y+x</em> es <em>OPERATOR + (INT,OBJ)</em>. De este modo, es necesario cuando se tienen operadores de distinto tipo, escribir dos funciones de sobrecarga, una para cada tipo.</p>
+			<p>Sin embargo, debido a que en realidad solo el prototipo de la función cambia (por el orden de entrada de los argumentos), la implementación es la misma, es decir, un duplicado de código. Para evitar esto, podemos usar, para la implementación del segundo tipo <em>y+x</em>, la llamada al operador del primer tipo <em>x+y</em>, es decir, solo invertir el orden. Aunque la eficiencia es menor que con una implementación directa, pues hay llamados a funciones extras, el método hace más corto, limpio y fácil de mantener el código, así que es recomendable usarlo tal como se muestra en el siguiente ejemplo.</p>
+			<p>En la clase se define</p>
+			<pre><code>FRIEND OBJ OPERATOR + (OBJ &P1, INT Z);
+FRIEND OBJ OPERATOR + (INT Z, OBJ &PI);</pre></code>
+			<p>Y en su implementación</p>
+			<pre><code>OBJ OPERATOR + (OBJ &PI, INT Z)
+	{ ...				// The call is P1+Z
+	  RETURN OBJ(...);
+	}
+OBJ OPERATOR (INT Z, OBJ &PI)
+	{
+	  RETURN (PI+Z)			// The call for this overload is Z+P
+	}</pre></code>
+
+		</article>
+		
+	</body>
+</html>	

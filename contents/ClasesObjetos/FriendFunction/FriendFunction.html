@@ -22,9 +22,67 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>En ocaciones se tienen funciones funciones y clases que necesitan trabajar muy íntimamente. Por ejemplo se puede tener, por razones de (...), una clase encargada de almacenar datos y una función (de otra clase) que muestra dichos datos en pantalla. Así, a pesar de este separador, el código que muestra la información está íntimamente ligado a los pormenores de la clase que almacena.</p>
+			<p>En situaciones como esta hay dos opciones:</p>
+			<ol>
+				<li>Definir el código de display en la clase de (...), lo que no solo puede hacer (...) el enfoque de la clase, si no que puede exponer los datos o el código de display, al cual no se permite acceder a nadie más, pues su (...) (...) de decir "solo accesible para la clase de display, no la use nadie más".</li>
+				<li>Usar clases y funciones amigas, para darle a la clase amiga (a sus funciones) el acceso a los detalles preciados de la clase de almacenamiento.</li>
+			</ol>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Funciones amigas/Friend functions</h1>
+			<p>Una función miembro es aquella función que puede acceder a datos privados de una clase como si fuera miembro de esta, cuando en realidad es ajeno. En todos los demás aspectos se comporta como una función normal. Una función amiga puede ser o no ser miembro de otra clase, puede ser una simple función definida fuera de cualquier clase.</p>
+			<p>Para declarar una función amiga solo es necesario anteponer la keyword <b>FRIEND</b> al prototipo de la función, dentro de la clase a la que deseamos inicializar. No importa si se pone en public o privada.</p>
+			<p>La implementación se da fuera de la clase, y en esto no se agrega la palabra friend.</p>
+			<p>Es importante recalcar que el argumento de la función amiga debe ser un objeto del tipo clase igual a la que esté enlazado, o a una referencia a este si se desean modificar vectores, pues ya que la función amiga no es una función miembro no tiene un puntero this, tampoco tiene entonces un objeto con el cual trabaje, a menos que se le proporcione uno. El acceso a los miembros de la clase son por medio del nombre del objeto y el operador de selección (.).</p>
+
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th>Declaración →</th>
+						<th>Dentro de la clase hospedada →</th>
+						<th>Implantar (...) →</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>FRIEND &ltTIPO&t [FUNC_NAME] (arg);</pre></code></td>
+						<td><pre><code>CLASS [CLASS_NOM]
+	{
+	.
+	.
+	.
+	FRIEND &ltTIPO&t [FUNC_NAME] (arg);
+	.
+	.
+	.
+	};</pre></code></td>
+						<td><pre><code>FRIEND &ltTIPO&gt
+	[FUNC_NAME] (&ltCLASS_NOM&gt & Var)
+	{
+	Var.datos =
+	}</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Una función puede ser amiga de más de una clase del mismo tipo. Solo hay que definirla (indicar el prototipo dentro de todos ellos). Es normal cuando se tienen funciones amigas de varias clases que a esta se le parecen al menos en un argumento por cada tipo de clase a la que se enlaza. Es decir, en la definición de la primera clase, el prototipo de la función amiga hará referencia a una clase aún no creada. En este caso es necesario colocar al menos un fichero (.h) o antes del prototipo de función (...), <b>el prototipo(s) de la clase</b> que será declarada después, esto pone alerta al compilador de que después de definido, al igual que en el caso de los problemas de función.</p>
 		</article>
 		
+		<article class="subsection">
+			<h1 id="">Prototipo de clase.</h1>
+			<p>Siempre será de la función.</p>
+			<pre><code>CLASS [CLASS_NOM];</pre></code>
+		</article>
+		
+		<article class="subsection">
+			<h1 id="">Clases amigas/Friend classes</h1>
+			<p>Es posible hacer amigas clases anteriores. Esto da a todos los miembros de la clase amigo acceso a los miembros prioridad de la otra clase (clase huesped).</p>
+			<p>Para declarar una clase amiga es necesario introducir el prototipo de la clase antecedente por la keyword, en el cuerpo (privado: o public:) de la clase huesped.</p>
+			<pre><code>FRIEND CLASS [CLASS_NOM];</pre></code>
+			<p>A los miembros de la clase amigo se les debe poner un objeto de tipo CLASS como argumento. (Clase huesped se define).</p>
+			<p>Cuando se hace que una clase A sea amiga de B, no necesariamente implica que B sea amiga de A. Para lograr esto hay que hacer la doble indicación. De igual manera, si A es amiga de B y B es amiga de C, no significa que A sea amiga de C.</p>
 	</body>
 </html>	

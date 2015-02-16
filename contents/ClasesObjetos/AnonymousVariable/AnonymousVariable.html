@@ -22,9 +22,73 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Algunas veces ocupamos variables temporalmente, por ejemplo:</p>
+			<pre><code>int Add (int x, int y)
+	{ int Sum=x+y;
+	  return Sum;}
+
+int Main ()
+	{ S+D :: cout &lt&lt Add (5,3);
+	  return 0;}</pre></code>
+
+			<p>En la función Add vemos que la variable Sum solo se usa como un placeholder temporal. No contribuye nada, su única función es transferir los resultados de la expresión <b>x + y</b> al valor de la salida.</p>
+			<p>De hecho es más fácil y claro escribir una función Add() haciendo uso de una <b>variable anónima</b>. Una variable anónima es aquella que no tiene un identificador (nombre), solo está temporalemente en la memoria. Las variables anónimas en C++ tienen "expresión scape", lo que significa que se destruyen al final de la expresión en la que fueron creadas. Consecuentemente deben ser usadas inmediatamente. De este modo,la función Add( ) quedará como:</p>
+			<pre><code>int Add (int x, int y)
+	{ return x+y; }</pre></code>
+
+			<p>Cuando la expresión x + y es evaluada, el resultado es una variable sin nombre, anónima. Una copia de una variable anónima es regresando a la llamada por valor.</p>
+			<p>No solo una función con valores de retorno, si no también con parámetros de función. Ponemos en una función PRINT VALUE (int X) que será evaluada, entonces se le puede llamar como:</p>
+			<pre><code>int Sum = 5+3;
+PRIVATE VALUE (Sum);
+
+O con el anónimo como:
+
+PRIVATE VALUE (5+3)</pre></code>
+			<p>En este caso, la expresión 5+3 es evaluada y su resultado se obtendrá en la variable anónima, una copia de esta variable es pasarla después como argumento de la función.</p>
 		</article>
+
+		<article class="subsection">
+			<h1 id="">Anonymous Class Objects</h1>
+			<p>Es posible construir también variables anónimas de datos tipo objeto, creados con las clases definidas en código. Se puede también crear el objeto como normalmente se hace, por ejemplo, ponerlo en una clase de nombre Conts.</p>
+			<pre><code>Normal:
+Conts Obj nuevo (4);
+
+Con Anónimo:
+Const (4);</pre></code>
+
+			<p>Así creamos un objeto anónimo de tipo Const y se inicializa con el valor 4. Sin embargo, en este contexto no parece muy útil, (...) en una función que regrese un dato tipo objeto → Class Conts.</p>
+			<p>Función:</p>
+			<pre><code>Conts Add (Conts & C1, Conts &C2)
+{
+	Conts c temp (C1.GetConts() + C2.GetConts());
+	return c temp 3
+}</pre></code>
+
+			<article class="note"><p><b>GetConts()</b> → Función que devuelve el (...) almacenado en la clase.</p>
+<p><b>(C1.GetConts() + C2.GetConts()</b> → Inicializar objeto.</p></article>
+
+			<pre><code>int Main ()
+	{ Conts Conts 1 (6);
+	  Conts Conts 2 (7);
+	  Conts ContsSum = Add (Conts 1, Conts 2);
+	  Cout &lt&lt ContsSum . GetConts ();
+	  return 0
+	}</pre></code>
+
+			<article class="note"><p>Note que la variable temporal es solo usado dentro para tipo y en Main se crea ContSum solo para (......) de los dos objetos.</p></article>
+
+			<p>Usando el objeto anónimo podemos escribir el código anterior como:</p>
+			<pre><code>Conts Add (Conts & C1, Conts & C2)
+	{ Return Conts (C1.GetConts() + C2.GetConts); } → Inicializar objeto anónimo.
+
+int Main()
+	{ Conts Conts 1 (6);
+	  Conts Conts 2 (7);
+	  Conts ContsSum = Add (Conts 1, Conts 2).GetConts ();
+	  return 0; }</pre></code>
+
+			<p>Como resultado el programa es más corto, limpio y generalmente más fácil de regresar el flujo.</p>
+			<p>En C++ las variables anónimas son primordialmente usadas para pasar o regresar valores sin tener que crear nuevas variables temporales. Es importante notar que las variables anónimas solo pueden ser pasadas o regresadas por valores. De otro modo hay que usar named-variables.</p>
 		
 	</body>
 </html>	

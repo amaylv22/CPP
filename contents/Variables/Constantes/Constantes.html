@@ -26,8 +26,8 @@
 			<p>Existe la recomendación de declarar las constantes con letras mayúsculas y anteponer una "k" minúscula, solo por razones de legibilidad y comprensibilidad.</p>
 		<article class="note"><p>Las constantes se inicializan al (...).</p></article>
 			<p>La forma de declarar las constantes es la siguiente:</p>
-			<pre><code>CONST [TIPO & MODIFICADORES] <$NOMBRE>=<$VAL>;
-#DEFINE <$NOMBRE><$VAL>;</pre></code>
+			<pre><code>CONST [TIPO & MODIFICADORES] &ltNOMBRE&gt = &ltVAL&gt;
+#DEFINE &ltNOMBRE&gt &ltVAL&gt;</pre></code>
 			<p>La diferencia es que la segunda forma define una constante simbólica, es decir, el compilador no usa las variables como tal, si no que sustituye en el código el valor de este antes de armar el ejecutable.</p>
 
 			<h2 id="">Tipos de constantes</h2>
@@ -37,7 +37,7 @@
 				<dt>Simbólicas</dt>
 					<dd><p>Constante representada por un nombre.</p></dd>
 				<dt>Enumeraciones</dt>
-					<dd><p>Situado entre constante y variable, se define un tipo y a este se le asigna un número finito de valores posibles que puede tomar durante la ejecución. Se (...) en el inicio.</p></dd>
+					<dd><p>Situado entre constante y variable, se define un tipo y a este se le asigna un número finito de valores posibles que puede tomar durante la ejecución. Se describen en el inicio.</p></dd>
 			</dl>
 			
 		</article>

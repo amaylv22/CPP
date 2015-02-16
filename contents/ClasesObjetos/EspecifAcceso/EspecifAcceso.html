@@ -22,9 +22,36 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Dentro de la lista de miembros, cada miembro puede tener diferentes niveles de acceso.</p>
 		</article>
+
+		<article class="subsection">
+			<h1 id="">Acceso privado "PRIVATE:"</h1>
+			<p>Son miembros accesibles solo por los propios miembros de la clase y en general por objetos de la misma clase, pero no desde funciones externas o desde funciones de clases derivadas.</p>
+			<p>Se trata de acceder a una variable miembro desde el programa no desde el método de la clase, así esto será posible.</p>
+			<pre><code>&ltOBJETO&gt.&ltVARIABLE&gt = # → X</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Acceso público "PUBLIC:"</h1>
+			<p>Es un miembro accesible desde cualquier parte por donde sea accesible el propio objeto.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Acceso protegido "PROTECTED:"</h1>
+			<p>Con respecto a las funciones externas se comportan como privado, pero con respecto a las clases derivadas se comportan como públicas.</p>
+		</article>
+
+		<article class="subsection">
+			<p>Cada una de estas palabras seguidas de ":" da comienzo a una nueva sección (dentro de la lista de miembros), que terminará cuando se crea la sección siguiente o cuando termine la declaración de la clase. Es posible tener varias secciones de cada tipo dentro de una clase.</p>
+			<p>Si no se especifica nada, por defecto los miembros de una clase son privados.</p>
+			<p>Por ejemplo:</p>
+			<pre><code>CLASS CABALLO
+{
+	PUBLIC:
+		&ltLISTA MIEMBRO&gt}
+:</pre></code>
+
 		
 	</body>
 </html>	

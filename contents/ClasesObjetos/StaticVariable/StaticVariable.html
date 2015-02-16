@@ -22,9 +22,44 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Una variable static mantiene su valor y no se destruye incluso después de que sale de su entorno. Así, una variable de este tipo conserva el valor a lo largo de la aplicación sin necesidad de ser global. La forma de la declaración es:</p>
+			<pre><code>STATIC &ltTIPO&gt [VAR_NAME];</pre></code>
+
+			<p>La palabra clave STATIC puede ser usada además para dar otro significado cuando se aplica sobre variables globales. Los cambia de un entorno global a un entorno de archivo. Es decir, usar globales solo en el entorno de un archivo en el que se definen.</p>
 		</article>
+
+		<article class="subsection">
+			<h1 id="">Static member variable.</h1>
+			<p>C++ introduce dos nuevos usos para la palabra clave STATIC cuando se aplica a clases, estos son <b>Static member variable</b> y <b>Static member class</b>.</p>
+
+			<h2 id="">STATIC member variable</h2>
+			<p>Cuando instanciamos objetos de una definida clase, cada objeto tiene su propia copia de las variables miembro de la clase (normales). Sin embargo, al hacer STATIC las variables miembro de una clase (usando la keyword STATIC), la variable solo existe una vez en el programa sin importar cuantos objetos class-type hayan sido creados, incluso existe sin ninguna la (...) instanciada. Así, el valor de dicha variable será igual para todos los objetos.</p>
+			<p>Para acceder a dicha variable, se puede hacer mediante cualquier objeto, como si se tratara de una variable miembro solamente. Se puede modificar su (...) modificando para todos los objetos.</p>
+			<pre><code>[OBJ_CLASS_TYPE] . [STATIC_VAR_NAME] = ... ;</pre></code>
+
+			<p>Sin embargo, esto podría hacer que la variable static pertenezca a determinado objeto y como esto es falso, su (...) variable existe aún en la (...) de objeto. Esto se puede acceder directamente usando el nombre de la clase y el operador de acceso, pues en realidad la variable pertenece a la clase misma.</p>
+			<pre><code>[CLASS_NAME] :: [STATIC_VAR_NAME] = ... ;</pre></code>
 		
+			<h2 id="">Inicializar STATIC member variable.</h2>
+			<p>Como la variable miembro static no será parte de ningún objeto individual, se debe de definir explícitamente si no se quiere inicializar en ceros. Esto se hace de la siguiente forma:</p>
+			<pre><code>&ltTIPO&gt [CLASS_NAME] :: [STATIC_VAR_NAME] = x ;</pre></code>
+			<p>Este código se debe poner en el archivo de implatación de la clase (.cpp)</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Static member function.</h1>
+			<p>Tal como se ve, podemos acceder a los miembros estáticos de una clase directamente con su nombre y el operador de acceso (::), pero solo si la variable miembro estática es pública. Si la variable es privada tendremos que utilizar una función miembro pública para acceder a esta directamente con el nombre de la clase. Estas funciones pueden acceder directamente a la variable STATIC de una clase, por lo que son llamadas <b>Funciones miembro estáticas.</b></p>
+			<p>Al igual que las STATIC member variable, las STATIC member function no pertenecen a ningún objeto particular,por lo que pueden ser llamadas directamente usando el nombre de la clase y el operador de acceso. También pueden ser llamadas a través de objetos class-type, sin embargo esto no es recomendable.</p>
+			<pre><code>Declaración
+	STATIC &ltTIPO&gt [FUNC_NAME] (arg...) { };
+
+Llamada
+	[CLASS_NAME] :: [FUNC_NAME] ( );</pre></code>
+
+			<p>Las funciones miembro estáticas tienen dos características dignas de mencionar.</p>
+			<ol>
+				<li>Las funciones miembro static no tienen un puntero this asociado,  pues este no pertenece a ningún objeto y el puntero this siempre apunta al objeto en el que esté trabajando la función. Las funciones static no trabajan en un objeto así que no necesitan este puntero.</li>
+				<li>Las funciones miembro estáticas solo pueden acceder a variables miembro estáticas. Esto es debido a que las variables no estáticas deben pertenecer a un objeto class-type y las funciones miembro estáticas no trabajn para ningún objeto, si no para una clase en sí.</li>
+			</ol>
 	</body>
 </html>	

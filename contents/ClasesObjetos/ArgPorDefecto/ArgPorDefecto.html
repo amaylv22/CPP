@@ -22,8 +22,12 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Es posible asignar a las variables argumentos de los valores por defecto, así, si no se introduce ningún valor podremos estar preparados para ello, o dicho de otro modo, ahorraremos una línea al no sobrecargar el constructor para crear el constructor por defecto.</p>
+			<p>Por ejemplo:</p>
+			<pre><code>CLASS PAREJA
+	{ PRIVATE:
+		PAREJA (INT a2=0, INT b2=0): a(a2), b(b2) { }
+	}</pre></code>
 		</article>
 		
 	</body>

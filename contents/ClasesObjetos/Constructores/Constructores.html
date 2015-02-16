@@ -22,9 +22,51 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Retomando el concepto de inicializar, recordamos que una variable podía ser definida escribiendo el código y después asignar un valor, ya sea predeterminado o asignado por el usuario. La segunda opción era inicializar, que significa asignarle un valor a variable al tiempo que se define, esto ahorrará código.</p>
+			<p>Sim embargo, dado que una clase es solo una idea, no un objeto real, no es posible inicializar las variables miembro al mismo tiempo que se definen en la lista de miembros, sin embargo sí existe una forma de "inicializar" con los datos miembro de un objeto, es decir, asignar un valor al mismo tiempo que se declara un <b>objeto</b> de determinada clase. Al momento en que lo creamos ya tiene un valor.</p>
+			<p>Las funciones miembro especiales que realizan esta tarea de inicialización de un objeto son llamados <b>"Constructores"</b>.</p>
 		</article>
+
+		<article class="subsection">
+			<h1 id="">Características de los constructores</h1>
+			<ul>
+				<li>Tener el mismo nombre que la clase.</li>
+				<li>NO tener valor retorno u omitir por completo este parámetro.</li>
+				<li>Pueden tomar parámetros.</li>
+				<li>No pueden ser heredados.</li>
+				<li>Siempre serán PUBLIC.</li>
+				<li>Siempre los acompañará un destructor.</li>
+			</ul>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Declarar un constructor.</h1>
+			<pre><code>&ltNOMBRE DE LA CLASE&gt (&ltPARAMETROS&gt);</pre></code>
+
+			<p>Por ejemplo:</p>
+			<pre><code>CLASS CABALLO
+	{
+	PUBLIC:
+		CABALLO (INT EDAD);
+		.
+		.
+		.
+	};</pre></code>
+
+			<article class="note"><p>Se tiene que recordar que los constructores no llevan tipo y los parámetros son opcionales. El nombre del constructor siempre es igual al de la clase.</p></article>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Definir un construtor.</h1>
+			<pre><code>&ltNOMBRE CLASE&gt :: &ltNOMBRE CLASE&gt (&ltPARAMETROS&gt)
+	{
+		.
+		.
+		.
+	}</pre></code>
+
+			<article class="note"><p>Dado que no tiene un tipo de valor de retorno <b>no se incluye la sentencia RETURN</b>.</p></article>
+			
 		
 	</body>
 </html>	

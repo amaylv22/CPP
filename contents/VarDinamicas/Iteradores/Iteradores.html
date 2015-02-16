@@ -22,9 +22,210 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Los iteradores son una especie de punteros utilizados por un algoritmo para reconocer los elementos almacenados en un contenedor (vector, matriz, lista, pila, mapa, etc.) Dado que los distintos algoritmos necesitan recorrer los contenedores de diversas maneras para realizar distintas operaciones, y los contenedores deben ser accedidos desde formas distintas, existen diferentes tipos de iteradores. Cada contenedir de la LS puede generar un iterador con funcionalidad a la técnica de almacenamiento que utilize. Es precisamente el tipo de iterador requerido como argumento, lo que distingue qué algoritmo de la STL pueden ser utilizados con cada clase de contenedor. Por ejemplo, si un contenedor solo dispone de iteradores de acceso secuencial no pueden utilizarse algoritmos que exijan iteradores de acceso aleatorio.</p>
+			<p>Existen diversos caracteres principales que distinguen unos iteradores de otros. Podemos resumirlos como sigue:</p>
+			<dl>
+				<dt>Capacidad de modificar datos.</dt>
+					<dd><ul>
+						<li>Solo lectura.</li>
+						<li>Solo escritura.</li>
+						<li>Lectura/escritura.</li>
+					</ul></dd>
+				<dt>Tipo de desplazamiento.</dt>
+					<dd><ul>
+						<li>Avance secuencial.</li>
+						<li>Avance y retroceso secuencial.</li>
+						<li>Avance aleatorio.</li>
+					</ul></dd>
+			</dl>
+
+			<p>El estandar distingue una única variedad de iteradores, basados en los antes mencionados, los cuales se presentan a continuación.</p>
+
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th>Categoría</th>
+						<th>Nombre genérico</th>
+						<th>Resumen de propiedades</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Acceso aleatorio.</td>
+						<td>Random access iterator.</td>
+						<td>Lec./Esc., acceso aleatorio.</td>
+					</tr>
+					<tr>
+						<td>Bidireccional.</td>
+						<td>Bidirectional iterator.</td>
+						<td>Lec./Esc., movimiento adelante/atrás.</td>
+					</tr>
+					<tr>
+						<td>Adelante.</td>
+						<td>Forward iterator</td>
+						<td>Lec./Esc., movimiento hacia adelante.</td>
+					</tr>
+					<tr>
+						<td>Entrada.</td>
+						<td>Input iterator</td>
+						<td>Solo Lec., movimiento hacia adelante.</td>
+					</tr>
+					<tr>
+						<td>Salida.</td>
+						<td>Output iterator</td>
+						<td>Solo Esc., movimiento hacia adelante.</td>
+					</tr>
+				</tbody>
+			</table>
 		</article>
 		
+		<article class="subsection">
+			<h1 id="">La clase iterador. #include &ltiterator&gt</h1>
+			<p>Los iteradores deben definirse antes de comenzar a usarse o de asignarlos y deben de ser descritos según las características que se desea que tengan.</p>
+			<pre><code>vector &lt[tipo]&gt :: [MOD_CARACT]_[NOMBRE];</pre></code>
+
+			<p>Por ejemplo:</p>
+			<pre><code>vector &ltint&gt :: iterador i;
+vector &ltint&gt :: reverse_iterador i;</pre></code>
+		</article>
+		
+		<article class="subsection">
+			<p>A continuación se presenta la tabla que muestra los modificadores de caracteres [MOD_CARACT] para la definición de iteradores.</p>
+
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th>Categoría</th>
+						<th>MOD_CARACT</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Iterador de entrada</td>
+						<td>istream_iterator</td>
+					</tr>
+					<tr>
+						<td>Iterador de salida</td>
+						<td><p>ostream_iterator</p>
+<p>insert_iterator</p>
+<p>front_insert_iterator</p>
+<p>back_insert_iterator</p></td>
+					</tr>
+					<tr>
+						<td>Bidimensional</td>
+						<td><p>list, set y multiset</p>
+<p>map y multimap</p></td>
+					</tr>
+					<tr>
+						<td>Acceso aleatorio</td>
+						<td><p>punteros ordinarios</p>
+<p>vector</p>
+<p>deque</p></td>
+					</tr>
+					<tr>
+						<td>Iterador Inverso</td>
+						<td>reverse_iterator</td>
+					</tr>
+					<tr>
+						<td>Iterador constante</td>
+						<td>const_iterator</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<article class="note"><p><b>Iterador constante</b> no puede usarse para modificar los valores de los miembros del vector asociado. Solo para acceso.</p>
+<p><b>Iterador inverso</b> recorre de forma inversa el contenedor.</p></article>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Iterador a estructuras.</h1>
+			<p>Para ver los datos contenidos en la estructura se cambia el operador "." por "->"</p>
+			<pre><code>IT -> A	o	(*IT).A</pre></code>
+			<p>Suponiendo que A es una variable de la estructura.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Iteradores de flujo.</h1>
+			<p>STL proporciona los elementos diseñados para ser utilizados en los flujos de entrada/salida (en este recorrido los flujos actúan a modo de contenedores).</p>
+			<p><b>istream_iterators</b>: para leer datos en un flujo de entrada.</p>
+			<p><b>ostream_iterators</b>: para escribir datos en un flujo de salida.</p>
+		</article>
+
+		<article class="subsection">
+			<p>Ejemplo: crear un contenedor UINT para contener enteros de clase vector y llenarlo con datos numéricos introduciéndolos desde el flujo estandar de entrada.</p>
+			<pre><code>VECTOR &ltINT&gt VINT;
+ISTREAM_ITERATOR &ltINT&gt IN(C IN); → Función de lectura
+ISTREAM_ITERATOR &ltINT&gt EOS;
+COPY (IN, EOS, BACK_INSERTER (VINT));</pre></code>
+
+			<p>Posteriormente escribir el contenido del vector VINT en el flujo de salida estandar.</p>
+			<pre><code>OSTREAM_ITERATOR &ltINT&gt OUT (C OUT, ",");
+								  "＼n"
+COPY (VINT.BEGIN(), VINT.END(), OUT);</pre></code>
+
+			<article class="note"><p><b>COPY</b>→ Saca todo</p>
+<p><b>UNIQUE_COPY</b>→ Saca una de cada una, no se repiten.</p></article>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Álgebra de iteradores.</h1>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th>Operación</th>
+						<th>Resultado</th>
+						<th>   </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>IT ++</td>
+						<td>Iterador</td>
+						<td>Desp. ascendente (1 elemento). Para todos los iteradores.</td>
+					</tr>
+					<tr>
+						<td>IT --</td>
+						<td>Iterador</td>
+						<td>Desp. ascendente (1 elemento). No aplica para iteradores de entrada/salida.</td>
+					</tr>
+					<tr>
+						<td>IT + n</td>
+						<td>Iterador</td>
+						<td>Desp. ascendente (n elementos)</td>
+					</tr>
+					<tr>
+						<td>IT - n</td>
+						<td>Iterador</td>
+						<td>Desp. ascendente (n elementos). No aplica para iteradores de entrada/salida.</td>
+					</tr>
+					<tr>
+						<td>IT 1 - IT 2</td>
+						<td>Entero</td>
+						<td>Distancia entre los elementos. Para los FORWARD ITERATOR la diferencia debe ser positiva. Para los iteradores bidireccionales y aleatorios, puede ser positiva o negativa.</td>
+					</tr>
+					<tr>
+						<td>IT 1 == IT 2</td>
+						<td>Bool</td>
+						<td>Igualdad entre iteradores. Aplicable a todos los tipos.</td>
+					</tr>
+					<tr>
+						<td>IT 1! = IT 2</td>
+						<td>Bool</td>
+						<td>Desigualdad de iteradores. Aplicable a todos.</td>
+					</tr>
+					<tr>
+						<td>Operadores &lt, &gt, &lt=, &gt=</td>
+						<td>Bool</td>
+						<td>Solo aplicable a iteradores de acceso aleatorio.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<article class="note"><p><b>Advance/Method</b>→ Avanza o retrocede el iterador "i" en "n" posiciones</p>
+<pre><code>advance (it,n);</pre></code></article>
+		</article>
 	</body>
 </html>	

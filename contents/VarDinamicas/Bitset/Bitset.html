@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bitset</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Bitset</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>El Bitset es un tipo especial de contenedor que está diseñado para almacenar Bits solamente (elementos con solo dos valores posibles: 0 o 1). La clase es muy similar a un array estandar pero optimiza el espacio de alojamiento: cada elemento ocupa solo un bit (que es ocho veces menor que el elemento más pequeño en C++: char). El contenedor Bitset no tiene iteradores, en general el Bit "0" (respecto a su posición), es el menos significativo y el n-1 el más significativo.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Librería de Inclusión.</h1>
+			<pre><code>#include &lt;bitset&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructor.</h1>
+			<pre><code>bitset &lt;n&gt; [NOM];
+		   [NOM] (Val);
+		   [NOM] (string ("..."));</pre></code>
+			<p>Donde n es el número de elementos que contendrá el bit set, si será un valor númerico hay que especificarlo (por ejemplo, 120 ul → unsigned long) con el que se inicializará y string ("...") es una cadena de dígitos binarios con la cual también puede ser inicializada.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de bitset.</h1>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>operator [i]</td>
+						<td>Regresa el valor en el contenedor de la posición i. El los bitset el valor i=0 es el del extremo derecho y aumenta i++ hacia la izquierda.</td>
+					</tr>
+					<tr>
+						<td><p>set ( )</p>
+<p>set (n, val)</p>
+<p>set (n)</p></td>
+						<td>Asigna valor a los bits en la primer versión pone en 1 todos los bits del set, la segunda pone valor = 0 o 1 la posición n y la tercera pone "1" en la posición n.</td>
+					</tr>
+					<tr>
+						<td><p>reset ( )</p>
+<p>reset (n)</p></td>
+						<td>Pone en ceros todas las posiciones del arreglo (primera versión). En el segundo caso, n es la posición que se pondrá en ceros.</td>
+					</tr>
+					<tr>
+						<td><p>flip ( )</p>
+<p>flip (n)</p></td>
+						<td>La primera versión invierte todos los bit en el bitset, todos los 0s por 1s y los 1s por 0s. La segunda versión solo invierte la posición n.</td>
+					</tr>
+					<tr>
+						<td>to_vlong ( )</td>
+						<td>Convierte el bitset a un long sin signo con el valor entero que contienen los mismos bits que el bitset. Se aplica sobre el identificador del bitset completo.
+<pre><code>[NOM].to_vlong ( )</pre></code></td>
+					</tr>
+					<tr>
+						<td>to_string ( )</td>
+						<td>Construye un objeto básico tipo string que representa la sucesión de bits en el bitset. La salida debe recibirse por un "string" y se aplica sobre el identificador completo.</td>
+					</tr>
+					<tr>
+						<td>count ( )</td>
+						<td>Regresa el número de 1s que contiene el bitset.</td>
+					</tr>
+					<tr>
+						<td>size ( )</td>
+						<td>Regresa el valor correspondiente al tamaño del bitset.</td>
+					</tr>
+					<tr>
+						<td>test (i)</td>
+						<td>Comprueba si la posición i está set, es decir, si tiene el valor 1. Si es así regresa true, si no false.</td>
+					</tr>
+					<tr>
+						<td>any ( )</td>
+						<td>Regresa true si al menos uno (alguno) de los valores del bitset está o ha sido set (1).</td>
+					</tr>
+					<tr>
+						<td>none ( )</td>
+						<td>Regresa true si ninguno de los bits del bitset a sido 1.</td>
+					</tr>	
+				</tbody>
+			</table>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Bitset operators/Operadores del Bitset.</h1>
+			<p>Existen operadores de bitset específicos que usan la lógica binaria para comparar dos objetos de este tipo, regresando como respuesta en (...) un bitset o (...) o una respuesta booleana.</p>
+			<pre><code>Binarios
+[NOMBSET 1] &lt;OPERATOR&gt; [NOMBSET 2]
+
+Monobit
+[NOMBSET 1] &lt;OPERATOR&gt; &lt;NL&gt;
+~[NOMBSET] → Solo para NOT</pre></code>
+
+			<h2 id="">Lista de opeadores binarios.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>XOR</td>
+						<td>^</td>
+						<td>Si los dos son diferentes es 1. Si son iguales es 0.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>= =</td>
+						<td>Regresa true si son igua, si no regresa false.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>! =</td>
+						<td>Regresa true si son diferentes, si no regresa false.</td>
+					</tr>
+					<tr>
+						<td>OR</td>
+						<td>|</td>
+						<td>Si uno u otro es uno, el valor de este es 1.</td>
+					</tr>
+					<tr>
+						<td>XOR</td>
+						<td>^</td>
+						<td>Si sin diferentes regresa 1, si son iguales 0.</td>
+					</tr>
+					<tr>
+						<td>AND</td>
+						<td>&</td>
+						<td>Si son 1 regresa 1, si no regresa 0.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>|=</td>
+						<td>Aplica OR e igual la principal variable al resultado.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>^=</td>
+						<td>Aplica XOR e igual la principal variable al resultado.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>&=</td>
+						<td>Aplica AND e igual la principal variable al resultado.</td>
+					</tr>		
+				</tbody>
+			</table>
+
+			<h2 id="">Lista de opeadores binarios.</h2>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>NOT</td>
+						<td>~</td>
+						<td>Invierte los valores, si es 1 lo hace 0, si es 0 lo hace 1.</td>
+					</tr>
+					<tr>
+						<td>DESP IZ</td>
+						<td>&lt;&lt;N</td>
+						<td>Agrega N ceros al extremo derecho y recorre los valores hacia la izquierda, el tamaño del bitset se monta, así que se pierden los N últimos elementos de la izqierda, es decir, los N elementos menos significativos.</td>
+					</tr>
+					<tr>
+						<td>DESP DER</td>
+						<td>&gt;&gt;N</td>
+						<td>Agrega N ceros al extremo izquierdo y recorre los valores hacia la derecha, el tamaño del bitset se monta, así que se pierden los N últimos elementos de la derecha, es decir, los N elementos más significativos.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>&lt;&lt;=</td>
+						<td>Aplica DESP IZ e iguala el resultado a la variable, solo lo que se aplica.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>&gt;&gt;=</td>
+						<td>Aplica DESP DER e iguala el resultado a la variable, solo lo que se aplica.</td>
+					</tr>		
+				</tbody>
+			</table>
+
+		</article>
+		
+	</body>
+</html>	

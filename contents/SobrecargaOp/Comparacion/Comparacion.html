@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores de comparación (==, !=, <...)</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores de comparación (==, !=, <...)</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Los operadores de comparación son también binarios, así que se utilizan funciones amigas para hacer su sobrecarga. Es importante recordar que los datos de salida, los resultados arrojados por estos operadores son booleanos.</p>
+			<p>Hablando sobre las operaciones de igualdad o desigualdad (<em>= = y !=</em>), es importante hacer nota que <em>!=</em> obtiene la respuesta opuesta que <em>= =</em>, es decir, si al usar = = obtenemos true, al usar != obtendremos false y viceverza, por tanto podemos usar una en función de otra, generalmente != en función de = =, lo que hace las cosas simples y además reduce la posibilidad de errores y la cantidad de código a escribir. Tal como se muestra en el siguiente ejemplo:</p>
+			<pre><code>bool OPERATOR == (CLASS A &P1, CLASS A &P2)
+{
+RETURN (P1.x==P2x && P1.y==P2.y && P1.z==P2.z);
+}
+
+bool OPERATOR != (CLASS A &P1, CLASS A &P2)
+{
+RETURN ! (P1==P2)
+}</pre></code>
+			<p>La misma forma de sobrecargar puede ser usada para los demás operadores de comparación (&lt;, &gt;, &lt;=, &gt;=).</p>
+			<p>Nótese también que los operadores &gt; y &lt;= son lógicamente opuestos también, al igual que &lt; y &gt;=, es decir, uno puede ser definido en términos de otro.</p>
+		</article>
+		
+	</body>
+</html>	

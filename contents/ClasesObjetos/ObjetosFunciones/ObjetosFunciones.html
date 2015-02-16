@@ -18,13 +18,23 @@
 	
 	<body class="kg-content">
 		<header>
-			<h1>Objetos constantes y funciones miembro</h1>
+			<h1>Objetos constantes (de clases) y funciones miembro</h1>
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Un objeto de determinada clase declarado como constante (CONST [NAME_OBJ]) sirve para garantizar que no se hagan modificaciones sobre los valores en él almacenados.</p>
+			<p>Los objetos const deben ser inicializados en una declaración, si no hay un constructor con parámetros se debe de proporcionar un constructor público por defecto para inicializar las variables. De otro modo genera error.</p>
+			<p>Si se intenta modificar el valor de las variables de un objeto const, este genera un conflicto, además los objetos const <b>solo pueden llamar a funciones const.</b></p>
+
+			<dl>
+				<dt>Función const.</dt>
+					<dd><p>Es una función que garantiza que no se harán cambios en ninguna variable y que se llenen con funciones que no sean const.</p>
+<pre><code>&ltTIPO&gt [NOM_FUNCION] (&ltARGUM&gt...) CONST {...}</pre></code></dd>
+			</dl>
 		</article>
 		
+		<article class="subsection">
+			<p>Desde que el constructor no esté mencionado como función const, es aquí donde se deben inicializar las variables.</p>
+			<p>Es posible sobrecargar una función para que tenga una (...) CONST y otra no CONST, así la variable CONST solo será llamada en las declaraciones como tal.</p>
 	</body>
 </html>	

@@ -25,44 +25,42 @@
 			<p>Existen solo siete tipos de variables que se complementan con los modificadores para crear gran cantidad de espacios para guardar diferentes tipos de información.
 			Para definir las variables se pueden utilizar solo letras (Mayúsculas y minúsulas), números y el caracter " " con el fin de que el programa sea totalmente transportable. El identificador (a nombre de la variable) se puede (...) con un número y C++ distingue entre mayúsculas y minúsculas.</p>
 		
-		<article class="note"><p><#IDENTIFICADOR> = Nombre que le quieres poner.</p></article>
-		</article>
-		
+		<article class="note"><p>&ltIDENTIFICADOR&gt = Nombre que le quieres poner.</p></article>
 		</article>
 
 		<article class="subsection">
 			<h1>Tipos de variables</h1>
 			<h2>Tipo "char" ó caracter</h2>
 			<p>Variable que contiene un solo dígito (con o sin signo en el caso de los números) o signo de puntuación, tomando 1 byte u octeto. Si no se especifica el modificador de signo, se asume que es con signo. Caracter, incluye números, letras y símbolos.</p>
-			<pre><code>[SIGNED/UNSIGNED] CHAR <#IDENTIFICADOR></pre></code>
+			<pre><code>[SIGNED/UNSIGNED] CHAR &ltIDENTIFICADOR&gt</pre></code>
 			<p>Se introduce como valores del código ASCII.</p>
 
 			<h2>Tipo "int" ó entera</h2>
 			<p>Almacena solamente números enteros, de diferentes longitudes como sus modificadores lo indican. Los números pueden ser positivos o negativos.</p>
 			<pre><code>[SIGNED/UNSIGNED]	[SHORT/LONG/ LONG LONG]		INT
-					LONG LONG								<#IDENTIFICADOR>
+					LONG LONG								&ltIDENTIFICADOR&gt
 					LONG						[INT]
 					SHORT</pre></code>
 
 			<h2>Tipo "float" o coma flotante.</h2>
 			<p>Son números con decimales ((...) y exponente) de gran magnitudpero poca precisión. Con un rango de valores de magnitudes no desmedidas es seguro usar hasta 3 decimales.</p>
-			<pre><code>FLOAT <#IDENTIFICADOR></pre></code>
+			<pre><code>FLOAT &ltIDENTIFICADOR&gt</pre></code>
 
 			<h2>Tipo "double" o coma flotante de doble precisión</h2>
 			<p>Son números con decimales de gran magnitud, pero también de gran precisión, su inconveniente es que ocupan mucho más espacio de memoria que las variables tipo float.</p>
-			<pre><code>[LONG] DOUBLE <#IDENTIFICADOR></pre></code>
+			<pre><code>[LONG] DOUBLE &ltIDENTIFICADOR&gt</pre></code>
 
 			<h2>Tipo "bool" ó Booleana</h2>
 			<p>Variables binarias que solo pueden tomar dos valores, <b>true</b> o <b>false</b>.</p>
-			<pre><code>BOOL <%IDENTIFICADOR></pre></code>
+			<pre><code>BOOL &ltIDENTIFICADOR&gt</pre></code>
 
 			<h2>Tipo "void" o sin tipo.</h2>
 			<p>Indica la ausencia de tipo. Se usa en funciones que no devuelven ningún valor o en las que no requieren parámetros, así como en la declaración de punteros genéricos.</p>
-			<pre><code>VOID <%IDENTIFICADOR></pre></code>
+			<pre><code>VOID &ltIDENTIFICADOR&gt</pre></code>
 
 			<h2>Tipo "enum" ó enumerado</h2>
 			<p>Permite definir conjuntos de constantes. Solo podrán tomar los valores definidos. Una vez se asigna un valor o un elemento de la lista, los siguientes toman valores correlativos. Varios identificadores de la lista pueden tener el mismo valor, pero un identificador no puede aparecer en más de un enumerado. Son (...).</p>
-			<pre><code>ENUM [<%IDENTIFICADOR_DE_ENUM>] {<$NOMBRE>[=<$VALOR>]...<$NOMBRE_>...}</pre></code>
+			<pre><code>ENUM [&ltIDENTIFICADOR_DE_ENUM&gt] {&ltNOMBRE&gt[=&ltVALOR&gt]...&ltNOMBRE_&gt...}</pre></code>
 			<p>Cada valor-nombre es una nueva constante simbólica, si no se les asigna o indica (...) el valor comienza en 0 y aumenta en ++. Es un (...).
 			<article class="note"><p>Definido el tipo con constante, se pueden crear nuevas constantes del número, donde se cita el nombre del tipo creado y el nombre de la nueva constante responsable con un espacio.</p></article>
 			

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sobrecarga de operadores de incremento y decremento</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Sobrecarga de operadores de incremento y decremento</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>La sobrecarga de operadores de incremento (++) y decremento (--) es muy directa, sin embargo hay que recordar que existen dos versiones de estas, de <b>prefijo (++x y --x)</b> y de <b>sufijo (x++, x--)</b>.</p>
+			<p>Como estos operadores modifican a los operadores, son declarados con funciones miembro.</p>
+			<p>Dado que se trata de una función miembro su primer argumento va a ser un objeto, es decir, si se quiere que la variable no tenga directamente una sobrecarga, entonces se puede usar como retorno la dirección del puntero *this, que apunta directamente a un objeto class_type. Para lograr esto, el valor de retorno debe definirse como una dirección a class_type, por ejemplo, al sobrecargar el operador <em>++ en prefijo</em> tenemos:</p>
+			<pre><code>ClassA& OPERATOR ++( );	→ Prototipo
+ClassA& ClassA :: OPERATOR ++ ( );	→ Implementación
+	{
+	++ MemberVar
+	return *this
+	}</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Sobrecarga de Incremento a Decremento en Sufijo/Postfijo.</h1>
+			<p>Normalmente las funciones pueden sobrecargarse cuando tienen el mismo nombre pero un número diferente o tipo diferente de argumentos. Considerando el caso del prefijo y sufijo de los operadores de incremento nos podemos dar cuenta que ambos tienen el mismo nombre, ambos son unarios, toman un parámetro del mismo tipo, por lo tanto C++ diferencía entre las dos sobrecargas.</p>
+			<p>La respuesta es mediante una <b>"dummy variable"</b> o <b>"dummy argument"</b> para el caso del postfijo. Este argumento es un falso entero que solo sirve para distinguir la versión del prefijo. Así, el prototipo sería:</p>
+			<pre><code>ClassA OPERATOR ++ (int);</pre></code>
+			<p>La variable DUMMY no recibe un nombre pues no será utilizada. Por último debemos recordar la diferencia del uso de prefijo y postfijo de los operadores de incremento. Es usar el prefijo suponiendo que (++x) primero e incrementa el valor de la variable y después se pasa su valor, hasta aquí no hay poblema, se trata de la sobrecarga anterior. En el caso contrario, el del sufijo (x++) se supone que primero se pasa el valor de x y después se incrementa, es decir, la función debe devolver el valor original y después incrementa una variable, el valor devuelto una unidad menos al valor de la variable una vez terminada la función.</p>
+			<p>Pensando en esto, notamos que la implementación de la función de x++ devuelve el valor original y luego la cuenta, pero al devolverlo la función se termina y entonces no la podrá emitir, por tanto la única forma de hacerlo es por una variable temporal que guarde el valor de x mientras se le cuenta y luego lo regrese una vez almacenado el valor, podemos aplicar de forma unida la función de prefijo para aumentar el valor o (...) propio. La implementación sería entonces:</p>
+			<pre><code>ClassA ClassA :: OPERATOR ++ (INT)
+	{ ClassA Temp(VarMember); // Introducir una variable temporal tipo clase
+	++ (*this);
+	return TEMP;
+	}</pre></code>
+			<article class="note"><p>Se puede usar el this porque ya se ha definido el operador ++ prefijo para el caso de un objeto tipo ClassA y como se ha dicho, *this en este caso apunta a el objeto de este tipo.</p></article>
+
+		</article>
+		
+	</body>
+</html>	

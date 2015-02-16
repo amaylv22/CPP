@@ -22,8 +22,14 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<pre><code>CLASS &ltIDENTIFICADOR DE CLASE&gt [&ltLISTA DE CLASES BASE&gt]
+{	&ltLISTA DE VARIABLES MIEMBRO&gt
+	&ltLISTA DE FUNCIONES MIEMBRO&gt
+}	[&ltLISTA DE OBJETOS A CREAR&gt];</pre></code>
+
+			<p>La &ltLISTA DE CLASES BASE&gt es usada solo cuando se direccionan clases, si se omite entonces se declara una clase base.</p>
+			<p>La &ltLISTA DE OBJETOS&gt se incluye cuando se desea crear un objeto de la clase al mismo tiempo de definirlo.</p>
+			<p>La lista de miembros incluye variables y funciones. Las funciones pueden ser declaradas y definidas dentro de la clase, sin embargo, de ser así las funciones serán tratadas como (...). Lo más recomendable es declarar solo los prototipos de las funciones y definirlas fuera de la clase, para esto se tendrá que referenciar la declaración de la función a la clase a la que pertenece mediante el operador de ámbito (::).</p>
 		</article>
 		
 	</body>

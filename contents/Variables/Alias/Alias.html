@@ -37,7 +37,7 @@
 				<tbody>
 					<tr>
 						<td>VARIABLE</td>
-						<td><pre><code>TYPEDEF [TIPO] <$NOMBRE>;</pre></code>Declarando una variable de este tipo →</td>
+						<td><pre><code>TYPEDEF [TIPO] &ltNOMBRE&gt;</pre></code>Declarando una variable de este tipo →</td>
 						<td><pre><code>TYPEDEF INT ENTERAVAR;
 ENTERAVAR CLAVE;
 TYPEDEF UNSIGNED CHAR BYTE</td>
@@ -45,9 +45,9 @@ TYPEDEF UNSIGNED CHAR BYTE</td>
 
 					<tr>
 						<td>ESTRUCTURA</td>
-						<td><pre><code>TYPEDEF STRUCT ([TIPO] <$VAR_1>;
-[TIPO]<$VAR_2>;...
-<%STRUCT NAME>;</pre></code>Declarando varios tipos. Asignar valores a la nueva variable.</td>
+						<td><pre><code>TYPEDEF STRUCT ([TIPO] &ltVAR_1&gt;
+[TIPO]&ltVAR_2&gt;...
+&ltSTRUCT NAME&gt;</pre></code>Declarando varios tipos. Asignar valores a la nueva variable.</td>
 						<td><pre><code>TYPEDEF STRUCT (
 	INT VAL;
 	FLOAT COST1;
@@ -60,8 +60,8 @@ EJEMPLO. ID= #;</td>
 
 					<tr>
 						<td>PUNTERO</td>
-						<td><pre><code>TYPEDEF <%TIPO> (<$PUNT_NAME>;
-<%PUNT_NAME> <&VAL_NAME>;</pre></code></td>
+						<td><pre><code>TYPEDEF &ltTIPO&gt (&ltPUNT_NAME&gt;
+&ltPUNT_NAME&gt &ltVAL_NAME&gt;</pre></code></td>
 
 					</tr>
 				</tbody>

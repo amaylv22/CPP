@@ -22,8 +22,39 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>SI una clase posee constructor, será llamado siempre que se declare un objeto de esa clase, y si requiere argumentos es obligatorio suministrarlos.</p>
+			<pre><code>&ltNOMBRE DE CLASE&gt &ltNOMBRE DE OBJETO A DECLARAR&gt (&ltPARAMETROS DE CONSTRUCTOR&gt);</pre></code>
+
+			<p>Si el constructor no tiene parámetros se debe omitir el paréntesis, de lo contrario dará error.</p>
+			<p>Por ejemplo:</p>
+
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>CLASS CABALLO
+	{PRIVATE:
+		CABALLO (INT EDAD);
+	};
+
+CABALLO PONY (15);
+   </pre></code></td>
+						<td><pre><code>CLASS CABALLO
+	{PRIVATE:
+		CABALLO ();
+	};
+
+CABALLO PONY;
+CABALLO PONY (); ← Incorrecto.</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+
 		</article>
 		
 	</body>

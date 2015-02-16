@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pair</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Objetos tipo Par/Pair</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Los objetos tipo pair son "clases" que agrupan dos valores a un par de valores que pueden ser de diferentes tipos. Son pues, como estructuras con dos miembros, pero quita la necesidad de hacer la declaración de clase o estructura explícitamente. Los valores (...) pueden ser accesados mediante los miembros públicos first y second.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Librería de inclusión</h1>
+			<pre><code>include &lt;utility&gt;</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructores.</h1>
+			<pre><code>pair &lt;TIPO1, TIPO2&gt; [NOM];
+					[NOM] (Val1, Val2);</pre></code>
+			<p>Donde Val1 y Val2 son valores de inicialización al Tipo1 y Tipo2 respectivamente.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Inicialización de un par.</h1>
+			<pre><code>[NOM].first = Val1;
+[NOM].second = Val2;
+
+ó
+
+[NOM].make_pair (Val1, Val2);</pre></code>
+
+		</article>
+		
+	</body>
+</html>	

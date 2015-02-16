@@ -22,9 +22,88 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Las matrices son arreglos de vectores, estos pueden ser declarados al inicio del programa, el tipo de objeto será un vector de vector, o si se desean matrices multidimensionales será un vector de vectores de vectores.</p>
+			<p>La declaración de tipo será algo como lo siguiente.</p>
+			<p>Para matices de 2D:</p>
+			<pre><code>vector &ltvector &lt[TIPO]&gt_&gt</pre></code>
+			<p>Para matices de 3D:</p>
+			<pre><code>vector &ltvector &ltvector &lt[TIPO]&gt_&gt_&gt</pre></code>
+			<p>Y así sucesivamente.</p>
 		</article>
-		
+
+		<article class="subsection">
+			<h1 id="">Matriz definida desde el inicio.</h1>
+			<pre><code>vector &ltvector &ltint&gt &gt	Vect2D (m, vector &ltint&gt (n));</pre></code>
+			<p>Donde:</p>
+			<p>m = número entero que indica el número de filas.</p>
+			<p>n = número entero que indica el número de columnas.</p>
+			<p>Si se desea inicializar los campos, solo se agrega después de "n" → ",c" donde c es el valor de inicialización.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Matriz definida por variables.</h1>
+			<pre><code>int i, j;
+i=m;
+j=n;
+vector &ltvector &ltint&gt &gt	Vec2D (i, vector &ltint&gt (j));</pre></code>
+			<p>De igual forma, se puede inicializar usando la forma (j,c), donde c es el valor de inicialización.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Arreglos/Matrices de tipos de información compuesta.</h1>
+			<p>Estructuras</p>
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre><code>vector &ltTIPO ESTRUCTURA&gt VecEst;
+VectEst.resize(n)
+VecEst[m]=A=x
+VecEst[m].B=y
+  </pre></code></td>
+						<td><pre><code>struct Tipo Estructura
+	{
+	 int A;
+	 int B;
+	}</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Donde <b>n</b> es el número de elementos que se desean crear y <b>0&lt;=m&lt;n</b>. Si IT es un iterador del tipo de datos estructura entonces para referirse a los métodos usaremos <b>IT→A; of (*IT).A;</b> y para asignarlo, por ejemplo, <b>IT=VectEst.begin( );</b> o <b>VecEst.end( );</b></p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Matrices Redimensionables dinámicamente (Mutidimensionales).</h1>
+			<pre><code>vector &ltvector &ltint&gt &gt	Matrix2D;
+
+	||Reservamos espacio en memoria para la redimensión (opcional)
+Matrix2D.reserve(m);
+	for (int i=0; i&ltMatrix2D.size(); i++)
+		{
+		 Matrix[i].reserve(n)
+		}
+
+	||Redimensión de la matriz
+Matrix2D.resize(m)
+	for (int i=0; i&ltMatrix2D.size(); i++)
+		{
+		 Matrix2D[i].resize(n)
+		}</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Iteradores de matrices multidireccionales.</h1>
+			<pre><code>vector &ltvector &ltint&gt &gt	Matrix;
+vector &ltvector &ltint&gt &gt :: iterator IT_i;
+vector &ltint&gt :: iterator IT_j;
+IT_i=Matrix.begin();
+IT_j=(*IT_i).begin();
+COUT&lt;&lt;*IT_l;</pre></code>
 	</body>
 </html>	

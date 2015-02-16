@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Introducción</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Introducción</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>La sobrecarga de operadores es igual que la de función (...) como los operadores (+, -, = =, = ó !) deben interactuar con varios tipos de datos. Porque en C++ los operadores son empleados como función, la sobrecarga de operador trabaja análogamente a la sobrecarga de funciones.</p>
+			<p>Casi todos los operadores en C++ pueden ser sobrecargados, sin embargo existen algunas excepciones que son:</p>
+			<h1 id="">Excepciones.</h1>
+			<ul>
+				<li>aritmetic if (?:)</li>
+				<li>size of</li>
+				<li>scape (::)</li>
+				<li>member selector (.)</li>
+				<li>pointer selector (.*)</li>
+			</ul>
+
+			<p>Así, por ejemplo, si se sobrecarga el operador los XOR (^) (...) hacer (...) y se (...) x*y^2, (...) primero se desea hacer y^2 *(......) que XOR así que se hace (x*y)^2.</p>
+		</article>
+
+		<article class="subsection">
+			<p>Se puede sobrecargar, por ejemplo, el operador &lt;&lt; para hacer más fácil la expresión en pantalla o archivo de una clase compuesta. Lo que hace de la sobrecarga de operadores una de las más útiles funciones de C++, pues permite interactuar con los objetos de una forma muy intuitiva.</p>
+			<p>Antes de sobrecargar hay algunos aspectos a tener en cuenta:</p>
+			<ol>
+				<li>Al menos uno de los argumentos que se utilizará con el operador sobrecargado debe ser del tipouser_defined. Esto es, no se puede sobrecargar el operador para trabajar con un entero y un double, pero sí para actuar con MyObj un entero.</li>
+				<li>Solo se pueden sobrecargar los operadores creados, no se pueden crear mediante la sobrecarga.</li>
+				<li>Los operadores conservan su orden de prioridad.</li>
+			</ol>
+
+			<p>Teniendo la expresión nx + ny esta puede ser traducida a OPERATOR + (nx,ny). Así dx + dy sería OPERATOR + (dx,dy).</p>
+			<p>Aunque ambas expresiones llaman una función llamada OPERATOR + ( ), la sobrecarga es usada pero resuelve la ambiguedad de la llamada a diferentes versiones, basado en el tipo(s) de los argumentos. DE manera más general, cuando se evalúa una expresión con operadores se busca al (...) de los argumentos para ver de qué tipo son. Si todos son built-in llaman una función built-in, si alguno no lo es, busca una función definida que se adapte.</p>
+		</article>
+		
+	</body>
+</html>	

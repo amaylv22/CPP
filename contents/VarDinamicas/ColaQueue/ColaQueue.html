@@ -22,9 +22,54 @@
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Una cola es una lista en donde las inserciones ocurren en un extremo (anterior - parte de crecimiento de la lista) y las eliminaciones en el otro (posterior). Por la forma en que operan, conservan el orden de entrada de los elementos, los cuales son listas de primero en entrar, primero en salir <b>(first-in, first-out, o FIFO)</b>.</p>
 		</article>
 		
+		<article class="subsection">
+			<h1 id="">Librería de inclusión.</h1>
+			<pre><code>#include &lt;queue&gt;</pre></code>
+		</article>
+		
+		<article class="subsection">
+			<h1 id="">Constructor.</h1>
+			<p>Igual que para las pilas (Stack), pero inician con</p>
+			<pre><code>queue &lt;[TIPO]&gt;</pre></code>
+		</article>
+		
+		<article class="subsection">
+			<h1 id="">Métodos de Colas.</h1>
+			<h2 id="">Iguales que para las pilas/stacks.</h2>
+			<p>size ( )</p>
+<p>empty ( )</p>
+
+			<h2 id="">Distintos/Particulares.</h2>
+			<table border="0" cellspacing="5" cellpadding="20px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>push (x)</td>
+						<td>Añade un elemento a la cola de la lista, será este el más nuevo y el de menor gerarquía, saldrá después de los n-1 anteriores. El valor de este nuevo elemento es "x".</td>
+					</tr>
+					<tr>
+						<td>pop ( )</td>
+						<td>Remueve el siguiente elemento (siguiente a salir) de la lista, es decir, elimina el más viejo.</td>
+					</tr>
+					<tr>
+						<td>front ( )</td>
+						<td>Regresa el valor del elemento siguiente en la lista, es decir, el más viejo. Puede ser igualado a un valor al ser implementado.</td>
+					</tr>
+					<tr>
+						<td>back ( )</td>
+						<td>Muestra el valor del último elemento en la lista, es decir, el más nuevo. Puede ser igualado.</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 	</body>
 </html>	

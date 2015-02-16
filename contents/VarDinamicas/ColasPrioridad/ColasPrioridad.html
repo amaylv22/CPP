@@ -18,13 +18,51 @@
 	
 	<body class="kg-content">
 		<header>
-			<h1>Colas de prioridad</h1>
+			<h1>Colas de prioridad/Priority Queue</h1>
 		</header>
 		
 		<article class="subsection">
-			<h1></h1>
-			<p></p>
+			<p>Las colas de prioridad son contenedores tipo cola pero que en su primer elemento se encuentra siempre el mayor de los elementos que contiene, es decir, el de mayor prioridad.</p>
+			<p>En este contexto, solo el elemento de máxima prioridad puede ser retirado de la cola. Sirve para asignar un orden a conjuntos, por ejemplo, de tareas que se agregan en el tiempo, con respecto a la prioridad de alguno de sus índices.</p>
 		</article>
-		
+
+		<article class="subsection">
+			<h1 id="">Librería de Inclusión.</h1>
+			<pre><code>#include &ltqueue&gt</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Constructor.</h1>
+			<pre><code>priority queue &ltTIPO&gt [NOM]</pre></code> 
+			<p>→ Crea una cola de prioridad vacía.</p>
+
+<pre><code>priority queue &ltTIPO&gt [NOM] (OTRO) 
+					    (first, last)</pre></code> 
+			<p>→ Crea una cola que contiene los elementos guardados en otra o los que se encuentran en el argumento first,last.</p>
+
+<pre><code>priority queue &lt;TIPO vector &lt;TIPO&gt; greater&lt;TIPO&gt;&gt; [NOM] (first,last)</pre></code>
+			<p>→ Crea una cola que contiene elementos de tipo "Tipo" tomados de un contenedor tipo vector&lt;TIPO&gt; del rango "first,last" y que contiene el modificador "greater" en lugar del predeterminado que es "less". El elemento a la cabeza es el menor.</p>
+
+<pre><code>priority queue &lt;TIPO vector &lt;TIPO&gt;, comp&gt; [NOM] (comp)</pre></code>
+			<p>→ En este caso se emplea "comp" como función de comparación para establecer el orden de prioridad.</p>
+		</article>
+
+		<article class="subsection">
+			<h1 id="">Métodos de priority-queue</h1>
+			<h2 id="">Iguales que para las colas/queue</h2>
+				<ul>
+					<li>empty</li>
+					<li>size</li>
+					<li>pop</li>
+					<li>push</li>
+				</ul>
+
+			<h2 id="">Propios de las colas de prioridad.</h2>
+			<ul>
+				<li><b>Tap ( )</b>: regresa el valor tap (a la cabeza) a la cabeza, es decir, el primero en salir y el de mayor prioridad.</li>
+			</ul>
+			
+
+		</article>		
 	</body>
 </html>	

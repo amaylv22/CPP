@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vectores</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Vectores</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Constructor de contenedor vector</h1>
+			<pre><code>vector &lt;TIPO&gt; [NOMBRE]
+			  [NOMBRE] (n)
+				       (n,c)
+				       (first,last)
+				       (x)</pre></code>
+			<ul>
+				<li><b>n</b>= número de elementos que contendrá.</li>
+				<li><b>c</b>= valor de inicialización para los elementos del vector.</li>
+				<li><b>first</b>: elementos de entrada comenzando al inicio de la secuencia que se desea almacenar.</li>
+				<li><b>last</b>: elementos de entrada comenzando al final de la secuencia que se desea almacenar.</li>
+				<li><b>x</b>: otro contenedor de tipo (...) y del mismo &lt;tipo&gt; y que no se copiará.</li>
+			</ul>
+		</article>		
+
+		<article class="subsection">
+			<h1 id="">Destructor de Vector.</h1>
+			<p>Destruye el objeto contenedor, llama a cada elemento y lo llama de la memoria.</p>
+			<pre><code>~ [Name_vector]_()</pre></code>
+		</article>		
+
+		<article class="subsection">
+			<h1 id="">Iteradores a estructuras.</h1>
+			<p>Para obtener los datos contenidos en la estructura se cambia el operador "." por:</p>
+			<pre><code>(*IT).A → Se debe poner el paréntesis encerrando del punto al iterador.
+IT -> A → Se hace sin paréntesis.</pre></code>
+		</article>		
+
+		<article class="subsection">
+			<h1 id="">Asignación de posición.</h1>
+			<pre><code>IT.Vect.begin()</pre></code>
+		</article>		
+
+		<article class="subsection">
+			<h1 id="">Push_back con objeto.</h1>
+			<p>Se puede hacer push_back con objeto usando el mismo objeto, por ejemplo se crea una clase y un vector.</p>
+			<pre><code>Class ClaseA
+	{
+	 public
+		int A;
+		int B;
+	} ;</pre></code>
+
+		</article>
+		
+	</body>
+</html>	
