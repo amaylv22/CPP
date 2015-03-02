@@ -25,20 +25,26 @@
 			<p>Cuando se produce demación de tipos, el computador normalmente emite avisos o "warning", por ejemplo, al asignar expresiones tipo float o variables int.</p>
 			<p>Para aludir estos avisos, el compilador usa el "casting" o conversión explícito (y no implícito como en el caso de la demación). En general el uso de este recurso es obligatorio cuando se hacen asignaciones, o cuando se pasan argumentos a funciones con pérdida de precisión. En el caso de los argumentos pasados o funciones es también muy recomendable aunque no exista pérdida de precisión.</p>
 			<p>En general un "casting" tiene dos notaciones, la normal y la funcional, que se presenta a continuación respectivamente.</p>
-			<pre><code>((TIPO))(VAR_NAME) o (TIPO)((EXPRESION))</pre></code>
+			<pre><code>(&lt;TIPO&gt;)&lt;VAR_NAME&gt; o &lt;TIPO&gt;(&lt;EXPRESION&gt;)</pre></code>
 			<p>Existen otros castings propios de C++, los cuales son más recomendables debido a que realizan tareas especializadas, a continuación se presenta un listado de ellos.</p>
+		</article>
 
-			<h1>Static_cast< ></h1>
+		<article class="subsection">
+			<h1>Static_cast &lt; &gt;</h1>
 			<p>Realizan una conversión de tipo durante la compilación del programa, de modo que no crea más código durante la ejecución. Es obligado a realizar conversiones de tipo que de otro modo haría el compilador automáticamente,por ejemplo, convertir un puntero a un objeto de una clase determinada o un puntero a una clase base pública.</p>
-			<pre><code>STATIC_CAST(TIPO) ((EXPRESION));</pre></code>
+			<pre><code>STATIC_CAST&lt;TIPO&gt; (&lt;EXPRESION&gt;);</pre></code>
+		</article>
 
-			<h1>Const_cast< ></h1>
-			<p>Se usa para liminar o añadir los modificadores const y volatile de una expresión. Para eso, la expresión debe de ser del mismo tipo del "(TIPO)" salvo por los modificadores const o volatile que tengan que aparecer o desaparecer.</p>
-			<pre><code>CONST_CAST(TIPO) ((EXPRESION));</pre></code>
+		<article class="subsection">
+			<h1>Const_cast < ></h1>
+			<p>Se usa para liminar o añadir los modificadores const y volatile de una expresión. Para eso, la expresión debe de ser del mismo tipo del "&lt;TIPO&gt;" salvo por los modificadores const o volatile que tengan que aparecer o desaparecer.</p>
+			<pre><code>CONST_CAST&lt;TIPO&gt; (&lt;EXPRESION&gt;);</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1>Reinterpret_cast< ></h1>
-			<p>Se usa para hacer cambios de tipo a nivel de bits, es decir, el valor de la "expresión" se interpreta como si fuese un objeto del tipo "(TIPO)". Los modificadores const y volatile no se modifican, permanecen igual que en el valor asignado de "expresión". Este tipo de conversión es peligrosa.</p>
-			<pre><code>REINTERPRET_CAST(TIPO) ((EXPRESION));</pre></code>
+			<p>Se usa para hacer cambios de tipo a nivel de bits, es decir, el valor de la "expresión" se interpreta como si fuese un objeto del tipo "&lt;TIPO&gt;". Los modificadores const y volatile no se modifican, permanecen igual que en el valor asignado de "expresión". Este tipo de conversión es peligrosa.</p>
+			<pre><code>REINTERPRET_CAST&lt;TIPO&gt; (&lt;EXPRESION&lt;);</pre></code>
 		</article>
 		
 	</body>

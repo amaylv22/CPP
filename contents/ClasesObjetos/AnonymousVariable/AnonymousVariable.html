@@ -32,7 +32,7 @@ int Main ()
 	  return 0;}</pre></code>
 
 			<p>En la función Add vemos que la variable Sum solo se usa como un placeholder temporal. No contribuye nada, su única función es transferir los resultados de la expresión <b>x + y</b> al valor de la salida.</p>
-			<p>De hecho es más fácil y claro escribir una función Add() haciendo uso de una <b>variable anónima</b>. Una variable anónima es aquella que no tiene un identificador (nombre), solo está temporalemente en la memoria. Las variables anónimas en C++ tienen "expresión scape", lo que significa que se destruyen al final de la expresión en la que fueron creadas. Consecuentemente deben ser usadas inmediatamente. De este modo,la función Add( ) quedará como:</p>
+			<p>De hecho es más fácil y claro escribir una función Add( ) haciendo uso de una <b>variable anónima</b>. Una variable anónima es aquella que no tiene un identificador (nombre), solo está temporalemente en la memoria. Las variables anónimas en C++ tienen "expresión scape", lo que significa que se destruyen al final de la expresión en la que fueron creadas. Consecuentemente deben ser usadas inmediatamente. De este modo,la función Add( ) quedará como:</p>
 			<pre><code>int Add (int x, int y)
 	{ return x+y; }</pre></code>
 
@@ -56,7 +56,7 @@ Conts Obj nuevo (4);
 Con Anónimo:
 Const (4);</pre></code>
 
-			<p>Así creamos un objeto anónimo de tipo Const y se inicializa con el valor 4. Sin embargo, en este contexto no parece muy útil, (...) en una función que regrese un dato tipo objeto → Class Conts.</p>
+			<p>Así creamos un objeto anónimo de tipo Const y se inicializa con el valor 4. Sin embargo, en este contexto no parece muy útil, pensemos en una función que regrese un dato tipo objeto → Class Conts.</p>
 			<p>Función:</p>
 			<pre><code>Conts Add (Conts & C1, Conts &C2)
 {
@@ -64,7 +64,7 @@ Const (4);</pre></code>
 	return c temp 3
 }</pre></code>
 
-			<article class="note"><p><b>GetConts()</b> → Función que devuelve el (...) almacenado en la clase.</p>
+			<article class="note"><p><b>GetConts()</b> → Función que devuelve el entero almacenado en la clase.</p>
 <p><b>(C1.GetConts() + C2.GetConts()</b> → Inicializar objeto.</p></article>
 
 			<pre><code>int Main ()

@@ -23,49 +23,55 @@
 		
 		<article class="subsection">
 			<p>Este tipo de sentencias son el núcleo de cualquier lenguaje de programación, permiten realizar tareas repetitivas. También llamados <b>Loop</b>.</p>
+		</article>
 
+		<article class="subsection">
 			<h1 id="">While</h1>
 
 			<p>La sentencia es ejecutable mientras la condición sea verdadera. Comprueba la condición antes de realizar la sentencia.</p>
-			<pre><code>WHILE ((CONDICION))
-{	(SENTENCIA_1);
-	(SENTENCIA_2);
-	(SENTENCIA_3); ...}</pre></code>
+			<pre><code>WHILE (&lt;CONDICION&gt;)
+{	&lt;SENTENCIA_1&gt;;
+	&lt;SENTENCIA_2&gt;;
+	&lt;SENTENCIA_3&gt;; ...}</pre></code>
 
 			<p>Por ejemplo:</p>
-			<pre><code>WHILE (x<100)
+			<pre><code>WHILE (x&lt;100)
 	x=x+1;
 		Es igual a
-WHILE (x++<100);
+WHILE (x++&lt;100);
 
 Con uso de sentencia nula.</pre></code>
 
 			<article class="note"><p>Un while (...) ciclo que podría ser while (TRUE). Salir con break.</p></article>
+		</article>
 
+		<article class="subsection">
 			<h1 id="">Do... while</h1>
 
 			<p>Igual que la sentencia while, la diferencia es que este <b>comprueba la condición después de ejecutar</b> la sentencia, de modo que <b>se ejecutará al menos una vez</b>. Si la evaluación de la condición resulta verdadera, el ciclo continúa.</p>
 			<pre><code>DO
-{	(SENTENCIA_1);
-	(SENTENCIA_2);
-	(SENTENCIA_3);
+{	&lt;SENTENCIA_1&gt;;
+	&lt;SENTENCIA_2&gt;;
+	&lt;SENTENCIA_3&gt;;
 }
-WHILE ((CONDICION));</pre></code>
+WHILE (&lt;CONDICION&gt;);</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1 id="">For</h1>
 
 			<p>La sentencia se repite un número concreto de veces, desde que una variable tiene un valor inicial hasta que (...) otra final.</p>
-			<pre><code>FOR	([(VALOR_INICIAL)]; [(CONDICION_DE_REPETICION)]; [(INCREMENTO)])
-	{	(SENTENCIA_1);
-	(SENTENCIA_2);
-	(SENTENCIA_3);
+			<pre><code>FOR	([&lt;VALOR_INICIAL&gt;]; [&lt;CONDICION_DE_REPETICION&gt;]; [&lt;INCREMENTO&gt;])
+	{	&lt;SENTENCIA_1&gt;;
+	&lt;SENTENCIA_2&gt;;
+	&lt;SENTENCIA_3&gt;;
 	}</pre></code>
 
 			<article class="note"><p>Al ser usado FOR se debe declarar.</p></article>
 
-			<p>El bucle se repetirá mientras que la condición de repetición sea verdadera. El campo de "(VALOR_INICIAL)" puede ser una expresión (i=1) o una declaración, siempre y cuando se inicialize la variable (INT i=0).</p>
+			<p>El bucle se repetirá mientras que la condición de repetición sea verdadera. El campo de "&lt;VALOR_INICIAL&gt;" puede ser una expresión (i=1) o una declaración, siempre y cuando se inicialize la variable (INT i=0).</p>
 			<p>Por ejemplo:</p>
-			<pre><code>FOR (contador=0, CONTADOR<12, CONTADOR ++)</pre></code>
+			<pre><code>FOR (contador=0, CONTADOR&lt;12, CONTADOR ++&gt;</pre></code>
 
 			<p>Existen tres comandos adicionales que pueden ser usados en conjunto con el FOR.</p>
 
@@ -87,7 +93,9 @@ WHILE ((CONDICION));</pre></code>
 	PRINT F ("%d", i);
 	}</pre></code>
 			<article class="note"><p>En este caso, cuando i=3 se sale del bucle, se rompe el ciclo.</p></article>
+		</article>
 
+		<article class="subsection">
 			<h1 id="">Go to</h1>
 
 			<p>Sirve para hacer saltos incondicionales dentro del código, es decir, para pasar directamente de una sentencia a otra omitiendo los intermedios. En los bucles for es muy útil para salir de bucles muy anidados. Por ejemplo.</p>
@@ -101,8 +109,8 @@ PRINT F...</pre></code>
 			<article class="note"><p>En este caso, sale de dos bucles for al cumplirse la condición.</p></article>
 
 			<p>La sintaxis es,</p>
-			<pre><code>GOTO (DESTINO);
-(DESTINO):</pre></code>
+			<pre><code>GOTO &lt;DESTINO&gt;;
+&lt;DESTINO&gt;:</pre></code>
 
 			<p>Por último, es posible que el posible que el ciclo for se controle por más de una variable, lo importante es saber si este parará cuando una condición se cumpla, o todos o ninguna; esto se logra por medio de los operadores. Con el formato normal de condición separados por comas, hay que exponer que todas las condiciones se cumplan para poder salir. Por ejemplo:</p>
 			<pre><code>FOR (i=0, j=1, i<=5, j<=30; i++, j++)

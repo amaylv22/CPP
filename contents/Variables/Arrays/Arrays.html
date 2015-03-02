@@ -23,15 +23,18 @@
 		
 		<article class="subsection">
 			<p>Permiten agrupar datos usando un mismo identificador. Todos los elementos de un array son del mismo tipo, y para acceder a cada elemento se usan subíndices.</p>
-			<pre><code><%TIPO> <%IDENTIFICADOR> [NUM_DE_ELEMNTOS] [[NUM_DE_ELEM_2]...];</pre></code>
+			<pre><code>&lt;TIPO&gt; &lt;IDENTIFICADOR&gt; [NUM_DE_ELEMNTOS] [[NUM_DE_ELEM_2]...];</pre></code>
 
 		<article class="note"><p><pre><code>[NUM_DE_ELEMNTOS]</pre></code>Corresponde al <b>subíndice</b> y tiene valores desde 0 hasta [(NUM_DE_ELEMENTOS)-1].</p></article>
+		</article>
 
+		<article class="subsection">
 			<h1>Declarando arrays con listas</h1>
-			<p>En este caso no es necesario especificar el número de listas (subíndice), ya que se (...) de los valores de la lista.</p>
-			<pre><code><%TIPO> <%IDENTIFICADOR> [ ] =  {<%ELE_1>, <%ELE_2>,..., <$ELE_n>};</pre></code>
+			<p>En este caso no es necesario especificar el número de listas (subíndice), ya que se obtienen de los valores de la lista.</p>
+			<pre><code>&lt;TIPO&gt; &lt;IDENTIFICADOR&gt; [ ] =  {&lt;ELE_1&gt;, &lt;ELE_2&gt;,..., &lt;ELE_&gt;};</pre></code>
+		</article>
 
-
+		<article class="subsection">
 			<h1>Operadores con arrays</h1>
 			<h2>Size of</h2>
 			<p>Aplicados a un array, este operador devuelve el tamaño de todo el array en bytes, dado que todos los elementos son del mismo tipo, podemos conocer el número de elementos que forman el array por medio de una sencilla división.<p>

@@ -23,16 +23,18 @@
 		
 		<article class="subsection">
 			<p>Las sentencias condicionales o de selección, permiten controlar el flujo del programa, seleccionando distintas sentencias en función de diferentes valores.</p>
+		</article>
 
+		<article class="subsection">
 			<h1 id="">If...Else</h1>
 
 			<p>Implementa la ejecución condicional de una sentencia.</p>
 			<h2 id="">If con varias sentencias.</h2>
 
-			<pre><code>IF ((CONDICION))
-	{	(SENTENCIA_1);
-	(SENTENCIA_2);
-	(SENTENCIA_3);
+			<pre><code>IF (&lt;CONDICION&gt;)
+	{	&lt;SENTENCIA_1&gt;;
+	&lt;SENTENCIA_2&gt;;
+	&lt;SENTENCIA_3&gt;;
 	}</pre></code>
 			<article class="note"><p>Operador relacional.</p>
 			<pre><code>== igual
@@ -40,31 +42,33 @@
 
 			<h2 id="">If con else,</h2>
 
-			<pre><code>IF ((CONDICION))
-	(SENTENCIA);
-ELSE IF ((CONDICION))
-	(SENTENCIA);
+			<pre><code>IF (&lt;CONDICION&gt;)
+	&lt;SENTENCIA&gt;;
+ELSE IF (&lt;CONDICION&gt;)
+	&lt;SENTENCIA&gt;;
 ELSE
-	(SENTENCIA);</pre></code>
+	&lt;SENTENCIA&gt;;</pre></code>
 
 			<ul>
 				<li>En el segundo caso también pueden existir los bloques de sentencias.</li>
 				<li>La sentencia if se puede anidar.</li>
 				<li>Dentro de la condición también se pueden declarar variables.</li>
 			</ul>
+		</article>
 
+		<article class="subsection">
 			<h1 id="">Switch</h1>
 			<p>Esta sentencia también implementa una expresión asociada a la aparición de cierto valor, es muy útil cuando se tienes varios posibles valores que cada uno produce un efecto determinado.</p>
-			<pre><code>SWITCH ((VAR_NAME))
+			<pre><code>SWITCH (&lt;VAR_NAME&gt;)
 	{
-	CASE (EXPRESION_CTE_1): [(SENTENCIA)] [(BREAK)];
+	CASE &lt;EXPRESION_CTE_1&gt;: [&lt;SENTENCIA&gt;] [&lt;BREAK&gt;];
 	...
-	[DEFAULT:[(SENTENCIAS)]]
+	[DEFAULT:[&lt;SENTENCIAS&gt;]]
 	}</pre></code>
 			
 			<ul>
-				<li><b>(VAR_NAME)</b> → Corresponde a la variable en donde se está almacenando la información a comparar con los casos.</li>
-				<li><b>(BREAK)</b> → Si esta se omite, si no precede de un break, el programa sigue comparando los CASE y se puede ejecutar más de una sentencia aunque el CASE no coincida.</li>
+				<li><b>&lt;VAR_NAME&gt;</b> → Corresponde a la variable en donde se está almacenando la información a comparar con los casos.</li>
+				<li><b>&lt;BREAK&gt;</b> → Si esta se omite, si no precede de un break, el programa sigue comparando los CASE y se puede ejecutar más de una sentencia aunque el CASE no coincida.</li>
 				<li><b>DEFAULT</b> → Se ejecuta en caso de que (...) lo haya hecho.</li>
 			</ul>
 			

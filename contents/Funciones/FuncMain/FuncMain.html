@@ -24,14 +24,14 @@
 		<article class="subsection">
 			<p>Hasta ahora MAIN( ) se había presentado sin argumento alguno, sin embargo existen casos donde es necesario introducirlos, por ejemplo cuando ejecutamos nuestro programa desde la línea de comandos y si deseamos ingresarle algunos parámetros de inicio.</p>
 			<p>Esto se hace de la siguiente manera:</p>
-			<pre><code>INT MAIN ((LISTA_DE_PARAMETROS));</pre></code>
+			<pre><code>INT MAIN (&lt;LISTA_DE_PARAMETROS&gt;);</pre></code>
 
 			<p>Quedaría quizá más claro con un ejemplo.</p>
 			<pre><code>INT MAIN (INT ARGC, CHAR **ARGN)</pre></code>
 			<p>Así, el programa se llama "programa", desde la línea de comando se teclearía:</p>
 			<pre><code>PROGRAMA ARG1 ARG2 ARG3 ARG4 (Enter)</pre></code>
 			<p>De esta manera, la variable ARGC valdría 5 (4 argumentos más el nombre del programa que cuenta como un argumento más).</p>
-			<p>Mientras que ARGU[ ] contendrá la siguiente lisa "(DIRECCION_DEL_EJECUTABLE)", "ARG1", "ARG2", "ARG3", "ARG4".</p>
+			<p>Mientras que ARGU[ ] contendrá la siguiente lisa "&lt;DIRECCION_DEL_EJECUTABLE&gt;", "ARG1", "ARG2", "ARG3", "ARG4".</p>
 		</article>
 		
 	</body>

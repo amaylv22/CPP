@@ -22,23 +22,23 @@
 		</header>
 		
 		<article class="subsection">
-			<p>En C++ es obligatorio usar prototipos, es decir, una declaración de una función sin cuerpo, solamente con (...) el valor de retorno y el tipo de sus argumentos, terminando con un ";".</p>
-			<pre><code>[EXTERN|STATIC] (TIPO) (FUN_NAME) ([(LISTA_DE_PARAMETROS)]);</pre></code>
+			<p>En C++ es obligatorio usar prototipos, es decir, una declaración de una función sin cuerpo, solamente con sustituir el valor de retorno y el tipo de sus argumentos, terminando con un ";".</p>
+			<pre><code>[EXTERN|STATIC] &lt;TIPO&gt; &lt;FUN_NAME&gt; ([&lt;LISTA_DE_PARAMETROS&gt;]);</pre></code>
 		
-			<article class="note"><pre><code>[(LISTA_DE_PARAMETROS)]
+			<article class="note"><pre><code>[&lt;LISTA_DE_PARAMETROS&gt;]
 	→ Toma en valor del argumento
-	→ Separado por comas para (.......)</pre></code></article>
+	→ Separado por comas para (.....) Por ejemplo, (int largo, int ancho); = C</pre></code></article>
 
 			<p>En un prototipo los nombres de los parámetros con opciones bastan solo con su tipo, pero estos ayudan a la legibilidad del programa.</p>
 			<pre><code>Cabecera
-		(TIPO) (NOMBRE DE FUNCION) ()
+		&lt;TIPO&gt; &lt;NOMBRE DE FUNCION&gt; ()
 		{
 Cuerpo
 		...
 		}</pre></code>
 
 			<article class="note"><p>→ Las funciones existentes con accesibles desde cualquier parte del programa, los <b>static</b> solo lo son desde el fichero fuente donde se definen.</p>
-<p>→ Si <b>name</b> indica (TIPO) de retorno, el compilador le concederá un (...). Si se quiere que no devuelva nada se usa <b>void</b>.</p></article>
+<p>→ Si <b>name</b> indica &lt;TIPO&gt; de retorno, el compilador le concederá un (...). Si se quiere que no devuelva nada se usa <b>void</b>.</p></article>
 		</article>
 		
 	</body>

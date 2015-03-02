@@ -23,19 +23,19 @@
 		
 		<article class="subsection">
 			<p>Esto significa que se pasará a la función la dirección del alojamiento en memoria en que se encuentra dicha variable. Dado que el argumento de la función será una dirección, la variable debe de ser un puntero.</p>
-			<pre><code>(TIPO) [FUNC_NAME] ((TIPOARG)*[NOM_ARG]...)</pre></code>
+			<pre><code>&lt;TIPO&gt; [FUNC_NAME] (&lt;TIPOARG&gt;*[NOM_ARG]...)</pre></code>
 			<p>Al llamarlo en el código hay que pasar la dirección de las variables.</p>
 			<pre><code>[FUNC_NAME] (&[NAME_VAR_A_PASAR] ...)</pre></code>
 
 			<p>La diferencia está en pasar por dirección o por referencia siendo en la funcionalidad o flexibilidad de los punteros pues estos se pueden redireccionar en la implementación incluso cuando el código para referencia es más limpio.</p>
-			<p>El puntero puede tomar nuevas direcciones que no (...) antes a la variable original.</p>
+			<p>El puntero puede tomar nuevas direcciones que no localicen antes a la variable original.</p>
 		</article>
 		
 		<article class="subsection">
 			<h1 id="">Cambios de dirección de un argumento desde la función</h1>
 			<p>Si lo que deseamos hacer es cambiar la dirección de alojamiento, lo que se debe de hacer es pasar la referencia por punteros, con esto se le dice al compilador que cualquier cambio en la variable (a referencia) debe ser hecha a la variable original.</p>
 			<pre><code>*&[NAME_VAR]</pre></code>
-			<p>Hecho del modo correcto entonces puede crearse una referencia al (...) y el (...) cambia.</p>
+			<p>Dicho del modo correcto entonces puede crearse una referencia al (...) y el puntero cambia.</p>
 			<pre><code>[NAME_VAR] = &[NEW_DIR]</pre></code>
 			<p>La forma de implementar es igual a la de argumentar punteros.</p>
 		</article>
@@ -70,9 +70,9 @@ DELETE [] pnARRAY;
 		<article class="subsection">
 			<h1 id="">Namespaces</h1>
 			<p>Los namespaces determinan el ámbito o la porción de código en que se garantiza que un comando o llamada a función es única. Esta ayuda a evitar naming collision, que se presenta cuando el compilador quiere llamar a una función y evita núcleos con el mismo nombre, así no sabe a quién llamar.</p>
-			<p>Hay dos maneras de evitar el naming collision, la primera es usando el <b>operador de acceso (: :)</b>. Si tenemos librerías con menos nombres de funciones podemos usar este operador para identificar la llamada. (...) en una función FUNCION( ) definido en la librería VARIOS.h, también evita una función diferente pero con el mismo nombre y se encuentra en la librería OTROS.h, así para llamar a cada función utilizaremos:</p>
+			<p>Hay dos maneras de evitar el naming collision, la primera es usando el <b>operador de acceso (: :)</b>. Si tenemos librerías con menos nombres de funciones podemos usar este operador para identificar la llamada. Pensemos en una función FUNCION( ) definido en la librería VARIOS.h, también evita una función diferente pero con el mismo nombre y se encuentra en la librería OTROS.h, así para llamar a cada función utilizaremos:</p>
 			<pre><code>VARIOS::FUNCION(); ó OTROS::FUNCION();</pre></code>
-			<p>La segunda opción es usar la Keyword namespace para definir el código que pertenece a cada librería. El efecto del namespace aplicado (...) hasta que se aplique (...) (...), lo que se hace es decirle al compilador que si no (...) en el puntero namespace define la busqueda en el (...).</p>
+			<p>La segunda opción es usar la Keyword namespace para definir el código que pertenece a cada librería. El efecto del namespace aplicado persiste hasta que se aplique uno nuevo, lo que se hace es decirle al compilador que si no (...) en el puntero namespace defina la busqueda en el nuevo.</p>
 			<pre><code>namespace VARIOS;
 	FUNCION();
 
@@ -80,7 +80,7 @@ o
 
 NAMESPACE OTROS;
 	FUNCION ();</pre></code>
-			<p>Generalemente se declara un namespace (.............)</p>
+			<p>Generalemente se declara un namespace al declararlo (fuera de main, los namespace también tienen ámbito) con liberación de entorno. Para ahorrar código esto se hace con la (...)</p>
 			<pre><code>USING NAMESPACE std;</pre></code>
 	</body>
 </html>	

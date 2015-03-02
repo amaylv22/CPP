@@ -33,8 +33,8 @@
 			<p>C++ introduce dos nuevos usos para la palabra clave STATIC cuando se aplica a clases, estos son <b>Static member variable</b> y <b>Static member class</b>.</p>
 
 			<h2 id="">STATIC member variable</h2>
-			<p>Cuando instanciamos objetos de una definida clase, cada objeto tiene su propia copia de las variables miembro de la clase (normales). Sin embargo, al hacer STATIC las variables miembro de una clase (usando la keyword STATIC), la variable solo existe una vez en el programa sin importar cuantos objetos class-type hayan sido creados, incluso existe sin ninguna la (...) instanciada. Así, el valor de dicha variable será igual para todos los objetos.</p>
-			<p>Para acceder a dicha variable, se puede hacer mediante cualquier objeto, como si se tratara de una variable miembro solamente. Se puede modificar su (...) modificando para todos los objetos.</p>
+			<p>Cuando instanciamos objetos de una definida clase, cada objeto tiene su propia copia de las variables miembro de la clase (normales). Sin embargo, al hacer STATIC las variables miembro de una clase (usando la keyword STATIC), la variable solo existe una vez en el programa sin importar cuantos objetos class-type hayan sido creados, incluso existe sin ningun lugar instanciado. Así, el valor de dicha variable será igual para todos los objetos.</p>
+			<p>Para acceder a dicha variable, se puede hacer mediante cualquier objeto, como si se tratara de una variable miembro solamente. Se puede modificar su valor para leer los objetos.</p>
 			<pre><code>[OBJ_CLASS_TYPE] . [STATIC_VAR_NAME] = ... ;</pre></code>
 
 			<p>Sin embargo, esto podría hacer que la variable static pertenezca a determinado objeto y como esto es falso, su (...) variable existe aún en la (...) de objeto. Esto se puede acceder directamente usando el nombre de la clase y el operador de acceso, pues en realidad la variable pertenece a la clase misma.</p>

@@ -22,7 +22,7 @@
 		</header>
 		
 		<article class="subsection">
-			<p>Cuando se dicta el prototipo de una función, se declaran parámetros para este, cuando la función se llena, en estos campos pueden insertarse variables y constantes para llamar a la función, la función copiará los valores de variable a constante a las variables creadas para recibir cada parámetro, la <b>fx</b> operará con estas variables modificando su valor (...) hasta alterar el resultado, sin embargo el valor de las variables de introducción no será modificado, esto se llama poner parámetros por su valor. Por ejemplo:</p>
+			<p>Cuando se dicta el prototipo de una función, se declaran parámetros para este, cuando la función se llena, en estos campos pueden insertarse variables y constantes para llamar a la función, la función copiará los valores de variable a constante a las variables creadas para recibir cada parámetro, la <b>fx</b> operará con estas variables modificando su valor de ser necesario hasta alterar el resultado, sin embargo el valor de las variables de introducción no será modificado, esto se llama poner parámetros por su valor. Por ejemplo:</p>
 			<pre><code>INT a=8;
 INT b=4;
 INT FUNCION (INT m, INT n);
@@ -38,26 +38,26 @@ INT FUNCION (INT m, INT n)
 
 			<ul>
 				<li>En el ejemplo anterior al llamar a FUNCION (2,3) m=2, n=3, arroja un valor de m+n=6.</li>
-				<li>En el segundo caso, a=8 y b=4 al llamar a FUNCION (a,b) y al tener el proceso <b>m</b> que corresponde a la variable<b>b</b> (...) (...) de m=11 y n que corresponde a la variable b (...) n=2, pero a y b siguen (...) a=8, b=4, con la que se (...) que el valor de a y b se (...) solo se copia a los parámetros de la función.</li>
+				<li>En el segundo caso, a=8 y b=4 al llamar a FUNCION (a,b) y al tener el proceso <b>m</b> que corresponde a la variable<b>b</b> tiene valor de m=11 y n que corresponde a la variable b tiene n=2, pero a y b siguen siendo a=8, b=4, con la que se observa que el valor de a y b no solo se copian a los parámetros de la función.</li>
 			</ul>
 
 			<p>Sin embargo, existen sentencias en donde es necesario que las variables que se introducen, cambian su valor mediante los procesos que ejecutan la función. Para constantes como las variables deberán ser paradas por referencia. Es decir, estarán ligados y el cambio que se le infringe a una afectan directamente a la otra.</p>
 			<p>Así, se deben crear referencias a las variables, la referencia es para definir un "alias" para las variables ya existentes. Para ello se usa el operador de referencia (&). A continuación se muestran las fromas para crear las referencias pero aún no se introduce el concepto de las funciones.</p>
-			<pre><code>(TIPO) & (ALIAS) = (VAR_DE_REFERENCIA)
-(TIPO) & (ALIAS)</pre></code>
+			<pre><code>&lt;TIPO&gt; & &lt;ALIAS&gt; = &lt;VAR_DE_REFERENCIA&gt;
+&lt;TIPO&gt; & &lt;ALIAS&gt;</pre></code>
 
 			<p>La primera forma es la que se usa para declarar variables de referencia, <b>la asignación</b> ya que no pueden definirse referencias indeterminadas. La segunda forma es la que se usa para definir parámetros por referencias en funciones, en las que las asignaciones (=) son implícitas.</p>
 			<p>De esta manera, si queremos que los cambios realizados en los parámetros dentro de la función se conserven al retorno de la llamada, debemos ponerlos por referencia. Esto se hace declarando los parámetros de la función como referencias a variables.</p>
-			<pre><code>(TIPO) (FUN_NAME) ((TIPO) & (VAR_NAME_1), (TIPO) & (VAR_NAME_i));
+			<pre><code>&lt;TIPO&gt; &lt;FUN_NAME&gt; (&lt;TIPO&gt; & &lt;VAR_NAME_1&gt;, &lt;TIPO&gt; & &lt;VAR_NAME_i&gt;);
 
-(VAR_NAME_i) = alias</pre></code>
+&lt;VAR_NAME_i&gt; = alias</pre></code>
 			<article class="note"><p>Es ilegal pasar constantes como parámetros por referencia.</p>
 
 <p>Cualquier expresión C++ válida puede ser un argumento.</p>
 <p>Otras funciones: la salida de la fx coincide con el tipo de argumento.</p>
 
-<p><b>Ventaja</b>: al no hacer una copia es más rápido acceder a las (...) y si no se quiere (.........) se puede declarar (Constante).</p>
-<p><b>Múltiples (...)</b>: permiten tener varios salida, no solo uno.</p>
+<p><b>Ventaja</b>: al no hacer una copia es más rápido acceder a los (...) y si se quiere (...) modificarlos se puede declarar (Const).</p>
+<p><b>Múltiples (...)</b>: permiten tener varios valores de salida, no solo uno.</p>
 <p><b>Punteros vs Referencias</b>: C++ usa los punteros para llevar a cabo los argumentos con dirección, así que estos son más rápidos que las referencias.</p>
 <p>Se debe incluir el & en los prototipos de función y en la definición, no en la llamada.</p></article>	
 

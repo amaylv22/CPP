@@ -23,14 +23,14 @@
 		
 		<article class="subsection">
 			<p>Son un tipo especial de estructuras que permiten almacenar elementos de diferentes tipos en los mismas posiciones de memoria aunque evidentemente no al mismo tiempo.</p>
-			<pre><code>UNION [(IDENTIFICADOR)]
-{[(TIPO)(VAR_NAME);
-(TIPO)(VAR_NAME_2); ...;]
-} (VAR_UNION);</pre></code>
+			<pre><code>UNION [&lt;IDENTIFICADOR&gt;]
+{[&lt;TIPO&gt;&lt;VAR_NAME&gt;;
+&lt;TIPO&gt;&lt;VAR_NAME_2&gt;; ...;]
+} &lt;VAR_UNION&gt;;</pre></code>
 			<p>Las uniones tienen propiedades muy similares, se pueden referenciar completas, usando su nombre, o se puede acceder a cada uno de sus elementos usando el operador de selección (.).</p>
 			<p>También pueden declararse más variables del tipo de la unión en cualquier parte del programa.</p>
-			<pre><code>[UNION] (IDENTIFICADOR) (VAR_UNION);</pre></code>
-			<p>La particularidad de estos, es que cada elemento (...) en la misma posición de memoria. Por ejemplo:</p>
+			<pre><code>[UNION] &lt;IDENTIFICADOR&gt; &lt;VAR_UNION&gt;;</pre></code>
+			<p>La particularidad de estos, es que cada elemento comenzará en la misma posición de memoria. Por ejemplo:</p>
 			
 			<p>Suponiendo que int ocupa dos bytes, char un byte, y double cuatro, y que A→int, B→char, C→double.</p>
 			<pre><code>[BYTE0][BYTE1][BYTE2][BYTE3]
@@ -54,6 +54,9 @@ UNION UNCOORD3D
 			<pre><code>→ PUNTO.N.Y
 → PUNTO.COOR[2]</pre></code>
 			<p>Es importante que en este caso sobreponer las variables de estructura y array completamente, es decir, campo con campo (X con [1], Y con [2] y Z con [3]) y no hay sobreposición X, Y, Z, [1], [2], [3], como se pudiera (...) por la definición anterior. La diferencia radica en la forma en la que se declaran las variables, ya que en este caso se declaran como vectores se reserva el espacio que ocupa dicho vector completamente y no solo lo que ocupa un solo campo.</p>
+		</article>
+
+		<article class="subsection">
 			<h1>Estructuras anidadas en uniones.</h1>
 			<p>Como ya se sabe, la estructura anónima es la que carece de identificación de tipo de estructura y de identificación de variables de tipo de estructura.</p>
 			<p>La misma unión del ejemplo anterior puede declararse del modo siguiente:</p>

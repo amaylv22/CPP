@@ -22,7 +22,7 @@
 		</header>
 		
 		<article class="subsection">
-			<p>Un predicado binario es una función (...) que viene para hacer comparaciones y devuelve falso o verdadero. <b>Verdadero</b> si la condición se cumple, <b>falso</b> si no se cumple. Recomendando que en los return o if si se ponga.</p>
+			<p>Un predicado binario es una función booleana que viene para hacer comparaciones y devuelve falso o verdadero. <b>Verdadero</b> si la condición se cumple, <b>falso</b> si no se cumple. Recomendando que en los return o if si se ponga.</p>
 			<pre><code>if (argumento)</pre></code>
 			<p>Se interpreta como si <b>argumento=true</b>, entonces en los predicados binarios el return se considera una comparación.</p>
 			<pre><code>return (condición);</pre></code>
@@ -31,18 +31,18 @@
 
 		<article class="subsection">
 			<h1 id="">Predicado implementado como función</h1>
-			<pre><code>boal (comparación) (double first, double second)
+			<pre><code>bool &lt;comparación&gt; (double first, double second)
 	{return (int (first) == int(second));}
 
-boal (valor_de_un_solo_digito) (const int & value)
-	{return (value <10);}</pre></code>
+bool &lt;valor_de_un_solo_digito&gt; (const int & value)
+	{return (value &lt;10);}</pre></code>
 		</article>
 
 		<article class="subsection">
 			<h1 id="">Predicado implementado como clase</h1>
 			<pre><code>Clase is_odd
 	{public:
-		boal operator() (const int & value)
+		bool operator() (const int & value)
 	};</pre></code>
 		
 	</body>

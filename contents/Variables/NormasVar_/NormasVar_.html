@@ -23,7 +23,7 @@
 		
 		<article class="subsection">
 			<h1>Constante Int</h1>
-			<p>Se puede almacenar en tres sistemas diferentes, hexadecimal, octal y decimal. La ventaja es que para números enteros en un byte se pueden representar en hexadecimal rangos de 00 a ff y en dos bytes de 0000 a ffff, además de que la conversión de octal y hexadecimal a binaria es casi directa. Para definir un valor en estos sistemas se debe escribir:</p>
+			<p>Se puede almacenar en tres sistemas diferentes, hexadecimal, octal y decimal. La ventaja es que para números enteros en un byte se pueden representar en hexadecimal rangos de 00 o ff y en dos bytes de 0000 o ffff, además de que la conversión de octal y hexadecimal a binaria es casi directa. Para definir un valor en estos sistemas se debe escribir:</p>
 			<ul>
 				<li><p>VAR = 124 → Decimal</li></p>
 				<li><p>VAR = O321 → Octal (Prefijo O)</li></p>
@@ -60,7 +60,7 @@
 		<article class="subsection">
 			<h1>Constantes Char</h1>
 			<p>El valor de las constantes se representa entre comillas simples si se trata de un solo caracter, y en caso de ser más de uno, se utilizarán comillas dobles.</p>
-			<p>Existen caracteres especiales que nos (...) encerrados en comillas para representarlo, así que cuentan con una definición especial, estos caracteres son llamados <b>"secuencias de escape"</b>. La sintaxis para representarlos es:</p>
+			<p>Existen caracteres especiales que nos basta encerrarlos en comillas para representarlo, así que cuentan con una definición especial, estos caracteres son llamados <b>"secuencias de escape"</b>. La sintaxis para representarlos es:</p>
 			<pre><code>VCHAR ='&ltESCAPE&gt'</pre></code>
 			<p>La siguiente tabla presenta algunas opciones a elegir sobre secuencias de escape.</p>
 
@@ -70,7 +70,7 @@
 					<tr>
 
 						<th>Escape</th>
-						<th>Hepod</th>
+						<th>(...)</th>
 						<th>Ansi</th>
 						<th>Nombre del resultado</th>
 					</tr>
@@ -163,7 +163,7 @@
 				</tbody>
 		</table>
 			
-			<p>También pueden asignarse números decimales a (...) de tipo Char.</p>			
+			<p>También pueden asignarse números decimales o (...) de tipo Char.</p>			
 			
 		</article>
 		

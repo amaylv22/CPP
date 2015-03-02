@@ -24,14 +24,14 @@
 		<article class="subsection">
 			<p>Los punteros representan la mayor diferencia entre C++ y C en comparación con los otros lenguajes, lo que es característico entre lo que otorga a C y C++ es <b>su potencia</b>.</p>
 			<p>Para entender la forma en la que trabajan los punteros o apuntadores es necesario entender cómo se almacenan los datos en la compuadora. La memoria está compuesta por <b>unidades básicas (bits)</b>. Cada bit solo puede tomar dos valores mutuamente excluyentes 0 y 1 (bajo y alto). Pero trabajar con bits no es práctico y por eso se agrupan en <b>conjuntos de 8 bits</b>, cada conjunto es llamado <b>byte</b>. El programador solo puede manejar directamente a grupos de 2 a 4 bytes.</p>
-			<p>Cada byte dentro de la memoria tiene una dirección (localización), asignada por medio de la cuál se puede acceder a la información que este contine o a disponer del espacio de memoria (...). Esta dirección es llamada normalmente <b>dirección de memoria</b>.</p>
-			<p>Así, un <b>puntero</b> es un <b>tipo especial de variable que contiene una dirección de una variable</b> que apunta hacia cierto campo dentro de la unidad de almacenamiento. A partir de esa dirección puede haber o se puede referir dicha dirección a <b>cualquier tipo de objeto</b>, un char, int, float, double, un array, una etructura, una función u otro puntero.</p>
+			<p>Cada byte dentro de la memoria tiene una dirección (localización), asignada por medio de la cuál se puede acceder a la información que este contine o a disponer del espacio de memoria reservado. Esta dirección es llamada normalmente <b>dirección de memoria</b>.</p>
+			<p>Así, un <b>puntero</b> es un <b>tipo especial de variable que contiene una dirección de una variable en la memoria</b> que apunta hacia cierto campo dentro de la unidad de almacenamiento. A partir de esa dirección puede haber o se puede referir dicha dirección a <b>cualquier tipo de objeto</b>, un char, int, float, double, un array, una etructura, una función u otro puntero.</p>
 			<pre><code>* → operadores de dirección → "puntero a"</pre></code>
 			<article class="note"><p>Los punteros siempre apuntan hacia un objeto de tipo determindo.</p></article>
 
 			<h2>Declarar un puntero.</h2>
-			<pre><code>(TIPO)_*_(IDENTIFICADOR); → Tipo de variable que guarda el puntero.
-(TIPO)_*_(IDENTIFICADOR) = 0 → Inicializar puntero.</pre></code>
+			<pre><code>&lt;TIPO&gt;_*_&lt;IDENTIFICADOR&gt;; → Tipo de variable que guarda el puntero.
+&lt;TIPO&gt;_*_&lt;IDENTIFICADOR&gt; = 0 → Inicializar puntero.</pre></code>
 
 			<article class="note"><p>Todos los punteros al ser creados deben ser inicializados, si no se sabe a dónde, se hace nula, es decir = 0. Si no se crea un puntero (...).</p>
 			<p>Por ejemplo. <b>Inicializar</b></p>
@@ -40,14 +40,16 @@ INT * ENTERO;</pre></code>
 			<p>Debe quedar claro que <b>ENTERO</b> es una <b>variable de tipo "puntero a int"</b> y una variable de tipo <b>"int"</b>.</p></article>
 
 			<p>Si "ENTERO" apunta a una variable de tipo "int", es decir, contiene la dirección de una localización, "*ENTERO" será el contenido de esa variable, no se debe olvidar que "*ENTERO" es un operador aplicado a una variable de tipo "puntero a int", es decir, <b>"*ENTERO" es una expresión</b> no una variable.</p>
-			<p>Para averiguar la dirección de memoria de cualquier variable se usa el operador de dirección (&) "dirección de". LOs tipos deben de ser compatibles, para almacenar la dirección de un determinado tipo de variable, necesitan un puntero de dicho tipo.</p>
+			<p>Para averiguar la dirección de memoria de cualquier variable se usa el operador de dirección (&) "dirección de". Los tipos deben de ser compatibles, para almacenar la dirección de un determinado tipo de variable, necesitan un puntero de dicho tipo.</p>
 			<p>Por ejemplo. <b>Asignar dirección de variable a punto</b></p>
 			<pre><code>INT A;
 INT *PUNTO;
 PUNTO = &A // PUNTO apunta hacia la variable A.
 *PUNTO = 18 // Equivale a la línea A=18</pre></code>
 			<article class="note"><p>& → Address of.</p></article>
+		</article>
 
+		<article class="subsection">
 			<h1>Operaciones con punteros.</h1>
 			<ul>
 				<li><p>a) Asignar a un puntero la dirección de una variable y su valor respectivamente. Por ejemplo.</p>
@@ -63,11 +65,11 @@ INT a;
 
 			<h2 id="">Operaciones aritméticas.</h2>
 			<dl>
-				<dt>(PUNT_IDENTIFICADOR)++;</dt>
-					<dd><p>Incrementa en 1*SIZEOF((TIPO)) la dirección de memoria almacenada en el puntero.</p></dd>
-				<dt>(PUNT_IDENTIFICADOR) = (PUNT_IDENTIFICADOR) + (NUMERO_VAL);</dt>
-					<dd><p>Incrementa en (NUMERO_VAL)*SIZEOF((TIPO)) la dirección de memoria almacenada en el puntero.</p></dd>
-				<dt>(PUNT_IDENTIFICADOR) += (NUMERO_VAL);</dt>
+				<dt>&lt;PUNT_IDENTIFICADOR&gt;++;</dt>
+					<dd><p>Incrementa en 1*SIZEOF(&lt;TIPO&gt;) la dirección de memoria almacenada en el puntero.</p></dd>
+				<dt>&lt;PUNT_IDENTIFICADOR&gt; = &lt;PUNT_IDENTIFICADOR&gt; + &lt;NUMERO_VAL&gt;;</dt>
+					<dd><p>Incrementa en &lt;NUMERO_VAL&gt;*SIZEOF(&lt;TIPO&gt;) la dirección de memoria almacenada en el puntero.</p></dd>
+				<dt>&lt;PUNT_IDENTIFICADOR&gt; += &lt;NUMERO_VAL&gt;;</dt>
 			</dl>
 		</article>
 
@@ -76,7 +78,7 @@ INT a;
 				<li><p>Sustracción de punteros.</p>
 				<pre><code>INT *g, *P;
 
-COUT ((g-P((ENDL;</pre></code>La (...) entre las posiciones de punteros de (...).</p></li>
+COUT &lt;&lt;g-P&lt;&lt;ENDL;</pre></code>La (...) entre las posiciones de punteros de que se trate.</p></li>
 				<li><p>La suma de punteros no está permitida por el computador.</p></li>
 		</article>
 
@@ -87,83 +89,107 @@ COUT ((g-P((ENDL;</pre></code>La (...) entre las posiciones de punteros de (...)
 IF (P)
 IF (NULL == P)
 IF (!P)</pre></code>
-		
+		</article>
+
+		<article class="subsection">
 			<h1>Punteros genéricos.</h1>
 			<p>Es posible declarar punteros sin tipo concreto. Estos pueden apuntar a objetos de cualquier tipo.</p>
-			<pre><code>VOID *(IDENTIFICADOR);</pre></code>
+			<pre><code>VOID *&lt;IDENTIFICADOR&gt;;</pre></code>
 			<p>Y para indicar que tipo de valor se quiere ingresar a él se utiliza:</p>
-			<pre><code>(IDENTIFICADOR) = ((TIPO) *) (VAR_CON_INFO)</pre></code>
+			<pre><code>&lt;IDENTIFICADOR&gt; = (&lt;TIPO&gt;*) &lt;VAR_CON_INFO&gt;</pre></code>
 			<p>Para mostrar dicha información en algún tipo determinado (puede ser distinto al de ingreso) se usa:</p>
-			<pre><code>COUT ((*((TIPO)*) (IDENTIFICADOR)</pre></code>
+			<pre><code>COUT &lt;&lt;*(&lt;TIPO&gt;*) &lt;IDENTIFICADOR&gt;</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1>Punteros a estructuras.</h1>
 			<p>Los punteros pueden también apuntar a estructuras. En este caso para referirse a cada dentro de la estructura se cambia el operador <b>"." por "→".</b></p>
+		</article>
 
+		<article class="subsection">
 			<h1>Array de Punteros.</h1>
 			<pre><code>INT *NUM [ ] = { };</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1>Variables dinámicas. Asignar memoria en el Free Store.</h1>
 			<p>Utilizan la memoria que no utilizan los programas, <b>"memoria heap"</b>. Es decir, los punteros direccionan la información a estas direcciones de memoria.</p>
 			<p>C++ dispone de dos operadores para acceder a la memoria dinámica, son <b>"NEW"</b> y <b>"DELETE"</b>. Cuando se usa memoria dinámica, toda la memoria que se reserve durante el programa se debe de liberar antes de salir de este.</p>
 
 			<h2 id="">NEW</h2>
-			<pre><code>(PUNT_VAR_NAME) = NEW (TIPO);
-*(POINT_VAR_NAME) = #;
-DELETE (POINT_VAR_NAME);</pre></code>
+			<pre><code>&lt;POINT_VAR_NAME&gt; = NEW &lt;TIPO&gt;;
+*&lt;POINT_VAR_NAME&gt; = #;
+DELETE &lt;POINT_VAR_NAME&gt;;</pre></code>
 			<p>Esto se usa para asegurar si no se inicializa o si se aplica delete y si se quiere asignar de nuevo a un espacio de memoria heap.</p>
-			<p>Sin embargo es necesario primero crear el puntero, una vez a este se le asigna un espacio reservado por una variable de tipo (TIPO) en la Free Store mediante la (...) de un NEW.</p>
-			<pre><code>(TIPO) * (PUNTERO_NAME) = NEW (TIPO);</pre></code>
+			<p>Sin embargo es necesario primero crear el puntero, una vez a este se le asigna un espacio reservado por una variable de tipo &lt;TIPO&gt; en la Free Store mediante la palabra clave NEW.</p>
+			<pre><code>&lt;TIPO&gt; * &lt;PUNTERO_NAME&gt; = NEW &lt;TIPO&gt;;</pre></code>
 			<p>Donde:</p>
-			<p>(TIPO) * (PUNTERO_NAME) → Creación del puntero.</p>
-			<p>NEW (TIPO); → Asigna el valor de retorno de NEW, cuando se le asigna un valor a *(PUNTERO_NAME) el valor será guardado en el almacen libre al que apunta este, creado por NEW.</p>
+			<p>&lt;TIPO&gt; * &lt;PUNTERO_NAME&gt; → Creación del puntero.</p>
+			<p>NEW &lt;TIPO&gt;; → Asigna el valor de retorno de NEW, cuando se le asigna un valor a *&lt;PUNTERO_NAME&gt; el valor será guardado en el almacen libre al que apunta este, creado por NEW.</p>
 			<article class="note"><p>Estamos trabajando en FREE STORE, con las ventajas que ello conlleva.</p>
 			<p>La memoria ocupada por NEW no se devuelve automaticamente al almacen, hay que crearla de manera manual.</p></article>
 			<h2 id="">DELETE</h2>
 			<p>Palabra clave que se le aplica al puntero una vez que se toma de uno para devolver la memoria al ordenador, es decir, limpiar o usar el contenido y devolver la memoria al heap.</p>
-			<pre><code>DELETE (PUNTERO_NAME);</pre></code>
+			<pre><code>DELETE &lt;PUNTERO_NAME&gt;;</pre></code>
 			<p>Si el puntero sale del almacen sin exlicar el delete se produce una fuga de memoria, es decir, un área de memoria no disponible. Se liberará entonces hasta que el programa finalice.</p>
-			<p>Al liberar un puntero se combierte en un puntero (...), por la que (...) se debe generar el puntero nulo, de no hacer esto, si se vuelve a aplicar DELETE daría un error. En cambio si este sale hacia (.......)<p>
-			<pre><code>(PUNTERO_NAME) = 0;</pre></code>
+			<p>Al liberar un puntero se convierte en un puntero (...), por la que se debe generar el puntero nulo, de no hacer esto, si se vuelve a aplicar DELETE daría un error. En cambio si este se hace solo un puntero nulo la sentencia es modificada.<p>
+			<pre><code>&lt;PUNTERO_NAME&gt; = 0;</pre></code>
 
 			<h2 id="">Acceder datos miembro de una clase (objeto de una clase).</h2>
-			<pre><code>(*(PUNTERO_NAME)).(DATO MIEMBRO);</pre></code>
-			<p>(*(PUNTERO_NAME)) → Da prioridad.</p>
+
+			<pre><code>(*&lt;PUNTERO_NAME&gt;).&lt;DATO MIEMBRO&gt;;
+
+(*&lt;PUNTERO_NAME&gt;) → Da prioridad.</pre></code>
+
 			<p>Este es el caso de que se halle creado un objeto en la memoria heap. Por ejemplo:</p>
-			<pre><code>(CLASE_NOM)*(PUNT_NAME = NEW (CLASE_NOM))</pre></code>
+			<pre><code>&lt;CLASE_NOM&gt;*&lt;PUNT_NAME&gt; = NEW &lt;CLASE_NOM&gt;</pre></code>
+
 			<p>Sin embargo, es posible acceder a los datos miembro mediante un atajo, el <b>Operador de acceso a miembro de una clase (->)</b>, así el acceso es igual a:</p>
-			<pre><code>(PUNTERO_NAME) -> (DATO MIEMBRO);</pre></code>
+
+			<pre><code>&lt;PUNTERO_NAME&gt; -> &lt;DATO MIEMBRO&gt;;</pre></code>
 
 			<h2 id="">Inicializar datos en la memoria heap</h2>
-			<pre><code>(PUNTERO_NAME) = NEW (TIPO) ((VAL_INICIO))</pre></code>
+			<pre><code>&lt;PUNTERO_NAME&gt; = NEW &lt;TIPO&gt; (&lt;VAL_INICIO&gt;)</pre></code>
 			<p>Por ejemplo:</p>
 			<pre><code>INT * pEDAD = NEW INT (2); │=│ INT * pEDAD;
 							   pEDAD = NEW INT (2);</pre></code>
+		</article>
+
+		<article class="subsection">
 			<h1>Puntero this.</h1>
 			<p>Es un <b>puntero oculto</b> que el computador crea automáticamente cada que creamos una función miembro de una clase. Este puntero <b>apunta a "este"</b>, es decir, al propio objeto que lo crea.</p>
-			<p>Ya que "this" apunta al propio objeto, se tendrá una clase con un dato miembro llamado <b>HOLA</b> y un (.......)</p>
-			<pre><code>(CLASE) :: SALUDO ()						(CLASE) :: SALUDO() {
+			<p>Ya que "this" apunta al propio objeto, se tendrá una clase con un dato miembro llamado <b>HOLA</b> y un método (...) (...) <b>Saludo ( )</b> se produce (........)</p>
+			<pre><code>&lt;CLASE&gt; :: SALUDO ()						&lt;CLASE&gt; :: SALUDO() {
 {RETURNthis -> HOLA;			│=│			RETURNHOLA;}
 }
 
-(CLASE) :: SALUDO()
+&lt;CLASE&gt; :: SALUDO()
 {RETURN (*this), HOLA;}</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1>Palabra clave CONST con puntero</h1>
-			<pre><code>CONST(TIPO) * (PUNT_NAME);</pre></code>
-			<article class="note"><p>CONST(TIPO) → Puntero a una constante tipo (TIPO). Los valores se pueden cambiar con datos reales o miembros</p>
-			<p>(PUNT_NAME) → El valor que está guardando no puede ser cambiado. Se puede cambiar la dirección.</p></article>
+			<pre><code>CONST(TIPO) * (PUNT_NAME);
 
-			<pre><code>(TIPO) * CONST(PUNT_NAME);</pre></code>
-			<article class="note"><p>(TIPO)*CONST → El valor tipo (TIPO) puede ser cambiado.</p>
-			<p>(PUNT_NAME) → El puntero no puede apuntar a ningún otra dirección.</p></article>
+Donde:
+CONST&lt;TIPO&gt; → Puntero a una constante tipo &lt;TIPO&gt;. Los valores se pueden cambiar con datos reales o miembros.
+&lt;PUNT_NAME&gt; → El valor que está guardando no puede ser cambiado. Se puede cambiar la dirección.</pre></code>
 
-			<pre><code>CONST(TIPO) * CONST(PUNT_NAME);</pre></code>
-			<article class="note"><p>CONST(TIPO) → Valor al que apunta no puede ser cambiado.</p>
-			<p>CONST(PUNT_NAME) → El puntero no puede ser cambiado pero apunta hacia cualquier otro lado.</p></article>
+			<pre><code>&lt;TIPO&gt; * CONST&lt;PUNT_NAME&gt;;
 
-			<p>Los punteros const se pueden utilizar por ejemplo para aumentar la eficacia del código (angosta por referencia), pero sin perder la seguridad que proporciona el peso por vaor. Ya que un punto Const solo nos permite acceder a los miembros accesorios de una clase declarados explícitamente como constantes.</p>
+Donde:
+&lt;TIPO&gt;*CONST → El valor tipo &lt;TIPO&gt; puede ser cambiado.
+&lt;PUNT_NAME&gt; → El puntero no puede apuntar a ningún otra dirección.</pre></code>
+
+			<pre><code>CONST&lt;TIPO&gt; * CONST&lt;PUNT_NAME&gt;;
+
+Donde:
+CONST&lt;TIPO&gt; → Valor al que apunta no puede ser cambiado.
+CONST&lt;PUNT_NAME&gt; → El puntero no puede ser cambiado pero apunta hacia cualquier otro lado.</pre></code>
+
+			<p>Los punteros const se pueden utilizar, por ejemplo, para aumentar la eficacia del código (angosta por referencia), pero sin perder la seguridad que proporciona el peso por vaor. Ya que un punto Const solo nos permite acceder a los miembros accesorios de una clase declarados explícitamente como constantes.</p>
 			<p>Por ejemplo:</p>
-			<pre><code>CONST(NOM_CLASE) * CONST(FUNC_NAME) (CONST(NOM_CLASE) * CONST(Obj_NAME))</pre></code>
+			<pre><code>CONST&lt;NOM_CLASE&gt; * CONST&lt;FUNC_NAME&gt; (CONST&lt;NOM_CLASE&gt; * CONST&lt;Obj_NAME&gt;)</pre></code>
 		</article>
 		
 	</body>

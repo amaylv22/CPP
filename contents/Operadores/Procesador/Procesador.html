@@ -23,21 +23,21 @@
 		
 		<article class="subsection">
 			<p>Este procesador se usa para dar órdenes o directivos al compilador.</p>
-			<pre><code>#(ORDEN_AL_COMPILADOR)</pre></code>
+			<pre><code>#&lt;ORDEN_AL_COMPILADOR&gt;</pre></code>
 			<p>A continuación se presentan algunos de las órdenes más importantes al compilador.</p>
 
 			<h1 id="">Directivo #DEFINE</h1>
 
 			<p>Sirve para definir macros. Este suministra un sistema para la sustitución de palabras, con y sin parámetros.</p>
-			<pre><code>#DEFINE (IDENTIF_DE_MACRO) (SECUENCIA)</pre></code>
+			<pre><code>#DEFINE &lt;IDENTIF_DE_MACRO&gt; &lt;SECUENCIA&gt;</pre></code>
 
-			<p>El procesador sustituirá cada (...) (IDENTIF)... en el fichero fuente, por la (SECUENCIA). Cada sustitución se tomará como una expansión de la macro, y la secuencia es llamada a (...) cuerpo de la macro.</p>
-			<p>Si la secuencia no existe, el (IDENTIFICADO...) será eliminado cada vez que aparezca en el fichero fuente.</p>
+			<p>El procesador sustituirá cada (...) (&lt;IDENTIF&gt;)... en el fichero fuente, por la (SECUENCIA). Cada sustitución se tomará como una expansión de la macro, y la secuencia es llamada a menudo cuerpo de la macro.</p>
+			<p>Si la secuencia no existe, el &lt;IDENTIFICADO...&gt; será eliminado cada vez que aparezca en el fichero fuente.</p>
 			<h1 id="">Directivo #INCLUDE</h1>
 			<p>Sirve para insertar ficheros externos de nuestro fichero fuente.</p>
-			<pre><code>#INCLUDE (NOM_DE_FICH_DE_CABECERA)
+			<pre><code>#INCLUDE &lt;NOM_DE_FICH_DE_CABECERA&gt;
 #INCLUDE "NOM_DE_FICH_DE_CABECERA"
-#INCLUDE (IDENTIFICADOR_DE_MACRO)</pre></code>
+#INCLUDE &lt;IDENTIFICADOR_DE_MACRO&gt;</pre></code>
 			<p>En el tercer caso el nombre del fichero es el resultado de aplicar la macro.</p>
 
 			<p>La direfencia entre "( )" y (" ") es que de usar el primero, los archivos se buscarán en el directorio del compilador, en caso contrario por los directorios a incluir campo a ser buscado en el directorio personal; es decir, en el que se encuentra el fichero fuente.</p>

@@ -23,35 +23,39 @@
 		
 		<article class="subsection">
 			<p>Al igual que los array, permiten agrupar varios datos, pero en este caso podrán ser de distintos tipos, permitiendo manipularlos todos juntos con un mismo identificador o por separado.</p>
-			<p>Las estructuras reciben también el nombre de (...) ó "(...)" y cada variable se denomima <b>campo</b> o <b>"field".</b></p>
-			<pre><code>STRUCT [(IDENTIFICADOR)]
-	{[(TIPO) (VAR_NAME); (TIPO)(VAR_NAME);...]}
-	(VARIABLE_ESTRUCTURA) [(VAR_1),(VAR_2)...];</pre></code>
+			<p>Las estructuras reciben también el nombre de <b>registros</b> ó <b>"records"</b> y cada variable se denomima <b>campo</b> o <b>"field".</b></p>
+			<pre><code>STRUCT [&lt;IDENTIFICADOR&gt;]
+	{[&lt;TIPO&gt; &lt;VAR_NAME&gt;; &lt;TIPO&gt;&lt;VAR_NAME&gt;;...]}
+	&lt;VARIABLE_ESTRUCTURA&gt; [&lt;VAR_1&gt;,&lt;VAR_2&gt;...];</pre></code>
 
 			<p>Pueden también declarse más variables dentro del tipo de la estructura en cualquier parte del programa.</p>
-			<pre><code>[STRUCT] (IDENTIFICADOR) (VARIABLE_ESTRUCTURA) [(VAR_1)...];</pre></code>
-			<p>Donde la estructura (IDENTIFICADOR) ya está creada.</p>
+			<pre><code>[STRUCT] &lt;IDENTIFICADOR&gt; &lt;VARIABLE_ESTRUCTURA&gt; [&lt;VAR_1&gt;...];</pre></code>
+			<p>Donde la estructura &lt;IDENTIFICADOR&gt; ya está creada.</p>
 			<p>Para sustituir uno de los datos contenidos en la estructura se utiliza</p>
-			<pre><code>COUT << (VAR_EST).(VAR_NAME);</pre></code>
+			<pre><code>COUT &lt;&lt; &lt;VAR_EST&gt;.&lt;VAR_NAME&gt;;</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1>Funciones al interior de las estructuras</h1>
-			<p>En C++ podemos incluir funciones al interior de las estructuras. Dos funciones muy particulares son las de <b>inicialización</b>, o <b>constructor</b> y el <b>destructor</b>.El <b>constructor</b> es una función sin tipo de retorno y con el mismo nombre que la estructura. El <b>destructor</b> tiene la misma forma salvo que el nombre es precedido por el (...) "~" ([ALT]+126).</p>
+			<p>En C++ podemos incluir funciones al interior de las estructuras. Dos funciones muy particulares son las de <b>inicialización</b>, o <b>constructor</b> y el <b>destructor</b>.El <b>constructor</b> es una función sin tipo de retorno y con el mismo nombre que la estructura. El <b>destructor</b> tiene la misma forma salvo que el nombre es precedido por el operador "~" ([ALT]+126).</p>
 			<p>El constructor puede definir su proceso (código de la función) fuera o dentro de la estructura, en cualquiera que sea el caso, la función se sitúa en la parte correspondiente a la declaración de variables de la estructura</p>
 
-			<pre><code>STRUCT (IDENTIFICADOR){
-(TIPO)(VAR_NAME);... (CONSTRUCTOR)}
-(VAR_ESTRUCTURA);
+			<pre><code>STRUCT &lt;IDENTIFICADOR&gt;{
+&lt;TIPO&gt;&lt;VAR_NAME&gt;;... &lt;CONSTRUCTOR&gt;}
+&lt;VAR_ESTRUCTURA&gt;;
 
 ---------------------------------------------------------------------------------
 
-(CONSTRUCTOR) = 
-	(fx_NAME) ( ) {(CODE_LINE_1); (CODE_LINE_2)...;} → Declaración interna.
-	(fx_NAME) ( ); → Declaración externa.</pre></code>
+&lt;CONSTRUCTOR&gt; = 
+	&lt;fx_NAME&gt; ( ) {&lt;CODE_LINE_1&gt;; &lt;CODE_LINE_2&gt;...;} → Declaración interna.
+	&lt;fx_NAME&gt; ( ); → Declaración externa.</pre></code>
 			
 			<p>Se debe utilizar contructores para inicializar las variables dentro de una estructura, ya que de otra manera al ser cargados por el ejecutable contendrían basura.<p>
 
 			<article class="note"><p>Es posible también incluir otras funciones dentro de una estructura. Estas si tendrán un tipo definido.</p></article>
-			
+		</article>
+
+		<article class="subsection">			
 			<h1>Inicialización de Estructuras</h1>
 			<p>Podemos inicilizar las variables declaradas en un tipo de estructura reada, esto se hace por medio de listas como a continuación se muestra en el ejemplo. De esta manera todaslas variables que creemos con este tipo contendrán valores iniciales.</p>
 			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
@@ -87,7 +91,9 @@ B = {2, {'a','b'}, 20}</pre></code></td>
 					</tr>
 				</tbody>
 			</table>
+		</article>
 
+		<article class="subsection">
 			<h1>Asignación de Estructuras</h1>
 			<p>Si se tiene</p>
 			<pre><code>STRUCT H{
@@ -102,43 +108,102 @@ B = {2, {'a','b'}, 20}</pre></code></td>
 Equivale a
  
 	PUNTO_2 = PUNTO_1</pre></code>
+		</article>
 
+		<article class="subsection">
 			<h1>Arrays de estructuras</h1>
-			<p>Es posible crear arrays para las variables declarando dentro de una estructura (muy útil para variables tipo char), así como en las variables del tipo de la estructura (<%var_estructura>).</p>
+			<p>Es posible crear arrays para las variables declarando dentro de una estructura (muy útil para variables tipo char), así como en las variables del tipo de la estructura (&lt;var_estructura&gt;).</p>
+		</article>
 
+		<article class="subsection">
 			<h1>Estructuras anidadas</h1>
 			<p>Es posible también anidar estructuras, conteniendo cada una en sus respectivas llaves "{ }".</p>
 			<p>Para declarar una variable del tipo de una estructura ya creada dentro de otra estructura se utiliza:</p>
-			<pre><code><$STRUCTURE_NAME> <#VAR_ESTRUCTURA>;</pre></code>
+			<pre><code>&lt;STRUCTURE_NAME&gt; &lt;VAR_ESTRUCTURA&gt;;</pre></code>
 			<p>Las estructuras anidadas pueden ser llamadas dentro y fuera de la estructura principal.</p>
 			<p>Por lo general, no es usual definir estructuras dentro de estructuras, ya que resultan tener un ámbito local, y para acceder a ellos se necesita hacer referencia a la estructura más externa haciendo uso del operador de acceso (::).</p>
+		</article>
 
+		<article class="subsection">
 			<h1>Estructuras anónimas</h1>
 			<p>Son las que carecen de identificador, nombre de la estructura, y de declaración de variables del tipo de estructura.</p>
-			<pre><code>STRUCT (IDENTIFICADOR){
+			<pre><code>STRUCT &lt;IDENTIFICADOR&gt;{
 	STRUCT {
-	(TIPO) (VAR_ANONIM_1);
-	(TIPO) (VAR_ANONIM_2);
+	&lt;TIPO&gt; &lt;VAR_ANONIM_1&gt;;
+	&lt;TIPO&gt; &lt;VAR_ANONIM_2&gt;;
 	};
-	(TIPO) (VAR_1);
-	}; (VAR_ESTRUCT);</pre></code>
+	&lt;TIPO&gt; &lt;VAR_1&gt;;
+	}; &lt;VAR_ESTRUCT&gt;;</pre></code>
 			<p>Como se observa en el ejemplo, la sintaxis se asemeja a la de una estructura anidada, para sin identificador ni variables, así para accceder a cualquiera.</p>
-			<pre><code>(VAR_ESTRUCT).(VAR_ANONIM_1) = #;
-(VAR_ESTRUCT).(VAR_ANONIM_2) = #;
-(VAR_ESTRUCT).(VAR_1) = #;</pre></code>
+			<pre><code>&lt;VAR_ESTRUCT&gt;.&lt;VAR_ANONIM_1&gt; = #;
+&lt;VAR_ESTRUCT&gt;.&lt;VAR_ANONIM_2&gt; = #;
+&lt;VAR_ESTRUCT&gt;.&lt;VAR_1&gt; = #;</pre></code>
 			<p>La utilidad de este formato no parece muy relevante en las estructuras, sin embargo en los extremos lo será. El único lugar donde se pueden utilizar estructuras anónimas es en el interior de otras estructuras o uniones.</p>
+		</article>
 
+		<article class="subsection">
 			<h1>Operador sizeof</h1>
-			<p>Cuando se aplique el operador sizeof a una estructua, el tamaño obtenido no siempre coincide con el tamaño de la suma de los campos. Esto ocurre debido a la alineación de bytes, esto quiere decir que el computador intentó alinear las variables en las posiciones de memoria más (...).</p>
-			<p>Para mejorar el entendimiento del procesador, no se accede a todos las posiciones de memoria, en la mayoría de los casos es mejor si solo se accede a posiciones múltiplos de 4, esto dicta las posiciones más (...).</p>
+			<p>Cuando se aplique el operador sizeof a una estructua, el tamaño obtenido no siempre coincide con el tamaño de la suma de los campos. Esto ocurre debido a la alineación de bytes, esto quiere decir que el computador intentó alinear las variables en las posiciones de memoria más favorables.</p>
+			<p>Para mejorar el entendimiento del procesador, no se accede a todos las posiciones de memoria, en la mayoría de los casos es mejor si solo se accede a posiciones múltiplos de 4, esto dicta las posiciones más favorables.</p>
 			<p>De esta manera si al declarar las variables dentro de una estructura no tenemos cuidado en ordenarlas, estaremos dejando espacios de memoria vacíos y con esto, aumentando el tamaño en bytes de nuestra estructura. P.E.</p>
 
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<thead>
+					<tr>
+
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><pre>Orden de declaración
+INT X;
+CHAR A;
+INT Y;
+CHAR B;<code></pre></code></td>
+						<td><pre><code>Dimensiones en memoria (bytes)
+INT = 4
+CHAR = 1
+
+  </pre></code></td>
+						<td><pre><code>ACOMODO
+<figure>
+	<img src= "media/Screenshot1.png" alt="alt-text" width="px" height="px">
+</figure>
+SIZEOF = 16 bytes</pre></code></td>
+					</tr>
+					<tr>
+						<td><pre><code>Orden de declaración
+INT X;
+INT Y;
+CHAR A;
+CHAR B;</pre></code></td>
+						<td><pre><code>
+
+	"
+
+
+</pre></code></td>
+						<td><pre><code>ACOMODO
+<figure>
+	<img src= "media/Screenshot2.png" alt="alt-text" width="px" height="px">
+</figure>
+SIZEOF = 12 bytes</pre></code></td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+
+		<article class="subsection">
 			<h1>Campos de bits</h1>
 			<p>Las estructuras tienen la capacidad de almacenar sus campos (variables) en grupos o bloques de listas correspondientes al tamaño de su tipo de datos. Es decir, si vamos a usar datos tipo "char" es posible dividir los 8 bits (1 byte), que esta variable ocupa en distintos campos para variables del mismo tipo, es decir, podemos tener 8 campos de 1 bit, 4 de 2 bits, 2 de 3 bits y uno de dos a diferentes combinaciones.</p>
 			<p>Puede que su utilidad sea más clara cuando se usan campos de enteros, ya que podemos dividir los 16 bits (2 bytes) [entre corte] en diferentes campos, cuando sabemos las cantidades máximas que manejaremos, por ejemplo, un campo antes de 5 bits podrá contener un valor máximo igual a 63, es decir, en un rango de 0 a 63.</p>
 			<p>Debemos usar siempre valores de enteros sin signo, ya que estos se almacenan en un bit del entero, el de mayor peso y puede falsear los datos almacenados.</p>
-			<pre><code>STRUCT [(IDENTIFICADOR)]{
-UNSIGNED (TIPO) (VAR_NAME):(NUM_BITS);
+			<pre><code>STRUCT [&lt;IDENTIFICADOR&gt;]{
+UNSIGNED &lt;TIPO&gt; &lt;VAR_NAME&gt;:&lt;NUM_BITS&gt;;
 ...} [VAR_ESTRUCTURA];</pre></code>
 		</article>
 	</body>

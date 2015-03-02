@@ -23,7 +23,7 @@
 		
 		<article class="subsection">
 			<p>Existen solo siete tipos de variables que se complementan con los modificadores para crear gran cantidad de espacios para guardar diferentes tipos de información.
-			Para definir las variables se pueden utilizar solo letras (Mayúsculas y minúsulas), números y el caracter " " con el fin de que el programa sea totalmente transportable. El identificador (a nombre de la variable) se puede (...) con un número y C++ distingue entre mayúsculas y minúsculas.</p>
+			Para definir las variables se pueden utilizar solo letras (mayúsculas y minúsulas), números y el caracter "_" con el fin de que el programa sea totalmente transportable. El identificador (o nombre de la variable) no puede (...) con un número y C++ distingue entre mayúsculas y minúsculas.</p>
 		
 		<article class="note"><p>&ltIDENTIFICADOR&gt = Nombre que le quieres poner.</p></article>
 		</article>
@@ -59,10 +59,14 @@
 			<pre><code>VOID &ltIDENTIFICADOR&gt</pre></code>
 
 			<h2>Tipo "enum" ó enumerado</h2>
-			<p>Permite definir conjuntos de constantes. Solo podrán tomar los valores definidos. Una vez se asigna un valor o un elemento de la lista, los siguientes toman valores correlativos. Varios identificadores de la lista pueden tener el mismo valor, pero un identificador no puede aparecer en más de un enumerado. Son (...).</p>
+			<p>Permite definir conjuntos de constantes. Solo podrán tomar los valores definidos. Una vez se asigna un valor o un elemento de la lista, los siguientes toman valores correlativos. Varios identificadores de la lista pueden tener el mismo valor, pero un identificador no puede aparecer en más de un enumerado. Son (...)</p>
+			<p>Definido el tipo con constante, se pueden crear nuevas constantes del número, donde se cita el nombre del tipo creado y el nombre de la nueva constante responsable con un espacio.</p>
+
 			<pre><code>ENUM [&ltIDENTIFICADOR_DE_ENUM&gt] {&ltNOMBRE&gt[=&ltVALOR&gt]...&ltNOMBRE_&gt...}</pre></code>
+
+			<article class="note"><p>Si se direcciona esto como valor RETURN de una función, el &lt;TIPO&gt; del prototipo deberá ser del tipo &lt;IDENTIFICADOR_DE_ENUM&gt;</p></article>
+
 			<p>Cada valor-nombre es una nueva constante simbólica, si no se les asigna o indica (...) el valor comienza en 0 y aumenta en ++. Es un (...).
-			<article class="note"><p>Definido el tipo con constante, se pueden crear nuevas constantes del número, donde se cita el nombre del tipo creado y el nombre de la nueva constante responsable con un espacio.</p></article>
 			
 		</article>
 		

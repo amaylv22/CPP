@@ -23,8 +23,8 @@
 		
 		<article class="subsection">
 			<p>Las cadenas de caracteres no son más que array del tipo char. Estos no pueden ser asignados directamente, con exepción de que este se haga junto con la declaración. La sintaxis se muestra a continuación seguido de algunos ejemplos.</p>
-			<pre><code>CHAR (VAR_NAME)[(NO_DE_CARACTERES)];
-CHAR *(VAR_NAME);</pre></code>
+			<pre><code>CHAR &lt;VAR_NAME&gt;[&lt;NO_DE_CARACTERES&gt;];
+CHAR *&lt;VAR_NAME&gt;;</pre></code>
 
 			<p>En el primer caso para asignar memoria estáticamente y en el segundo para asignarla dinámicamente.</p>
 			<p>Ejemplos.</p>
@@ -38,7 +38,7 @@ TEXTO [2] = 'L';
 TEXTO [3] = 'A';
 TEXTO [4] = '1000';</pre></code>
 			
-			<p>Cuando se asigna memoria para cadenas, se debe tomar en cuenta el caracter de fin en la cadena, a pesar de que el vector (...) en la posición 0, se debe de reservar espacio igual a (num, máximo de caracteres)+1.</p>
+			<p>Cuando se asigna memoria para cadenas, se debe tomar en cuenta el caracter de fin en la cadena, a pesar de que el vector (...) en la posición 0, se debe de reservar espacio igual a (num, máximo de caracteres) +1.</p>
 		</article>
 		
 	</body>

@@ -25,7 +25,7 @@
 			<p>En ocaciones se tienen funciones funciones y clases que necesitan trabajar muy íntimamente. Por ejemplo se puede tener, por razones de (...), una clase encargada de almacenar datos y una función (de otra clase) que muestra dichos datos en pantalla. Así, a pesar de este separador, el código que muestra la información está íntimamente ligado a los pormenores de la clase que almacena.</p>
 			<p>En situaciones como esta hay dos opciones:</p>
 			<ol>
-				<li>Definir el código de display en la clase de (...), lo que no solo puede hacer (...) el enfoque de la clase, si no que puede exponer los datos o el código de display, al cual no se permite acceder a nadie más, pues su (...) (...) de decir "solo accesible para la clase de display, no la use nadie más".</li>
+				<li>Definir el código de display en la clase de almacenamiento, lo que no solo puede hacer (...) el enfoque de la clase, si no que puede exponer los datos o el código de display, al cual no se permite acceder a nadie más, pues su (...) (...) de decir "solo accesible para la clase de display, no la use nadie más".</li>
 				<li>Usar clases y funciones amigas, para darle a la clase amiga (a sus funciones) el acceso a los detalles preciados de la clase de almacenamiento.</li>
 			</ol>
 		</article>
@@ -68,7 +68,7 @@
 				</tbody>
 			</table>
 
-			<p>Una función puede ser amiga de más de una clase del mismo tipo. Solo hay que definirla (indicar el prototipo dentro de todos ellos). Es normal cuando se tienen funciones amigas de varias clases que a esta se le parecen al menos en un argumento por cada tipo de clase a la que se enlaza. Es decir, en la definición de la primera clase, el prototipo de la función amiga hará referencia a una clase aún no creada. En este caso es necesario colocar al menos un fichero (.h) o antes del prototipo de función (...), <b>el prototipo(s) de la clase</b> que será declarada después, esto pone alerta al compilador de que después de definido, al igual que en el caso de los problemas de función.</p>
+			<p>Una función puede ser amiga de más de una clase del mismo tipo. Solo hay que definirla (indicar el prototipo dentro de todos ellos). Es normal cuando se tienen funciones amigas de varias clases que a esta se le parecen al menos en un argumento por cada tipo de clase a la que se enlaza. Es decir, en la definición de la primera clase, el prototipo de la función amiga hará referencia a una clase aún no creada. En este caso es necesario colocar al menos un fichero (.h) o antes del prototipo de función amiga, <b>el prototipo(s) de la clase</b> que será declarada después, esto pone alerta al compilador de que después de definido, al igual que en el caso de los problemas de función.</p>
 		</article>
 		
 		<article class="subsection">
